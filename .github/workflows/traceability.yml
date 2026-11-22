@@ -1,0 +1,58 @@
+name: Traceability
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+
+jobs:
+  naming:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate branch and PR title
+        env:
+          BRANCH: ${{ github.head_ref }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+          branch = os.environ["BRANCH"]
+          title = os.environ["PR_TITLE"]
+          pattern = r"(?:feature|fix|docs|chore|refactor|test|ci|hotfix)/(RTARS-[1-9][0-9]*)-[a-z0-9]+(?:-[a-z0-9]+)*"
+          match = re.fullmatch(pattern, branch)
+          if not match:
+              sys.exit(f"Invalid branch: {branch}")
+          issue = match.group(1)
+          if not re.match(rf"^\[{re.escape(issue)}\] .+", title):
+              sys.exit(f"PR title must start with [{issue}] ")
+          print(f"Branch and PR title linked to {issue}")
+          PY
+      - name: Validate commit messages
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, urllib.request
+          issue = re.match(r"^[^/]+/(RTARS-\d+)-", os.environ["BRANCH"]).group(1)
+          url = f"https://api.github.com/repos/{os.environ['REPO']}/pulls/{os.environ['PR_NUMBER']}/commits?per_page=100"
+          messages = []
+          while url:
+              req = urllib.request.Request(url, headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
+              with urllib.request.urlopen(req) as resp:
+                  data = json.load(resp)
+                  link = resp.headers.get("Link", "")
+              messages += [c["commit"]["message"].splitlines()[0] for c in data]
+              next_link = re.search(r'<([^>]+)>; rel="next"', link)
+              url = next_link.group(1) if next_link else None
+          if not messages:
+              sys.exit("No commits found")
+          pattern = re.compile(r"^(?:feat|fix|docs|refactor|test|build|ci|chore|perf|revert)(?:\([a-z0-9][a-z0-9-]*\))?!?: .+ \(" + re.escape(issue) + r"\)$")
+          bad = [m for m in messages if not pattern.fullmatch(m)]
+          if bad:
+              sys.exit("Invalid commit subjects:\n" + "\n".join(bad))
+          print(f"Validated {len(messages)} commits for {issue}")
+          PY
