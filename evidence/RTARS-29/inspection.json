@@ -1,0 +1,64 @@
+{
+  "issue": "RTARS-29",
+  "observed_on": "2026-11-22",
+  "source": "user_supplied_runbook",
+  "printer": "ELEGOO Neptune 4 Standard",
+  "nozzle": {
+    "diameter_mm": 0.4,
+    "material": "brass",
+    "evidence": "operator_declaration",
+    "manufacturer_recommended": "hardened steel >=0.4mm",
+    "risk": "OPEN"
+  },
+  "machine_visual_inspection": {
+    "result": "PASS",
+    "evidence": "operator_declaration"
+  },
+  "filament": {
+    "brand": "ELEGOO",
+    "type": "PLA Metallic",
+    "color": "Metal Bronze",
+    "diameter_mm": 1.75,
+    "spool_condition": "PASS",
+    "moisture": "dry_documented_claim",
+    "method_or_date": null,
+    "source": "operator_declaration"
+  },
+  "slicer": {
+    "name": "Bambu Studio",
+    "version": "2.8.2.61",
+    "version_source": "operator_declaration",
+    "printer_preset_claim": "PASS",
+    "printer_preset_name": null,
+    "filament_preset_name": null
+  },
+  "temperature_c": {
+    "nozzle_first_layer": 210,
+    "nozzle_other_layers": 205,
+    "bed_all_layers": 60,
+    "material_nozzle_spec": [
+      190,
+      230
+    ],
+    "material_bed_spec": [
+      35,
+      65
+    ],
+    "within_published_material_ranges": true
+  },
+  "gcode": {
+    "compatibility_claim": "PASS",
+    "file_examined": false
+  },
+  "prior_prints": {
+    "reported_success": true,
+    "evidence_files": []
+  },
+  "gates": {
+    "configuration": "PARTIAL",
+    "conditions": "PARTIAL",
+    "risks_identified": "PASS",
+    "dod": "BLOCKED"
+  },
+  "personal_information_removed": true
+}
