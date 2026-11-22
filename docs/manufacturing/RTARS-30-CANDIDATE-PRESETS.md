@@ -28,7 +28,8 @@ Tutti gli altri campi restano **identici** ai rispettivi JSON di input: **non** 
 - **PASS:** entrambi i JSON nativi sono presenti su GitHub, letti dopo il commit e verificati byte-identici al file distribuito (SHA-256 in tabella sopra e Git blob SHA-1).
 - **PASS statico:** file `3_parts.gcode` mostra uso del profilo FUNCTIONAL.
 - **PARTIAL:** macchina/G-code in revisione statica, preset Generic PLA @Elegoo documentato in RTARS-29 senza calibrazione Metallic Bronze dedicata.
-- **NOT TESTED:** revisione locale motivata degli orientamenti/supporti del lotto (vedi [`RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md`](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md)); slicing di entrambi i profili su tutti i quattro piatti non richiesto per il primo lotto di RTARS-31; fit test fisici downstream.
+- **PASS (dichiarazione operatore):** ispezione Preview del lotto pilota a tre parti: appoggio, supporti fuori dalle interfacce e rimovibili, orientamento coerente coi carichi, nessun warning. [Verbale](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md). Risultato aggregato sui tre oggetti, non 3 attestazioni indipendenti.
+- **NOT TESTED downstream:** altri componenti fuori dal lotto, slicing AESTHETIC su geometrie definitive, misure/fit e stampe di RTARS-31/32.
 
 Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio HL-18 QUALITY. Non creare G-code da lanciare sulla macchina fino alla verifica del vero preset Neptune 4 Standard con ugello 0,4, della temperatura/ventilazione del PLA Metallic e delle istruzioni di avvio/fine Klipper. Non pubblicare modelli e derivati MakerWorld.
 
@@ -55,5 +56,5 @@ Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio
 - **PASS:** entrambi i preset importati, secondo dichiarazione utente; decisione quantitativa riproducibile.
 - **PARTIAL macchina/materiale:** Neptune 4 Standard/ugello 0,4, flavor Klipper e 210/205/60°C documentati da RTARS-29 e G-code effettivo. Lo start/end G-code è stato ispezionato staticamente; sicurezza esecutiva, verifica supporti per interfacce e calibrazione Generic PLA per Metallic Bronze non certificate. Prima di avviare stampa reale eseguire preflight locale.
 - **PASS per Done RTARS-30:** i due profili sono versionati come JSON nativi in `docs/manufacturing/presets/`, con SHA originali verificati; il G-code `3_parts` prova lo slicing FUNCTIONAL.
-- **PENDING per Done RTARS-30:** verifica motivata di orientamenti e supporti per le parti su Preview, con verbale di ispezione locale; nessun test fisico viene implicitamente considerato completato.
+- **PASS per il pilot RTARS-30:** verifica motivata di orientamenti e supporti per le 3 parti dello slicing FUNCTIONAL, attestata dall'operatore in Preview. **Limitazione:** altri pezzi non verificati; richiedono verifica prima di successive stampe. Nessun test fisico viene implicitamente considerato completato.
 - **NON autorizzata:** stampa definitiva RTARS-32.
