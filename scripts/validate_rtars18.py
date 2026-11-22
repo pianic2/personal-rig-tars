@@ -20,6 +20,21 @@ from pathlib import Path
 
 UPSTREAM_URL = "https://github.com/LuwuDynamics/rig_tars_rl.git"
 UPSTREAM_SHA = "456e3ee95ccbe94deae9484568719e8686b4b68b"
+# Exact five-image ESP-IDF manifest observed in the operator's TARS Global build.
+EXPECTED_IMAGES = {
+    "bootloader.bin": (0x0, 0x8000),
+    "partition-table.bin": (0x8000, 0x9000),
+    "ota_data_initial.bin": (0xD000, 0xF000),
+    "rig-tars.bin": (0x20000, 0x410000),
+    "board_assets.bin": (0x800000, 0x1000000),
+}
+# Limited ESP-IDF esptool flash flags; unknown options fail closed.
+FLASH_OPTIONS = {"--flash_mode", "--flash_freq", "--flash_size", "--spi-connection"}
+REQUIRED_ARTIFACTS = {
+    "flash_args", "bootloader/bootloader.bin",
+    "partition_table/partition-table.bin", "ota_data_initial.bin",
+    "rig-tars.bin", "board_assets.bin",
+}
 EXPECTED_TARGET = "esp32s3"
 EXPECTED_BOARD = "CONFIG_BOARD_TYPE_TARS=y"
 EXPECTED_REGION = "CONFIG_FIRMWARE_REGION_OVERSEAS=y"
@@ -62,20 +77,65 @@ def get_serial_ports() -> list[tuple[str, str]] | None:
 
 
 def image_arguments(flash_args: Path, build_dir: Path) -> list[tuple[int, Path]]:
+    """Parse all manifest arguments, reject extra images/options and escaped paths."""
     tokens = shlex.split(flash_args.read_text(encoding="utf-8"))
     images: list[tuple[int, Path]] = []
+    names: set[str] = set()
     index = 0
+    # Options must precede images and have a single value.
+    while index < len(tokens) and tokens[index].startswith("--"):
+        option = tokens[index]
+        if option not in FLASH_OPTIONS or index + 1 >= len(tokens):
+            raise ValueError("unrecognized or incomplete flash option")
+        value = tokens[index + 1]
+        if value.startswith("--") or value.startswith("0x"):
+            raise ValueError("invalid flash option value")
+        index += 2
+    if (len(tokens) - index) != 2 * len(EXPECTED_IMAGES):
+        raise ValueError("unexpected image count or trailing manifest tokens")
     while index < len(tokens):
-        token = tokens[index]
-        if re.fullmatch(r"0x[0-9a-fA-F]+", token) and index + 1 < len(tokens):
-            candidate = Path(tokens[index + 1])
-            if not candidate.is_absolute():
-                candidate = build_dir / candidate
-            images.append((int(token, 16), candidate.resolve()))
-            index += 2
-        else:
-            index += 1
+        address, relative = tokens[index:index + 2]
+        if not re.fullmatch(r"0[xX][0-9a-fA-F]+", address):
+            raise ValueError("invalid flash address")
+        if Path(relative).is_absolute() or ".." in Path(relative).parts:
+            raise ValueError("flash image path escapes build directory")
+        candidate = (build_dir / relative).resolve()
+        if not candidate.is_relative_to(build_dir.resolve()):
+            raise ValueError("flash image path resolves outside build directory")
+        name = candidate.name
+        if name not in EXPECTED_IMAGES or name in names:
+            raise ValueError("unexpected or duplicate flash image")
+        offset = int(address, 16)
+        if offset != EXPECTED_IMAGES[name][0]:
+            raise ValueError("flash image offset mismatch")
+        names.add(name)
+        images.append((offset, candidate))
+        index += 2
+    if names != set(EXPECTED_IMAGES):
+        raise ValueError("missing required flash images")
     return images
+
+
+def image_ranges_valid(images: list[tuple[int, Path]]) -> bool:
+    intervals: list[tuple[int, int]] = []
+    for offset, path in images:
+        if not path.is_file() or path.stat().st_size <= 0:
+            return False
+        end = offset + path.stat().st_size
+        if end > EXPECTED_IMAGES[path.name][1]:
+            return False
+        intervals.append((offset, end))
+    intervals.sort()
+    return all(left[1] <= right[0] for left, right in zip(intervals, intervals[1:]))
+
+
+def parse_partition_number(value: str) -> int:
+    """Decode ESP-IDF CSV offsets and sizes, including KiB/MiB suffixes."""
+    match = re.fullmatch(r"(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*([KMG]?)B?", value.strip(), re.I)
+    if not match:
+        raise ValueError("invalid partition number")
+    number = int(match.group(1), 0) if match.group(1).lower().startswith("0x") else int(match.group(1))
+    return number * (1024 ** {"": 0, "K": 1, "M": 2, "G": 3}[match.group(2).upper()])
 
 
 def partition_layout_matches(decoded_csv: str) -> bool:
@@ -92,7 +152,9 @@ def partition_layout_matches(decoded_csv: str) -> bool:
                 continue
             name = row[0].strip()
             if name in expected:
-                actual[name] = (int(row[3].strip(), 0), int(row[4].strip(), 0))
+                if name in actual:
+                    return False
+                actual[name] = (parse_partition_number(row[3]), parse_partition_number(row[4]))
     except (ValueError, IndexError):
         return False
     return actual == expected
@@ -108,9 +170,13 @@ def reusable_build(marker_path: Path, build_dir: Path, sdkconfig: Path, lockfile
                 or marker.get("dependencies_lock_sha256") != sha256(lockfile)):
             return False
         recorded = marker.get("artifacts")
-        return isinstance(recorded, dict) and bool(recorded) and all(
-            (build_dir / rel).is_file() and sha256(build_dir / rel) == digest
-            for rel, digest in recorded.items())
+        return (isinstance(recorded, dict)
+                and set(recorded) == REQUIRED_ARTIFACTS
+                and all(isinstance(digest, str)
+                        and re.fullmatch(r"[a-f0-9]{64}", digest)
+                        and (build_dir / rel).is_file()
+                        and sha256(build_dir / rel) == digest
+                        for rel, digest in recorded.items()))
     except (OSError, ValueError, TypeError):
         return False
 
@@ -289,21 +355,17 @@ def main() -> int:
         try:
             artifacts.append(("flash_args", flash_args))
             manifest_images = image_arguments(flash_args, build_dir)
-            known_assets = {"board_assets.bin", "assets.bin"}
+            known_assets = {"board_assets.bin"}
             for offset, path in manifest_images:
                 artifacts.append((f"image at 0x{offset:x}", path))
             all_exist = bool(manifest_images) and all(path.is_file() for _, path in manifest_images)
             add(checks, "flash_args", "PASS" if all_exist else "FAIL",
                 "all manifest images exist" if all_exist else "manifest missing images or has no offset/image pairs")
             fatal |= not all_exist
-            expected_offsets = {"bootloader.bin": 0x0, "partition-table.bin": 0x8000,
-                                "rig-tars.bin": 0x20000, "board_assets.bin": 0x800000,
-                                "assets.bin": 0x800000}
-            offsets_ok = (all(path.name in expected_offsets and expected_offsets[path.name] == offset
-                              for offset, path in manifest_images)
-                          and {path.name for _, path in manifest_images} >=
-                          {"bootloader.bin", "partition-table.bin", "rig-tars.bin"}
-                          and ({"board_assets.bin", "assets.bin"} & {path.name for _, path in manifest_images}))
+            offsets_ok = (len(manifest_images) == len(EXPECTED_IMAGES)
+                          and {path.name for _, path in manifest_images} == set(EXPECTED_IMAGES)
+                          and all(EXPECTED_IMAGES[path.name][0] == offset
+                                  for offset, path in manifest_images))
             add(checks, "manifest offsets", "PASS" if offsets_ok else "FAIL",
                 "known TARS image offsets match source package profile" if offsets_ok else "image offset differs from TARS source profile")
             fatal |= not offsets_ok
@@ -344,17 +406,9 @@ def main() -> int:
         add(checks, "generated partition table", "NOT TESTED", "partition-table.bin unavailable")
 
     if manifest_images and partition_bin.is_file():
-        size_ok = True
-        for offset, path in manifest_images:
-            if not path.is_file():
-                size_ok = False
-                continue
-            limits = {"bootloader.bin": 0x8000, "partition-table.bin": 0x1000,
-                      "rig-tars.bin": 0x3F0000, "board_assets.bin": 0x800000,
-                      "assets.bin": 0x800000}
-            size_ok &= path.name in limits and path.stat().st_size <= limits[path.name]
+        size_ok = image_ranges_valid(manifest_images)
         add(checks, "image sizes", "PASS" if size_ok else "FAIL",
-            "application/assets fit declared partitions" if size_ok else "one or more images exceed partition capacity")
+            "all five images fit declared ranges without overlap" if size_ok else "image out of range, missing, empty or overlapping")
         fatal |= not size_ok
         add(checks, "artifact SHA-256", "PASS" if all(p.is_file() for _, p in artifacts) else "FAIL",
             "checksums calculated for available manifest images" if all(p.is_file() for _, p in artifacts) else "one or more images unavailable")
@@ -367,9 +421,12 @@ def main() -> int:
         + [path for _, path in manifest_images]
         + ([partition_bin] if partition_bin.is_file() else [])
     ))
+    artifact_names = {str(p.relative_to(build_dir)) for p in artifact_paths
+                      if p.is_relative_to(build_dir)}
+    required_artifacts_ok = artifact_names == REQUIRED_ARTIFACTS
     required_checks = {"flash_args", "manifest offsets", "assets image", "generated partition table",
                        "image sizes", "artifact SHA-256", "resolved dependency lock for writes"}
-    validated_artifacts = (bool(artifact_paths) and all(path.is_file() for path in artifact_paths)
+    validated_artifacts = (required_artifacts_ok and all(path.is_file() for path in artifact_paths)
                            and required_checks <= {check.name for check in checks if check.result == "PASS"})
     if args.build and not build_reusable and build_command_ok and validated_artifacts and not fatal:
         try:
