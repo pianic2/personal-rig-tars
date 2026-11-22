@@ -29,3 +29,28 @@ Tutti gli altri campi restano **identici** ai rispettivi JSON di input: **non** 
 - **NOT TESTED:** slicing dei quattro piatti con i due profili dedicati, verifica orientamenti/supporti e fit test.
 
 Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio HL-18 QUALITY. Non creare G-code da lanciare sulla macchina fino alla verifica del vero preset Neptune 4 Standard con ugello 0,4, della temperatura/ventilazione del PLA Metallic e delle istruzioni di avvio/fine Klipper. Non pubblicare modelli e derivati MakerWorld.
+
+## Decisione quantitativa 2026-11-22 — profilo da utilizzare per RTARS-31
+
+**SELEZIONE: RTARS-FUNCTIONAL CANDIDATE 0.20mm**, come profilo unico per la prima prova funzionale (NON approvazione della produzione definitiva). La decisione confronta i JSON originali delle due configurazioni importate dall'utente; per evitare otto slicing dei quattro piatti, si richiede **un solo provino funzionale selezionato**, dopo i controlli macchina/materiale.
+
+| Parametro nei JSON | AESTHETIC 0.16 | FUNCTIONAL 0.20 | Valutazione |
+|---|---:|---:|---|
+| Layer (mm) | 0.16 | 0.20 | Functional 25% più alto, 20% meno layer a parità di altezza Z nominale (non una misura del tempo) |
+| Outer wall speed (mm/s) | 50 | 35 | Functional 30% più lento |
+| Inner wall speed (mm/s) | 70 | 45 | Functional 35.7% più lento |
+| Infill speed (mm/s) | 80 | 55 | Functional 31.25% più lento |
+| Acceleration generale (mm/s²) | 1500 | 700 | Functional 53.3% inferiore |
+| Accelerazione parete esterna (mm/s²) | 800 | 400 | Functional 50% inferiore |
+| Primo layer speed (mm/s) | 30 | 18 | Functional 40% più lento |
+| Wall loops | 3 | 3 | parità |
+| Infill | 25% | 25% | parità |
+| Supports | normal(auto), 30° | normal(auto), 30° | parità, da verificare sulla geometria |
+
+**Interpretazione:** velocità/accelerazioni più conservative riducono il carico dinamico nominale ma non dimostrano precisione dimensionale, adesione o resistenza. La riduzione dei layer è puramente geometrica e non equivale a −20% di tempo. Tempo e massa reali col nuovo preset **sconosciuti**; il run QUALITY 23h19m non è riutilizzabile come previsione FUNCTIONAL.
+
+### Gate di esecuzione
+- **PASS:** entrambi i preset importati, secondo dichiarazione utente; decisione quantitativa riproducibile.
+- **PENDING obbligatori prima di generare/eseguire G-code:** selezione macchina Neptune 4 Standard/ugello 0,4 e verifica dimensioni, start/end G-code, compatibilità Klipper; controlli temperatura e ventilazione per ELEGOO PLA Metallic Bronze (Generic PLA attualmente selezionato); controllo supporti e orientamento del singolo provino.
+- **PENDING per Done RTARS-30:** profili effettivamente versionati come artefatti nativi, motivazioni orientamenti/supporti per le parti, preview target e relative evidenze.
+- **NON autorizzata:** stampa definitiva RTARS-32.
