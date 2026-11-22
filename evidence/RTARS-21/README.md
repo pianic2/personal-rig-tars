@@ -95,3 +95,30 @@ La [guida rapida TARS](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_
 | G07 | **PASS documentazione** | Questo verbale, riscontri e limiti registrati |
 
 **Decisione:** nessuna ulteriore inferenza può sostituire le prove mancanti. Per DoD e HARDWARE_SAFETY, l'alimentazione e il cablaggio completo **non** possono ricevere PASS e l'issue non deve essere chiusa come validazione completa. La pubblicazione di questo audit non costituisce autorizzazione all'accensione.
+
+## Ultimi risultati del runbook — 2026-11-22 (prevalgono sulle tabelle precedenti)
+
+**Provenienza:** risultati forniti direttamente dall'operatore dopo l'esecuzione del runbook G02/G03. Le letture sono **dichiarate dall'operatore**, non raccolte da un sistema automatico. Il test riguarda il **solo cablaggio passivo isolato**, con batteria e RIG-Board scollegate, come prescritto dal runbook.
+
+| Gate/test | Risultato riportato | Valutazione |
+| --- | --- | --- |
+| G02R — continuità conduttore rosso | **Presente** | PASS per percorso rosso testato |
+| G02N — continuità conduttore nero | **Presente** | PASS per percorso nero testato |
+| G02S — pulsante | **Premuto chiude / rilasciato apre** | PASS |
+| G03OFF — continuità rosso ↔ nero con pulsante rilasciato | **Nessuna continuità** | PASS per assenza di corto rilevabile fra conduttori |
+| G03ON — continuità rosso ↔ nero con pulsante premuto | **Nessuna continuità** | PASS per assenza di corto rilevabile fra conduttori |
+| Anomalie osservate | **Nessuna** | Nessuna anomalia dichiarata |
+| G04 — documentazione specifiche batteria | **Non disponibili** | NOT VERIFIED: tensione 8,10 V già misurata, ma configurazione/protezioni/limiti pacco non accertati |
+| G05 — documentazione di compatibilità batteria/PCB della revisione | **Non disponibile** | NOT VERIFIED: confronto delle specifiche critiche non possibile |
+
+### Valutazione finale dei gate
+
+- **G01: PASS** — prova del pulsante come dichiarata dall'operatore.
+- **G02: PASS per continuità del cablaggio isolato e funzionamento interruttore.** Rimane non attribuita una netlist completa della PCB.
+- **G03: PASS per i test di isolamento fra conduttori nel cablaggio passivo e corrispondenza visiva del cablaggio dichiarata.** Non è una prova di compatibilità degli ingressi della PCB.
+- **G04: NOT VERIFIED**, documentazione del pacco effettivo non disponibile.
+- **G05: NOT VERIFIED**, documentazione di compatibilità della revisione effettiva PCB/pacco non disponibile.
+- **G06: PASS per inventario visivo**, senza attribuzione di pinout sconosciuti.
+- **G07: PASS per registrazione delle evidenze e verbale.**
+
+**Esito della DoD:** le prove passive G02/G03 precedentemente mancanti sono adesso documentate con esito positivo. **Non** sono stati risolti i requisiti critici di alimentazione G04 e G05. `HARDWARE_SAFETY.md` richiede specifiche compatibili verificate per la revisione reale; di conseguenza **RTARS-21 non può essere portata a Fatto secondo la DoD vigente**. La documentazione è pronta e integrabile, ma **non autorizza** a collegare, alimentare o ricaricare la batteria.
