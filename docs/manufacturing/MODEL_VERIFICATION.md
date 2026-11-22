@@ -2,7 +2,7 @@
 
 ## Sintesi degli esiti
 
-L'archivio locale è stato inventariato e il suo 3MF è stato analizzato senza modificare gli upstream. Package, grafo e mesh analizzati risultano `PASS` per i controlli statici implementati. La provenienza è attestata dal proprietario; la verifica indipendente della pagina, la licenza e la corrispondenza di revisione restano `NOT TESTED`. Il confronto documentale rileva quantità differenti e non prova compatibilità meccanica.
+L'archivio locale è stato inventariato e il suo 3MF è stato analizzato senza modificare gli upstream. Package, grafo e mesh analizzati risultano `PASS` per i controlli statici implementati. La provenienza è attestata dal proprietario; la verifica indipendente della pagina, la corrispondenza di revisione resta `NOT TESTED`; il testo della licenza è stato fornito dal proprietario e documentato separatamente. Il confronto documentale rileva quantità differenti e non prova compatibilità meccanica.
 
 Il manifest riproducibile è [MODEL_MANIFEST.json](MODEL_MANIFEST.json). Non include geometrie. Le verifiche puntuali e le azioni residue sono in [MODEL_DISCREPANCIES.md](MODEL_DISCREPANCIES.md).
 
@@ -13,7 +13,7 @@ Il manifest riproducibile è [MODEL_MANIFEST.json](MODEL_MANIFEST.json). Non inc
 | ZIP locale `RIG-TARS_+Open-Source+Desktop+Sci-Fi+Robot.zip` | Archivio originale, escluso da Git | `73f824fa02f36a52d28e1931989fcd17b53dbbba5dd7d9e73a874f45c8ca7fa9` | Il proprietario attesta il download dal modello MakerWorld #3318467 / profilo 3767953. Nessun confronto indipendente con un download dalla pagina. |
 | `armV3.3mf` | 2.481.283 byte; unico file esterno nell'archivio | `42912423fb2d91076ccc4721f9568fff6115fe686e7e3e51ca7572c15b5bc7c7` | Metadata locali: BambuStudio 02.07.01.57; Creation/ModificationDate 2026-09-02; `Designer` e `License` vuoti; `DesignerUserId=1510856505`. Valori dichiarati dal file, non verificati con il publisher. |
 
-L'autore visualizzato nella pagina, data originale di pubblicazione e cronologia/versione del profilo non sono stati verificati: accesso diretto alla pagina MakerWorld bloccato da Cloudflare (HTTP 403). Il proprietario attesta la provenienza del download, non l'identità dell'autore o la revisione pubblicata. Un indice terzo che attribuisce “MakerWorld Exclusive License” non costituisce evidenza primaria. La licenza dei modelli è `NOT TESTED`; nessun modello o derivato è ridistribuito.
+L'autore visualizzato nella pagina, data originale di pubblicazione e cronologia/versione del profilo non sono stati verificati: accesso diretto alla pagina MakerWorld bloccato da Cloudflare (HTTP 403). Il proprietario attesta la provenienza del download, non l'identità dell'autore o la revisione pubblicata. Il proprietario ha fornito il 2026-11-22 il testo visualizzato della **MakerWorld Exclusive License**, insieme al collegamento all'immagine della licenza. È un'evidenza diretta fornita dall'utente della licenza mostrata, ma la pagina del modello resta non verificata indipendentemente (HTTP 403); non si attribuiscono permessi ulteriori. Nessun modello o derivato è ridistribuito.
 
 ## Inventario del 3MF
 
@@ -80,4 +80,4 @@ Test sintetici coprono SHA-256, traversal/assoluti, ZIP corrotto, CRC/path non s
 
 ## Licenza e distribuzione
 
-La pagina primaria MakerWorld non ha fornito contenuto verificabile in questa esecuzione. Il campo licenza nei metadata 3MF è vuoto. Una licenza del firmware non determina i diritti sul CAD. La licenza è `NOT TESTED`; gli originali e i derivati restano esclusi da Git, non redistribuiti. Per verificarla serve consultare la pagina MakerWorld accessibile o ottenere autorizzazione esplicita riferita a questi file.
+Il proprietario ha riportato il 2026-11-22 il testo della **MakerWorld Exclusive License** visualizzata per il contenuto e il riferimento all'[immagine ufficiale della licenza](https://makerworld.bblmw.com/makerworld/static/creativecommons/makerworld-exclusive-license.png). La licenza riportata consente opere derivate solo se pubblicate esclusivamente su MakerWorld con attribuzione all'autore originale; vieta distribuzione/pubblicazione dell'originale e dei derivati su altre piattaforme e qualunque uso commerciale (anche con benefici economici indiretti). La pagina specifica del modello non è stata verificata autonomamente per HTTP 403, e il campo License del 3MF è vuoto: **termini comunicati dal proprietario, verifica indipendente dell'associazione modello-licenza non eseguita**. Non confondere le licenze firmware con quelle CAD. Originali e derivati restano esclusi da Git e non redistribuiti; eventuali usi oltre il perimetro consentito richiedono autorizzazione separata del titolare.
