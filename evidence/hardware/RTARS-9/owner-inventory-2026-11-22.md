@@ -76,3 +76,12 @@ Risposta: «no». **Non** equivale a un collaudo funzionale o all'assenza dimost
 4. L'assenza di M2×10, M3×10, dadi M3 e spugna è **accertata come dichiarazione sull'inventario ricevuto**, ma non determina automaticamente che il venditore abbia sbagliato a confezionare il kit.
 5. L'originale della fotografia non è archiviato qui; vedere il manifest per il digest.
 
+
+## Rettifica successiva del proprietario (22 novembre 2026)
+
+Testo originale: «nella foto lo vedi in basso a sinistra e non ha buste. le viti m2 sono di due categorie distinte svasate autofilettanti e a brugola con frenafiletti».
+
+- Il cavo descritto è il **cavo interruttore E008**, visibile sciolto senza bustina nella zona inferiore sinistra della foto; la voce originaria A008 si riferisce allo **stesso** cavo, non a un'unità aggiuntiva.
+- Le due categorie di viti M2×4 vengono specificate dal proprietario come **svasate autofilettanti (F002)** e **a brugola con frenafiletti (F003)**. Sono state ricondotte ai due gruppi già contati in Q11 (**4 + 4**, non altre 8 viti).
+- La fonte fotografica riporta tuttavia le etichette `M2*4圆头十字机丝` (testa tonda a croce per macchina) e `M2*4十字自攻螺丝` (autofilettante a croce), diverse dalla nuova classificazione fisica. La differenza rimane **OPEN in D03/D04**, senza sostituire l'una all'altra come fatto certo. Verificare materialmente prima dell'assemblaggio.
+- Non modificare retroattivamente le risposte Q1–Q16: questa nota documenta la revisione successiva.
