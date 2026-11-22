@@ -1,129 +1,158 @@
-# RTARS-23 — Procedura tracciabile di collaudo display, touch e IMU
+# RTARS-23 — Come collaudare display, touch e IMU
 
-**Issue:** [RTARS-23](https://niccolopiazzi01.atlassian.net/browse/RTARS-23)  
-**Tipo documento:** procedura originale derivata da fonti ufficiali; NON copia del manuale  
-**Consultazione delle fonti:** 2026-11-22  
-**Stato delle prove:** NOT TESTED — questo documento non attesta un collaudo già effettuato  
-**Ambito:** kit elettronico RIG-TARS, prima del montaggio strutturale; revisioni e cablaggi da identificare fisicamente.
+> **Guida pratica per il kit RIG-TARS.** Segui i passaggi dall'alto verso il basso. Alla fine compila il piccolo verbale.
+>
+> **Situazione attuale:** procedura preparata, **test non ancora eseguiti**. Questa pagina non dichiara che l'hardware funzioni già.
+>
+> [Task Jira RTARS-23](https://niccolopiazzi01.atlassian.net/browse/RTARS-23)
 
-## 1. Fonti e perimetro documentale
+## Che cosa dobbiamo verificare?
 
-| ID | Fonte ufficiale | Sezione rilevante | Ultimo aggiornamento dichiarato dalla fonte |
-|---|---|---|---|
-| S1 | [RIG-TARS — Kit assembly](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly) | §§1–3, 5: verifica kit, connessione di prova, firmware ufficiale, test e disconnessione | 2026-09-29 |
-| S2 | [RIG-TARS — Quick start](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_start) | §§1–2: power-on, stati del display, calibrazione | 2026-09-29 |
-| S3 | [RIG-TARS — Troubleshooting](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_faq) | display, movimento, contenuto del report di supporto | 2026-10-08 |
-| S4 | [TARS — Terminal display](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_terminal) | lettura display, telemetria e stati IMU | 2026-10-08 |
-| S5 | [RIG-TARS — Development](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_develop) | firmware pubblico, ESP32-S3, target TARS, recupero | Da ricontrollare sul sito al momento della prova |
+Dobbiamo rispondere a tre domande:
 
-**Fonte di verità:** i collegamenti e le procedure ufficiali pubblicate dal produttore; queste note descrivono i passaggi di verifica del progetto e ne rendono auditabile l'esecuzione. Per fotografie, diagrammi, video e dettagli non riprodotti, consultare direttamente gli originali. Non archiviare immagini/video del produttore nel repository senza autorizzazione.
+1. **Display:** si accende e mostra immagini corrette?
+2. **Touch:** quando tocchiamo il sensore, il firmware riconosce il comando?
+3. **IMU:** il sensore di movimento restituisce dati che cambiano quando cambia l'orientamento?
 
-**Regole interne:** [HARDWARE_SAFETY](../process/HARDWARE_SAFETY.md), [DoR](../process/DEFINITION_OF_READY.md), [DoD](../process/DEFINITION_OF_DONE.md). Questa procedura non prevale su tali gate.
+Per ciascuna domanda servono **un risultato (PASS / FAIL / NON TESTATO) e una prova** (foto o log). Non serve produrre decine di screenshot.
 
-## 2. Riscontri verificati nelle fonti
+## Prima di cominciare — 5 minuti di controlli
 
-- **S1:** il produttore richiede un test di accensione dei componenti elettronici prima dell'installazione nella struttura. I componenti vanno connessi con alimentazione scollegata seguendo la fotografia/schema corrispondente al kit. La guida distingue il layout temporaneo di prova dalla posa finale.
-- **S1:** il flusso del firmware ufficiale usa USB dati e [Luwu Tools](https://tools.luwudynamics.ai) con modello RIG-TARS, versione rilasciata e regione appropriata. Flashing e successivo riavvio non dimostrano, da soli, che tutte le periferiche funzionino.
-- **S1:** dopo il test, spegnere, scollegare tutte le fonti di alimentazione (USB inclusa) e solo allora disconnettere i componenti. La calibrazione meccanica definitiva è successiva al montaggio.
-- **S2:** in fase di calibrazione, il sensore touch esterno viene usato per confermare gli zeri **solo con il robot correttamente montato e allineato**. Non usarlo per forzare il superamento del test di elettronica sfusa.
-- **S3:** per uno schermo non funzionante, controllare alimentazione e target software; a potenza rimossa, controllare cavo e blocco del connettore. La configurazione TARS usa lo schermo orizzontale ST7789V2, non un display circolare.
-- **S4:** terminale orizzontale 320×240; indicazioni IMU `OFF`, `CAL`, `OK`; grandezze `R/P/Y` e `AX/AY/AZ`. L'animazione `FLIGHT LOG` non è un log diagnostico reale.
-- **S3/S4:** per anomalie registrare versione hardware/firmware, regione, sequenza riproducibile, messaggio visualizzato e, se possibile, output seriale.
+**Materiale:** kit RIG-TARS, alimentazione prevista dal produttore per questa revisione, cavo USB dati se richiesto, computer e telefono per una foto.
 
-**Limiti della documentazione consultata:** nelle sezioni sopra non è fornito un protocollo autonomo di accettazione touch/IMU con soglie numeriche, né si è verificato un pinout univoco della specifica revisione del kit. Per RTARS-23 i test funzionali sotto sono criteri di verifica del progetto, non specifiche prestazionali dichiarate dal produttore. Prima di alimentare, identificare la revisione reale e verificare il diagramma di connessione ufficiale specifico.
+**Fai questi controlli con tutte le alimentazioni scollegate:**
 
-## 3. Gate 0 — Autorizzazione a provare
+- [ ] Nessun cavo visibilmente rovinato o con rame esposto.
+- [ ] Tutti i connettori sono nelle posizioni e nell'orientamento mostrati nella [guida ufficiale di assemblaggio](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly), **per la revisione del tuo kit**.
+- [ ] Tensione, polarità e modalità di alimentazione sono state verificate per la scheda reale. Se non lo sono, **fermati e non accendere**.
+- [ ] Il kit è appoggiato su un piano stabile; non ci sono parti che potrebbero muoversi o tirare i cavi.
+- [ ] Il **boot del firmware** è già stato verificato e documentato. Rilevare il chip USB CH343 o la flash da 16 MB **non basta** a dimostrare il boot.
+- [ ] Sai come spegnere subito la scheda in caso di anomalia.
 
-Registrare ognuna delle seguenti condizioni con evidenza; un esito incerto su cablaggio o alimentazione è **BLOCKED**, non PASS.
+**Se una casella obbligatoria non è verificabile, non proseguire.** Non spostare connettori sotto tensione. Se noti calore anomalo, fumo, odori sospetti o movimenti inattesi, interrompi la prova.
 
-1. Boot test completato ed evidenziato (dipendenza RTARS-23); non confondere la sola identificazione del chip USB o della capacità flash con il boot applicativo.
-2. Alimentazione e polarità per la revisione fisica confermate mediante fonte attendibile; assenza di corti/danni e presenza di interruttore/disconnessione accessibile.
-3. Collegamenti dei componenti, verso e serraggio verificati sulla **foto ufficiale di test pre-assemblaggio S1** e sulla revisione reale; alimentazione assente durante qualsiasi cambio.
-4. Elettronica supportata su superficie stabile, lontana da conduttori; nessun cavo in zona di movimento; operatore presente.
-5. Firmware, regione, modello e strategia di alimentazione definiti e annotati. Se è necessario flashare: prima verificare target, release e procedura ufficiale; non cancellare/configurare arbitrariamente la flash.
-6. Nessuna calibrazione dei servomotori o prova di movimento del meccanismo sciolto per ottenere un PASS.
+La guida ufficiale prevede un controllo dell'elettronica *prima* dell'assemblaggio completo. Per le connessioni, guarda le immagini originali del produttore: non abbiamo riprodotto uno schema dei pin perché non è stata confermata la revisione della scheda.
 
-Riferimenti: S1, S2 e [HARDWARE_SAFETY](../process/HARDWARE_SAFETY.md).
+---
 
-## 4. Procedura controllata
+## Prova 1 — Display
 
-### T01 — Accensione e display
+**Obiettivo:** dimostrare che il display funziona, non soltanto che riceve corrente.
 
-**Fonte:** S1 §§2–3, S2 §2, S3, S4.
+1. Dopo aver superato i controlli iniziali, collega e accendi il kit **seguendo il test elettronico nella guida ufficiale**.
+2. Guarda che cosa appare sullo schermo.
+3. Controlla se il contenuto è leggibile, stabile e senza righe o artefatti anomali.
+4. Scatta **una foto** della schermata. Nascondi eventuali QR di pairing o identificatori personali.
+5. Scrivi il risultato nel verbale in fondo.
 
-1. A Gate 0 superato, alimentare secondo l'arrangiamento documentato per il kit; seguire l'avvio del firmware originale coerente con modello/regione.
-2. Osservare avvio, stabilità, immagini e messaggi (incluso eventuale `CALIB`); fotografare lo stato senza esporre codici QR/identificatori personali.
-3. Confrontare aspetto/risoluzione con S4; annotare errori, artefatti, riavvii e se il display resta spento.
-4. Se il display non parte, interrompere; controllare solo a potenza rimossa le condizioni descritte in S3. Nessun cambio pin o adattamento improvvisato.
+**PASS** = lo schermo mostra contenuto leggibile e stabile.  
+**FAIL** = resta nero, mostra soltanto retroilluminazione, presenta errori o anomalie.  
+**NON TESTATO** = non hai potuto eseguire la prova in sicurezza.
 
-**PASS di progetto:** avvio e rendering leggibili e stabili, senza difetti osservabili nella finestra di prova registrata. **Evidenza:** foto anonimizzata + firmware/region + osservazioni. Il solo backlight non è PASS.
+**Se non funziona:** spegni, scollega ogni alimentazione (USB compresa) e solo dopo verifica il connettore e la configurazione del firmware. Non cambiare pin a tentativi.
 
-### T02 — Sensore touch
+---
 
-**Fonte:** S1 §3, S2 §2, S4 (stati visualizzati). **Estensione di collaudo del progetto:** risposta funzionale al tocco.
+## Prova 2 — Sensore touch
 
-1. Identificare il sensore touch esterno effettivamente presente, non supporre che il pannello display sia touchscreen.
-2. Con il firmware in uno stato documentato che ammette l'input touch senza richiedere calibrazione meccanica, effettuare un tocco breve e registrare la risposta osservabile (display o output seriale).
-3. Ripetere per tre tocchi distinti solo se il comportamento è sicuro, deterministico e non attiva movimenti; registrare aspettativa/risultato per evento.
-4. Se è visibile `CALIB` su un robot non assemblato, **non confermare gli zeri**. Classificare il test indipendente come NOT TESTED fino alla disponibilità di una modalità diagnostica sicura documentata; non usare il touch come espediente per aggirare la calibrazione.
+**Attenzione:** qui si intende il **sensore touch esterno** del kit; non presumere che il display sia touchscreen.
 
-**PASS di progetto:** risposta verificabile a input intenzionali in uno stato previsto dal firmware. **Evidenza:** video ridotto o log seriale anonimizzato con eventi e stato. Assenza di risposta interpretabile = FAIL o NOT TESTED secondo la disponibilità della modalità di test.
+1. Identifica il sensore touch nella configurazione ufficiale.
+2. Verifica che il firmware si trovi in una schermata o modalità nella quale il touch è previsto e **non provoca movimenti**.
+3. Tocca brevemente il sensore.
+4. Osserva se cambia qualcosa sul display o se viene registrato un evento nel log seriale.
+5. Se la modalità è sicura e la risposta è chiara, ripeti altre due volte.
 
-### T03 — IMU
+**PASS** = ogni tocco di prova produce la risposta prevista e osservabile.  
+**FAIL** = la modalità di test è disponibile ma i tocchi non vengono riconosciuti.  
+**NON TESTATO** = non è disponibile una modalità sicura o non possiamo capire se il tocco è stato rilevato.
 
-**Fonte:** S4, S3. **Estensione di collaudo del progetto:** coerenza di lettura sensore.
+**Importante:** se appare una schermata di calibrazione meccanica (`CALIB`), **non confermare gli zeri sul kit non assemblato** soltanto per sbloccare il test. Nella guida ufficiale il touch viene anche usato durante la calibrazione successiva all'assemblaggio; questo non equivale a un test indipendente del sensore.
 
-1. Se il terminale o il monitor seriale mostra telemetria valida, annotare stato IMU (`OFF/CAL/OK`) e letture a riposo (`R/P/Y`, `AX/AY/AZ`) con timestamp.
-2. Solo se il kit è in condizioni sicure, l'operatore può variare leggermente l'orientamento della scheda supportata, senza provocare attivazioni e senza mettere in trazione cavi/connettori. Non muovere parti con servi energizzati.
-3. Annotare una seconda lettura; verificare se le grandezze pertinenti cambiano coerentemente e tornano in prossimità del valore iniziale quando riportate a riposo. Non inventare tolleranze, frequenze di campionamento né registri I²C.
-4. Se lo stato resta `OFF`/`CAL` o la telemetria non è disponibile, non dichiarare PASS solo perché il campo IMU appare sul display: annotare esito e diagnostica necessaria.
+**Prova da conservare:** un breve video, oppure un log che mostri gli eventi touch.
 
-**PASS di progetto:** stato operativo confermato e misure osservate, plausibili e sensibili a una variazione controllata. **Evidenza:** log seriale o sequenza fotografica con valori prima/dopo, timestamp e condizioni. Non equivale a calibrazione metrologica.
+---
 
-### T04 — Shutdown
+## Prova 3 — IMU (sensore di movimento)
 
-**Fonte:** S1 §3. Arrestare il firmware/spegnere, togliere l'alimentazione e l'USB, quindi eventualmente separare i componenti; annotare eventuali anomalie. Non usare il setup di prova come riferimento per la posizione di calibrazione definitiva.
+L'IMU rileva l'orientamento e l'accelerazione. Il terminale ufficiale può mostrare lo stato `OFF`, `CAL` o `OK`, oltre a dati come `R/P/Y` e `AX/AY/AZ`.
 
-## 5. Registro di esecuzione (compilare dopo le prove)
+1. Controlla se il display o il log seriale mostrano **lo stato dell'IMU e i valori misurati**.
+2. Con il kit fermo e in sicurezza, registra una prima lettura.
+3. **Solo se il movimento della scheda è sicuro e non attiva i servomotori**, cambia leggermente il suo orientamento, senza tendere i cavi.
+4. Registra una seconda lettura e controlla se cambia in modo plausibile.
+5. Riporta la scheda a riposo e annota il comportamento.
 
-| Campo | Riscontro |
+**PASS** = il sensore risulta operativo e le letture cambiano coerentemente con la prova.  
+**FAIL** = il sensore dovrebbe funzionare nella modalità verificata, ma produce errori o dati incoerenti.  
+**NON TESTATO** = non sono disponibili letture affidabili o non è sicuro muovere la scheda.
+
+Non è sufficiente vedere la parola “IMU” sul display: servono **valori reali**. Non inventiamo soglie numeriche o comandi non riportati nella documentazione.
+
+**Prova da conservare:** log o foto con almeno due letture (prima e dopo), indicazione dell'orientamento e ora della prova.
+
+---
+
+## Alla fine — Spegnimento
+
+1. Spegni il kit tramite la procedura prevista.
+2. Scollega **tutte** le fonti di alimentazione, USB inclusa.
+3. Solo a questo punto puoi intervenire sui connettori, se necessario.
+4. Compila il verbale qui sotto.
+
+## Verbale da compilare
+
+Puoi copiare e incollare questo blocco nella chat quando avrai eseguito i test. Io lo userò per preparare le evidenze da versionare su GitHub.
+
+```text
+RTARS-23 — RISULTATI COLLAUDO
+Data e ora:
+Revisione della scheda (se leggibile):
+Firmware/versione e regione:
+Alimentazione usata:
+Boot già verificato? (sì/no + riferimento):
+Alimentazione e cablaggio verificati? (sì/no + riferimento):
+
+DISPLAY: PASS / FAIL / NON TESTATO
+Che cosa compare sullo schermo?
+Foto disponibile? sì/no
+
+TOUCH: PASS / FAIL / NON TESTATO
+Che cosa succede quando tocco il sensore?
+Log o video disponibile? sì/no
+
+IMU: PASS / FAIL / NON TESTATO
+Stato IMU:
+Lettura a riposo:
+Lettura dopo variazione di orientamento:
+Log o foto disponibile? sì/no
+
+Spegnimento completato? sì/no
+Anomalie riscontrate:
+```
+
+**Regola per chiudere Jira:** display, touch e IMU devono avere ciascuno un PASS comprovato; devono risultare soddisfatti anche i prerequisiti di sicurezza e la [Definition of Done](../process/DEFINITION_OF_DONE.md). In caso contrario RTARS-23 resta aperta. Un test non effettuato non diventa PASS per presunzione.
+
+---
+
+## Documentazione ufficiale utilizzata
+
+Questa procedura è una **guida pratica originale** basata sulle fonti del produttore, consultate il **22 novembre 2026**. Non sostituisce i suoi diagrammi di cablaggio, le istruzioni di alimentazione o gli aggiornamenti firmware.
+
+| Fonte | A cosa serve |
 |---|---|
-| Esecutore e timestamp | NON ACQUISITO |
-| Hardware e revisione | NON VERIFICATA |
-| Firmware release/commit e regione | NON ACQUISITI |
-| Tipo di alimentazione / riferimenti | NON VERIFICATI |
-| Gate 0 / boot test | NOT TESTED — evidenza da collegare |
-| Gate 0 / alimentazione | NOT TESTED |
-| Gate 0 / cablaggio | NOT TESTED |
-| T01 display | NOT TESTED |
-| T02 touch | NOT TESTED |
-| T03 IMU | NOT TESTED |
-| T04 shutdown | NOT TESTED |
-| Anomalie, rischi e issue collegate | Nessuna evidenza ancora acquisita; non equivale ad assenza di anomalie |
+| [RIG-TARS — Guida di assemblaggio](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly) | Configurazione dell'elettronica, prova preassemblaggio e spegnimento |
+| [RIG-TARS — Primo avvio](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_start) | Avvio e calibrazione |
+| [RIG-TARS — Problemi comuni](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_faq) | Diagnosi display e problemi hardware |
+| [RIG-TARS — Display terminale](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_terminal) | Stati IMU e telemetria mostrata |
+| [RIG-TARS — Sviluppo](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_develop) | Firmware e strumenti di sviluppo |
 
-### Evidenze da raccogliere
+### Cosa viene dal produttore e cosa abbiamo definito noi?
 
-- `evidence/RTARS-23/<timestamp>-environment.md`: revisione hardware, firmware, regione, fonti, alimentazione, condizioni.
-- `evidence/RTARS-23/<timestamp>-display.jpg`: schermata senza identificativi o segreti.
-- `evidence/RTARS-23/<timestamp>-touch.log` oppure video redatto/anonimizzato.
-- `evidence/RTARS-23/<timestamp>-imu.log`: serie timestampate prima/dopo + contesto.
-- `evidence/RTARS-23/<timestamp>-results.md`: esiti distinti, anomalie e link agli artefatti.
+**Dal produttore:** sequenza di prova elettronica preliminare, riferimenti al firmware ufficiale, utilizzo del touch in calibrazione, interfaccia terminale e campi di telemetria IMU.
 
-I percorsi sono **nomi proposti**, non file già presenti. Prima della pubblicazione rimuovere account, hostname, percorsi personali, seriali identificativi, QR di pairing, SSID, password e token. Conservare nel report le informazioni tecniche necessarie alla riproducibilità.
+**Criteri del progetto RTARS:** documentare una prova separata per ciascuna periferica, ripetere il touch quando possibile, confrontare le letture IMU prima/dopo, registrare PASS/FAIL/NON TESTATO. Questi criteri non sono una certificazione prestazionale del produttore.
 
-## 6. Matrice di tracciabilità AC
+**Limite ancora aperto:** non è stata verificata, per la scheda fisica in uso, una modalità diagnostica indipendente e sicura per tutti e tre i componenti. Se manca, il relativo test resta **NON TESTATO** anziché aggirare firmware o safety gate.
 
-| AC Jira | Test | Criterio di chiusura | Stato |
-|---|---|---|---|
-| Display collaudato | T01 | PASS con evidenza | NOT TESTED |
-| Touch collaudato | T02 | PASS con evidenza | NOT TESTED |
-| IMU collaudata | T03 | PASS con evidenza | NOT TESTED |
-| Malfunzionamenti tracciati | Tutti | Report con esiti/incidenti espliciti | NOT TESTED |
-| Prerequisiti boot, power, cablaggio | Gate 0 | Evidenze PASS | NOT TESTED |
-| Safety / DoD | Gate 0 e T04 | Nessun safety gate obbligatorio irrisolto; evidenze versionate e collegate a Jira | NOT TESTED |
-
-**Regola finale:** non porre RTARS-23 in Done finché Gate 0 e tutti gli AC obbligatori non sono dimostrati. Le letture precedenti del bridge CH343 e della flash da 16 MB non costituiscono prova di display/touch/IMU. Questo documento registra **la procedura pianificata e le fonti consultate**, non un'esecuzione già avvenuta.
-
-## 7. Aggiornamento delle fonti
-
-Prima di una nuova sessione di collaudo, riaprire S1–S4; se contenuti, timestamp o istruzioni cambiano, registrarne la data e aggiornare la procedura tramite PR. Conservare nei commit la storia delle decisioni; i testi/illustrazioni del manuale restano ai rispettivi titolari.
+Per i controlli obbligatori prima di alimentare, consulta anche [Sicurezza hardware](../process/HARDWARE_SAFETY.md) e [Definition of Ready](../process/DEFINITION_OF_READY.md).
