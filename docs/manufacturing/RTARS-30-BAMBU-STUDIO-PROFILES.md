@@ -3,7 +3,7 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 
 ## Inputs and constraints
 - Slicer: **Bambu Studio only**; OrcaSlicer references in Jira were corrected.
-- **USER-CONFIRMED 2026-11-22:** printer ELEGOO Neptune 4 Standard; nozzle diameter 0.4 mm; ELEGOO PLA Metallic Metal Bronze; digital caliper available. Nozzle material/wear, firmware, filament dryness, Bambu Studio version, exact printer preset and actual slicer configuration **NOT VERIFIED**. Hardware testimony is not a physical inspection or slicer proof.
+- **USER-CONFIRMED 2026-11-22:** printer ELEGOO Neptune 4 Standard; nozzle diameter 0.4 mm; ELEGOO PLA Metallic Metal Bronze; digital caliper available. RTARS-29 subsequently documented **hardened steel 0.4 mm nozzle**, Bambu Studio version **2.8.2.61**, filament preset **Generic PLA @Elegoo**, nozzle temperatures **210°C first layer / 205°C subsequent**, bed **60°C**, machine inspection and previous G-code readability, all under operator testimony and selectively corroborated by Filament Manager photographs. See [RTARS-29 evidence](../../evidence/RTARS-29/README.md) and [inspection.json](../../evidence/RTARS-29/inspection.json); RTARS-29 is Done. Exact machine start/end G-code remains unaudited; nozzle wear/dryness not independently measured. Operator observations are not a third-party certification.
 - Do not import `HL-18 FAST 0.28mm @Elegoo Neptune4 0.4 nozzle` as a validated profile.
 - Source: RTARS-28 `PART_CLASSIFICATION.csv` (13 types / 16 instances). Geometric mating surfaces and actual tolerances remain **NOT TESTED**.
 - Source geometry is subject to MakerWorld Exclusive restrictions. Do not commit 3MF/STL, embedded geometry, G-code or screenshots exposing restricted geometry without permission.
@@ -14,7 +14,7 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 | Intended use | Visible outer shells, where no critical interface is affected | Structural, motion, mounting and interface features |
 | Layer height (candidate, assuming suitable 0.4 mm nozzle) | 0.16 mm | 0.20 mm |
 | Printer preset | Native `Elegoo Neptune 4 0.4 nozzle` preset **if confirmed in installed Bambu Studio** | Same verified Neptune 4 0.4 mm preset |
-| Filament preset | ELEGOO PLA Metallic Bronze custom filament preset after checking manufacturer's material settings | Same verified Metallic Bronze preset |
+| Filament preset | Generic PLA @Elegoo observed in RTARS-29; temperatures within ELEGOO Metallic specifications, but filament-specific flow/cooling calibration not established | Same observed Generic PLA @Elegoo with the same qualification limits |
 | Speed | Manufacturer's material/printer baseline; reduce outer-wall speed only after inspection | Manufacturer's baseline, conservative for dimensional surfaces after calibration |
 | Walls/infill | Decide from part loads and preview; no universal numeric claim | Decide from load paths and test coupons; no unverified strength claim |
 | Orientation | Prioritize visible surface and minimize support marks; protect mating surfaces | Prioritize load direction, layer adhesion, dimensional axes and critical interfaces |
@@ -29,6 +29,13 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 - Bambu Studio source contains Elegoo printer/filament preset definitions: https://github.com/bambulab/BambuStudio/tree/master/resources/profiles/Elegoo . Presence in upstream source does **not** prove the user's installed version ships or activates the exact Neptune 4 Standard 0.4 mm profile.
 - Before printing, verify start/end G-code, bed dimensions, kinematics, temperature limits and Klipper compatibility against **the correct Neptune 4 Standard** preset. Do not blindly use G-code from Bambu or Neptune 4 Pro/Plus/Max profiles.
 - RTARS-34 original four-plate estimates remain historical. A second four-plate **HL-18 QUALITY 0.20 mm / Generic PLA** preview is now documented in [RTARS-30-QUALITY-SLICING-EVIDENCE.md](RTARS-30-QUALITY-SLICING-EVIDENCE.md): 23h19m, 87.04 m, 259.61 g (MODEL aggregate only). These are two distinct runs, not proof of equivalent inputs; neither qualifies as a validated dedicated RTARS profile.
+
+## Quantitative reference from the closed RTARS-29 hardware inspection
+
+- ELEGOO PLA Metallic limits: nozzle **190–230°C**, bed **35–65°C**, recommended **hardened-steel nozzle ≥0.4 mm**. Operator declares hardened-steel 0.4 mm (replacement of brass documented); setpoints **210°C initial, 205°C rest**, bed **60°C** satisfy the manufacturer temperature envelope. Official product: https://www.elegoo.com/products/pla-metal-filament-1-75-mm-colored-1-kg.
+- `Generic PLA @Elegoo` Filament Manager screenshots showed 1.75 mm, these setpoints and cooling controls. This is **documented operational compatibility within temperatures**, not a filament-specific flow/PA calibration.
+- RTARS-29 is recorded Done; do not reopen its accepted discovery DoD merely because RTARS-30 has deeper quality gates. No start/end G-code bytes were supplied; previous operator reports that the Neptune 4 reads G-code and has completed earlier prints do **not** prove the current RTARS preset G-code is safe.
+- Source-specific RTARS process candidates are **generated and checksum-verified**; user reported successful import of both. Rebuild recipe: [rebuild_rtars30_presets.py](../../tools/manufacturing/rebuild_rtars30_presets.py). The full candidate JSON attachments exist in the conversation, but are **not yet committed as files**.
 
 ## Per-part provisional routing (not a validated plate layout)
 - Functional priority P0: P01 arm (2), P05 main body (1), P08 joystick (1), P13 servo arm (1).
@@ -49,8 +56,9 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 |---|---|
 | Jira scope uses Bambu Studio | PASS |
 | DoR/DoD and RTARS-28 classification consulted | PASS |
-| RTARS-29 printer/nozzle/filament identification (user declaration) | PASS (declaration only) |
-| Installed slicer version, correct machine preset, filament condition and temperatures | NOT TESTED |
+| RTARS-29 hardware and filament identification | PASS for RTARS-29 AC; operator record and partial UI evidence, issue Done |
+| Hardened-steel nozzle 0.4 mm, temperature setpoints 210/205/60°C | PASS for manufacturer range and operator declaration; physical measurement NOT TESTED |
+| Bambu Studio version and Generic PLA @Elegoo settings | PASS documented via RTARS-29 (version operator-declared, Filament/Cooling screenshots); full printer G-code still NOT TESTED |
 | Native presets exported/versioned | NOT TESTED |
 | Part-by-part orientation/support justification | NOT TESTED |
 | Four-plate Bambu Studio slicing **with legacy QUALITY + Generic PLA** | PASS — screenshot of estimates only; toolpaths/supports not shown |
@@ -58,4 +66,4 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 | RTARS-31 functional fit test | NOT TESTED (downstream) |
 | RTARS-32 definitive production | BLOCKED (downstream) |
 
-No physical prints, fit tests, dimensional measurements, G-code safety verification, **dedicated profile slicing** or native RTARS preset exports are claimed. A screenshot confirms that the user obtained **one four-plate slicing summary using a legacy QUALITY process and Generic PLA**; detailed per-part toolpaths and support inspection remain NOT TESTED.
+No new physical prints, fit tests, dimensional measurements, *static* G-code safety verification, **dedicated profile slicing** or GitHub-hosted native RTARS preset files are claimed. A screenshot confirms that the user obtained **one four-plate slicing summary using a legacy QUALITY process and Generic PLA**; detailed per-part toolpaths and support inspection remain NOT TESTED.
