@@ -1,6 +1,6 @@
 # RTARS-9 — Inventario e riconciliazione BOM RIG-TARS
 
-**Baseline:** `v0.4-owner-correction` (2026-11-22)  
+**Baseline:** `v0.5-source-audit` (2026-11-22), con conteggi fisici invariati rispetto a v0.4  
 **Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9 — Fatto nel perimetro dell'inventario  
 **Pull request:** https://github.com/pianic2/personal-rig-tars/pull/1 — in revisione, non mergiata
 
@@ -26,6 +26,8 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 - [discrepancies.csv](discrepancies.csv) — 13 discrepanze storiche, **4 RESOLVED** (D03, D10, D11, D12) e **9 OPEN**.
 - [owner-inventory-2026-11-22.md](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) — risposte originali Q1–Q16 e **due rettifiche cronologiche**, ultima delle quali prevale sulle precedenti.
 - [MANIFEST.md](../../../evidence/hardware/RTARS-9/MANIFEST.md) — metadati e digest SHA-256 della fotografia; la copia originale **non è ancora nel repository**.
+- [source-verification-2026-11-22.md](source-verification-2026-11-22.md) — revisione delle fonti del produttore per tutte le **9 anomalie aperte**, con esito, blocchi di sicurezza e fonti.
+- [supplier-clarifications-2026-11-22.md](supplier-clarifications-2026-11-22.md) — richiesta di chiarimenti tecnico-commerciali in inglese e cinese, pronta per invio ma **non inviata**.
 
 ### Regole di conteggio
 
@@ -91,7 +93,7 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 
 **Aperti (9):** D01 (M2×6, 55/60/52), D02 (driver display), D04 (brugola M2×4 non presente), D05 (M2×10 assenti), D06 (M3×10 assenti), D07 (dadi M3 assenti), D08 (batteria senza specifiche), D09 (modello servo e revisione PCB non verificati), D13 (spugna assente).
 
-**Aperto** significa differenza dalla distinta di riferimento o specifica da reperire, **non** dimostrazione che il venditore abbia consegnato un kit incompleto.
+**Aperto** significa differenza dalla distinta di riferimento o specifica da reperire, **non** dimostrazione che il venditore abbia consegnato un kit incompleto.\n\n**Audit documentale del 22/11/2026:** le 9 anomalie sono state ricontrollate con la BOM cinese V1.0, FAQ ufficiale, overview/firmware TARS, manuale elettronico, guide di assemblaggio e schemi disponibili. La FAQ conferma M2×6=60 come quantità pubblicata, mentre la quantità fisica rimane 55. Il firmware TARS conferma la configurazione attesa ST7789V2 320×240 e servo SCS009, non il chip e i servo non marcati consegnati. Lo schema condiviso ufficiale è esplicitamente riferito a Puppy/Hover/Arm, non prova della RIG-Board TARS. **Nessuna delle 9 anomalie può essere marcata RESOLVED come verifica hardware/SKU solo sulla base di fonti pubbliche.** I dettagli e i gate si trovano nel report linkato sopra.
 
 ## Gate RTARS-9
 
@@ -103,6 +105,6 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 | Stato di ogni componente | PASS |
 | Differenze annotate | PASS: registro con 13 voci storiche e stato per ciascuna |
 
-**Decisione:** RTARS-9 è `Fatto` come inventario documentale. Restano verifiche prima del montaggio. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. Nessun merge automatico della PR.
+**Decisione:** RTARS-9 resta `Fatto` come inventario documentale; l'audit esterno è completo ma **9 gap restano OPEN**, con richiesta di chiarimento al venditore pronta per invio. I gate di sicurezza delle voci D08/D09 e le differenze meccaniche non sono stati rimossi. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. Nessun merge automatico della PR.
 
 **Sicurezza:** batteria senza parametri noti: non collegare o ricaricare fino a identificazione affidabile. I fissaggi alternativi vanno verificati con la corretta revisione dell'assemblaggio. Nessuna accensione né collaudo eseguito. Le parti stampate appartengono a Epic E04, non sono classificate mancanti dal kit di elettronica.
