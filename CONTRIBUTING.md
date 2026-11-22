@@ -36,9 +36,16 @@ Breaking change: `feat(firmware)!: change control protocol (RTARS-25)`; dettagli
 ## Pull request
 Titolo: `[RTARS-N] <descrizione breve>`. Base: `main`.
 Usare il template PR, link Jira, test e prove; in assenza di test indicare esplicitamente perché. Una PR non chiude automaticamente una issue senza criteri di accettazione soddisfatti.
-Workflow: Jira In Progress → branch/commit → PR → review + check → squash merge → evidenze su Jira → Done.
+Workflow: Jira In Progress → branch/commit → PR → verifiche applicabili → squash merge → evidenze su Jira → Done.
+
+### Review proporzionata alle modifiche
+- **PR senza codice eseguibile**: review formale e approvazione di un revisore **non obbligatorie**. Esempi: documentazione Markdown, inventari, screenshot, decision record e aggiornamenti testuali. L'autore deve comunque verificare diff, AC, fonti/licenze, assenza di dati sensibili e check applicabili prima del merge.
+- **PR contenenti codice o cambiamenti di comportamento**: review obbligatoria prima del merge; includono firmware, software, script, test eseguibili, GitHub Actions, configurazioni di build/deploy/security e modifiche miste codice+documentazione. Per progetto personale senza altri reviewer, è ammessa una self-review esplicita con esito scritto nella PR; non equivale ad approvazione indipendente.
+- La classificazione dipende dal **contenuto del diff**, non dal tipo Jira, dal nome del branch o dal titolo della PR. La presenza di anche un solo file con impatto eseguibile rende la PR soggetta a review.
+- I check automatici necessari restano obbligatori indipendentemente dalla classificazione; una review non sostituisce test e controlli.
+
 Il squash commit deve mantenere `RTARS-N` nel titolo; titolo consigliato: `docs(repo): define versioning policy (RTARS-11)`.
-La review può essere self-review documentata se il progetto è personale; non dichiarare approvazioni indipendenti inesistenti.
+Non dichiarare approvazioni indipendenti inesistenti.
 Prima del merge verificare diff, licenze, test, sicurezza e allineamento AC.
 Nessuna automazione di transizione Jira viene assunta finché non testata end-to-end.
 
