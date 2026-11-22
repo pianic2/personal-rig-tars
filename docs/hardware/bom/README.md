@@ -1,103 +1,108 @@
-# RTARS-9 — BOM e riconciliazione kit fisico
+# RTARS-9 — Inventario e riconciliazione BOM RIG-TARS
 
-**Baseline:** `v0.3-owner-reconciliation` · 2026-11-22  
-**Issue Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9  
-**PR:** https://github.com/pianic2/personal-rig-tars/pull/1  
-**Esito:** inventario quantitativo compilato secondo dichiarazioni del proprietario; classificazioni fisiche non sempre concordi con le etichette. Nessun collaudo elettrico o meccanico. **Non è un collaudo elettrico, meccanico o funzionale.**
+**Baseline:** `v0.4-owner-correction` (2026-11-22)  
+**Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9 — Fatto nel perimetro dell'inventario  
+**Pull request:** https://github.com/pianic2/personal-rig-tars/pull/1 — in revisione, non mergiata
 
-## Identità e fonti (non confondere il modello con la revisione)
+## Provenienza e limiti
 
-- **Prodotto indicato dal proprietario:** RIG Series Robots: TARS (testo riportato nell'ordine: `RIG Serie Robots: TARS`).
-- **Pagina di acquisto fornita:** https://shop.xgorobot.com/products/rig-tars-fully-open-source-3d-printed-programmable-ai-companion-robot-maker-diy-kit
-- **Revisione di confezione / lotto:** nessuna marcatura di revisione o lotto dichiarata dal proprietario.
-- **PCB fisicamente consegnata:** marcatura testuale `RIG-Board 26/6/2025`. **La data non è una revisione hardware e non equivale automaticamente a `RIG-Board0722`.**
-- **BOM di costruzione di riferimento:** https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa — `LuwuDynamics Products BOM V1.0 · TARS`. La versione V1.0 è **del documento**, NON del kit fisico.
-- **Assemblaggio:** https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly
-- **Firmware upstream:** https://github.com/LuwuDynamics/rig_omni
-- **Fonte primaria del contenuto ricevuto:** foto zenitale del kit del 2026-11-22 ([manifest e hash](../../../evidence/hardware/RTARS-9/MANIFEST.md)) + [verifica fisica riferita dal proprietario](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) con risposte Q1–Q16 e rettifica successiva riportata in appendice.
+La BOM distingue:
+1. **BOM V1.0 LuwuDynamics** = *distinta tecnica di costruzione* (quantità `qty_expected`), non prova delle quantità garantite nella variante commerciale.
+2. **Kit fisico** = fotografia fornita dall'utente e conteggi/identificazioni dichiarati successivamente (`qty_observed`).
+3. **Marcature delle confezioni** = testo originale in cinese riportato nel CSV, conservato anche quando differisce dalle dichiarazioni sulle viti.
+4. **Verifiche non eseguite** = prove elettriche, compatibilità filettature e viti, revisione elettronica, pinout e batteria.
 
-La pagina commerciale identifica il prodotto ma non costituisce, da sola, una distinta di confezionamento verificata della variante effettivamente spedita. Le differenze rispetto alla BOM V1.0 sono **scostamenti rispetto al riferimento di costruzione**, non automaticamente errori di fornitura.
+**Variante acquistata dichiarata:** “RIG Serie Robots: TARS”.  
+**Pagina acquisto fornita:** https://shop.xgorobot.com/products/rig-tars-fully-open-source-3d-printed-programmable-ai-companion-robot-maker-diy-kit  
+**Distinta tecnica pubblica:** https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa  
+**Assemblaggio:** https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly  
+**Upstream firmware:** https://github.com/LuwuDynamics/rig_omni
 
-## Artefatti e semantica
+La revisione complessiva del kit non è indicata sulla confezione. La marcatura PCB `RIG-Board 26/6/2025` è una marcatura/data, **non un numero di revisione dimostrato**.
 
-- [rig-tars-bom.csv](rig-tars-bom.csv): 25 voci, 17 `OFFICIAL` (distinta V1.0) + 8 `OBSERVED_EXTRA` (evidenze fotografiche non riconciliate con certezza).
-- [discrepancies.csv](discrepancies.csv): 13 registrazioni storiche, **3 RESOLVED** (`D10`, `D11`, `D12`) e **10 OPEN**, inclusa `D13` sulla spugna assente.
-- `qty_expected`: quantità della BOM pubblica V1.0; **non** quantità garantita nella confezione.
-- `qty_observed`: conteggio visto direttamente in foto oppure confermato dall'utente in Q1–Q16; il campo `evidence_source` indica la base. Un numero `0` significa *assenza riferita dal proprietario rispetto alla voce di riferimento*.
-- `packages_observed`: confezioni visibili, mai numero di viti. Le tre tipologie scritte sulla bustina mista sono associate alla **stessa bustina**.
-- `observed_marking`: marcatura trascritta letteralmente, non prova automatica del driver, del produttore o di una revisione.
-- `revision_verified`: vuoto se nessuna revisione hardware attestata in modo inequivocabile; il suffisso `-V1` del display e `V11` della camera **restano nel codice grezzo**.
-- `evidence_source`: `USER_Qn` (risposta dichiarativa alla domanda n), `PHOTO` (foto) o `PHOTO_LABEL` (etichetta della foto).
-- `status`: classifica osservazioni e limitazioni, non esito di test funzionali.
-- `ABSENT_VS_REFERENCE` / `SPEC_NOT_RECONCILED`: non equivale automaticamente a non conformità contrattuale; per stabilirla servono la packing list della variante e/o istruzioni di assemblaggio aggiornate.
+## Artefatti
 
-**Non sommare automaticamente** le righe `OBSERVED_EXTRA` e `OFFICIAL`: `A008` e `E008` indicano lo stesso cavo interruttore (identificato dal proprietario), diverso dalla prolunga `E005`. Le denominazioni delle due tipologie M2×4 riferite dal proprietario non coincidono con le etichette fotografate A003/A004: il conflitto rimane aperto prima dell'assemblaggio, e tali voci non vanno conteggiate due volte.
+- [rig-tars-bom.csv](rig-tars-bom.csv) — 25 righe (17 di riferimento, 8 osservazioni della foto), quantità, stato, marcature e fonte della verifica.
+- [discrepancies.csv](discrepancies.csv) — 13 discrepanze storiche, **4 RESOLVED** (D03, D10, D11, D12) e **9 OPEN**.
+- [owner-inventory-2026-11-22.md](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) — risposte originali Q1–Q16 e **due rettifiche cronologiche**, ultima delle quali prevale sulle precedenti.
+- [MANIFEST.md](../../../evidence/hardware/RTARS-9/MANIFEST.md) — metadati e digest SHA-256 della fotografia; la copia originale **non è ancora nel repository**.
 
-## Rilevazioni nuove confermate dal proprietario
+### Regole di conteggio
 
-| Componente | Evidenza attuale | Limite |
+- `qty_expected`: quantità da distinta V1.0, non valore normativo per il kit consegnato.
+- `qty_observed`: pezzi visti o dichiarati, oppure 0 se l'utente ne ha esplicitamente dichiarata l'assenza.
+- `revision_verified`: vuoto se non esiste prova chiara della revisione; `FCP-HD240239C12-V1` e `HBVCAM-2526 V11` sono codici trascritti, non revisioni automaticamente confermate.
+- `evidence_source`: `PHOTO_LABEL`, `PHOTO`, `USER_Qn` oppure `USER_CORRECTION_2026-11-22`.
+- **Non sommare gli alias fotografici ai componenti canonici:** `A008=E008` (cavo interruttore); `A004=F002` (gruppo delle quattro viti svasate secondo il proprietario). `A003` è il gruppo distinto di quattro viti a testa tonda, **non** alias F002.
+- `F003` è una **specifica della BOM V1.0 non riscontrata fisicamente**: valore osservato 0, non 4.
+- La correzione del proprietario sulle viti a croce **non annulla** il dado M2 separato, censito in `A007` e mai esplicitamente ritirato.
+
+## Componenti elettronici e meccanici identificati
+
+| Oggetto | Rilievo del proprietario | Limite |
 | --- | --- | --- |
-| Scheda | 1, marcatura `RIG-Board 26/6/2025` | Revisione e corrispondenza esatta a RIG-Board0722 sconosciute |
-| Display | 1, `FCP-HD240239C12-V1` | Controller ST7789P3/ST7789V2 non confermato |
-| Fotocamera | 1, `HBVCAM-2526 V11` | Sensore ottico preciso non confermato |
-| Servomotori | 3 senza marcature | Non si può attestare SCS009 |
-| Altoparlante | 1 senza marcature | Non si può attestare 3514 |
-| Sensore touch | 1 confermato dal proprietario | Modello non riportato |
-| Batteria | 1 senza marcature | Tensione, chimica, capacità, polarità, protezione ignote |
-| Squadrette servo | 3 | Originalità/modello non dimostrati |
-| Contrappesi | 2 da 20 g ciascuno secondo proprietario | Composizione non misurata |
-| Prolunga | 1 presente (E005) | Lunghezza e pinout non accertati; non coincide con E008/A008 |
-| Cablaggi neri | 3 pezzi, 3 conduttori per pezzo, connettori a incastro | Destinazione e pinout non accertati |
-| Spugna isolante | 0 riportata | Confrontare con variante commerciale/manuale |
-| Integrità | Nessun danno visibile riferito dal proprietario | Nessun test elettrico/di movimento |
+| Scheda principale | 1, `RIG-Board 26/6/2025` | Revisione e equivalenza con RIG-Board0722 sconosciute |
+| Display | 1, `FCP-HD240239C12-V1` | Controller ST7789P3 vs ST7789V2 sconosciuto |
+| Fotocamera | 1, `HBVCAM-2526 V11` | Sensore ottico non attestato |
+| Servo | 3, senza etichette/incisioni | Modello SCS009 non certificabile dalla sola vista |
+| Servo horn | 3 | Modello esatto non verificato |
+| Altoparlante | 1, senza codice | La sigla 3514 resta solo nella fonte |
+| Batteria | 1, senza marcature | Tensione, capacità, chimica, polarità, protezioni non accertate |
+| Sensore touch | 1, identificato dal proprietario | Sigla non disponibile |
+| Contrappesi | 2, 20 g ciascuno secondo proprietario | Composizione del metallo non misurata |
+| Prolunga | 1 | Lunghezza 200 mm non misurata |
+| Cavo interruttore | 1, libero senza bustina nella zona inferiore sinistra della foto | `E008=A008`; lunghezza e pinout ignoti |
+| Cablaggi neri | 3, con 3 conduttori ciascuno e connettori a incastro | Destinazione/pinout non verificati |
+| Spugna isolante | 0 | Assenza rispetto alla fonte tecnica, non necessariamente alla packing list commerciale |
 
-### Minuteria: tabella comparativa senza equivalenze arbitrarie
+## Minuteria — situazione corretta al 22 novembre 2026
 
-| Voce | Qtà nel riferimento V1.0 | Conteggio riferito del kit | Esito |
+| Categoria | Quantità nel kit, dichiarata | Distinta V1.0 | Note |
 | --- | ---: | ---: | --- |
-| M2×6 autofilettanti a croce | 60 (52 nella descrizione) | **55** | Discrepanza quantitativa aperta |
-| M2×4 svasate autofilettanti | 2 | **4 riferite dal proprietario** | Etichetta della bustina indica testa tonda a croce per macchina: D03 OPEN fino a verifica della geometria |
-| M2×4 a brugola con frenafiletti | 3 | **4 riferite dal proprietario** | Etichetta della bustina indica autofilettanti a croce: D04 OPEN fino a verifica dell'impronta |
-| M2×10 / gruppo esagonale | 2 | **0** | Assente rispetto al riferimento |
-| M3×10 a croce | 2 | **0** | È presente **1 M3×8 testa piatta**, non equivalente |
-| Dadi autobloccanti M3 | 2 | **0** | È presente **1 dado M2**, non equivalente |
-| M2×5 testa piatta a croce | Non censite nella tabella core | **2** | Accessorio osservato |
+| M2×6 a croce, autofilettanti secondo etichetta | **55** | 60 nella colonna / 52 in descrizione | D01: conflitto nella fonte e scostamento di quantità |
+| **M2×4 a croce, testa tonda** | **4** | Non mappabile direttamente | `A003`: etichetta cinese indica testa tonda a croce per macchina, concorde sulla testa |
+| **M2×4 a croce, testa svasata** | **4** | F002: 2 svasate autofilettanti | `A004=F002` ai fini dell'inventario; l'etichetta dice autofilettante a croce ma non precisa la testa; filetto da verificare |
+| **M2×4 a brugola con frenafiletti** | **0** | F003: 3 | Nessuna vite M2×4 con esagono incassato secondo ultima rettifica del proprietario; D04 OPEN |
+| M2×5 testa piatta a croce | **2** | Non riconciliata | `A005`, fonte etichetta |
+| M3×8 testa piatta a croce | **1** | F005: 2 M3×10 | Non equivalente a M3×10 (D06) |
+| Dado esagonale M2 di bloccaggio | **1** | F006: 2 dadi M3 | È una categoria distinta dalle viti a croce (D07) |
+| M2×10 | **0** | F004: 2 | D05 OPEN |
+| M3×10 | **0** | F005: 2 | D06 OPEN |
+| Dadi autobloccanti M3 | **0** | F006: 2 | D07 OPEN |
 
-Il conteggio delle M2×6 è **55**, non 60 e non 52. Non sovrascrivere il dato osservato per farlo combaciare con la fonte.
+**Nota storica fondamentale:** inizialmente le quattro viti M2×4 svasate sono state attribuite per errore alla busta A003, e le quattro viti M2×4 a croce alla categoria “brugola con frenafiletti”. La seconda correzione del proprietario chiarisce: **tutte le M2×4 sono a croce, alcune tonde e alcune svasate, nessuna a brugola**. La classificazione corrente prevale, ma le dichiarazioni originali rimangono archiviate per audit.
 
-## Gap risolti e gap che rimangono
+### Etichette cinesi — testo, non verifica fisica
 
-**Risolti a livello di rilievo inventariale:**
+| Marcatura della busta | Traduzione tecnica |
+| --- | --- |
+| `M2*6十字自攻螺丝` | M2×6 autofilettante a croce |
+| `M2*4圆头十字机丝` | M2×4 testa tonda a croce per macchina |
+| `M2*4十字自攻螺丝` | M2×4 autofilettante a croce (senza specificare testa) |
+| `M2*5平头十字机丝` | M2×5 testa piatta a croce per macchina |
+| `M3*8平头十字机丝` | M3×8 testa piatta a croce per macchina |
+| `M2六角对锁螺母` | Dado esagonale M2 di bloccaggio |
 
-- **D10:** contati 3 servo horn e tutte e sei le tipologie di minuteria effettivamente elencate nelle buste; verificata come **assente** la spugna. Il divario rispetto al riferimento rimane tracciato altrove, in particolare `D13`.
-- **D11:** cavo interruttore E008 identificato dal proprietario come cavo nero libero nella zona inferiore sinistra della foto; A008 e la stessa unità. Pinout e lunghezze restano controlli successivi.
-- **D12:** marcatura del flat camera leggibile `HBVCAM-2526 V11`; la chiusura non attesta il chip del sensore camera.
+**Testa e impronta della vite non determinano la natura del filetto.** La compatibilità meccanica dei fissaggi è una verifica successiva; non sostituire automaticamente viti o dadi fra specifiche diverse.
 
-**Restano OPEN:** `D01`–`D09`, `D13` (10). Principali questioni: quantità 55/60/52; driver display; fissaggi non riconciliati; M2×10, M3×10, dadi M3 non presenti; batteria non marcata; modello servo/PCB revision sconosciuti; identificazione cavo interruttore; spugna assente. Consultare [discrepancies.csv](discrepancies.csv) per causa e prossima verifica.
+## Stato dei gap
 
-## Audit degli Acceptance Criteria di RTARS-9
+**Risolti (4):** D03 (riconciliazione teste tonde/svasate), D10 (conteggi/accessori), D11 (cavo interruttore), D12 (marcatura camera).
 
-| Acceptance criterion | Stato | Evidenza |
-| --- | --- | --- |
-| Inventario con nome e riferimento di ogni componente individuato | PASS | CSV: 25 righe, ID unici, fonte e marcature |
-| Quantità fisiche registrate per ogni componente | PASS come dichiarazioni | `qty_observed` valorizzato in **25/25** voci; A003/A004/A008 sono alias storici, non scorte aggiuntive |
-| Revisione registrata *se disponibile* | PASS come registrazione negativa | Nessuna revisione del kit dichiarata; i codici presenti sono registrati senza dedurre numeri di revisione |
-| Stato registrato per ogni voce | PASS | Colonna `status` piena |
-| Differenze annotate con evidenze | PASS | 13 discrepanze: 3 risolte e 10 aperte; quelle aperte restano vincoli espliciti per assemblaggio/validazione |
-| Evidenza fotografica permanentemente versionata | **PARZIALE** | Solo hash nel repo, immagine originale ancora non archiviata |
+**Aperti (9):** D01 (M2×6, 55/60/52), D02 (driver display), D04 (brugola M2×4 non presente), D05 (M2×10 assenti), D06 (M3×10 assenti), D07 (dadi M3 assenti), D08 (batteria senza specifiche), D09 (modello servo e revisione PCB non verificati), D13 (spugna assente).
 
-**Decisione:** i criteri originali di RTARS-9 (nome, quantità, revisione se disponibile, stato, differenze annotate) risultano soddisfatti come inventario dichiarativo e tracciato. La task può passare a **Fatto**; PR soggetta a review senza merge automatico. I conflitti di classificazione D03/D04 e i rischi hardware restano documentati e vanno verificati prima dell'assemblaggio.
+**Aperto** significa differenza dalla distinta di riferimento o specifica da reperire, **non** dimostrazione che il venditore abbia consegnato un kit incompleto.
 
-## Sicurezza e limiti del controllo
+## Gate RTARS-9
 
-- La batteria **non ha marcature**: non caricare, collegare o usare per test sotto tensione finché non siano noti specifiche, polarità e procedure del produttore.
-- `M3×8` non si sostituisce a `M3×10`; i dadi `M2` non sostituiscono `M3`; non iniziare montaggio in assenza di corrispondenza con il manuale della revisione usata.
-- I 17 pezzi stampati del robot (13 categorie in distinta) sono fuori dallo scope del kit di elettronica e appartengono all'Epic E04.
-- La fotografia originale è stata condivisa nella conversazione; il repository contiene il suo manifest con SHA-256, **non** il file binario. Il nuovo documento di ispezione è una dichiarazione del proprietario, non una fotografia delle marcature.
+| AC originale | Esito |
+| --- | --- |
+| Nome e componenti censiti | PASS: 25 righe, identificatori e fonti |
+| Quantità rilevate | PASS nel perimetro dichiarativo: 25/25 campi, alcuni alias da non sommare |
+| Revisione registrata se disponibile | PASS: nessuna revisione certificabile; marcature grezze conservate |
+| Stato di ogni componente | PASS |
+| Differenze annotate | PASS: registro con 13 voci storiche e stato per ciascuna |
 
+**Decisione:** RTARS-9 è `Fatto` come inventario documentale. Restano verifiche prima del montaggio. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. Nessun merge automatico della PR.
 
-## Rettifica v0.3 — ultime quantità e fonte del conflitto
-
-Il proprietario identifica il cavo interruttore sciolto, senza bustina, visibile in basso a sinistra: **E008=1**, mentre **A008 è la stessa unità** e non va sommata. Il primo e il secondo gruppo M2×4, già contati in Q11, vengono classificati dal proprietario rispettivamente come **svasate autofilettanti F002=4** e **a brugola con frenafiletti F003=4**. La fotografia delle bustine ha etichette *differenti* e rimane una fonte valida: **D03 e D04 restano OPEN** fino alla verifica della geometria/impronta. La loro apertura non impedisce il censimento dichiarativo, ma impedisce di usare la BOM come distinta di montaggio senza verifica. Con queste correzioni, `qty_observed` è compilata in tutte le 25 righe; alcune righe sono alias e non vanno sommate tra loro.
-
-**D11 RESOLVED** per identificazione inventariale. Non sono stati verificati pinout, qualità delle viti, chimica/polarità batteria o modello dei servomotori. L'originale della foto resta fuori dal repository e il suo hash è nel manifest: quest'ultimo non è equivalente a un archivio fotografico persistente.
+**Sicurezza:** batteria senza parametri noti: non collegare o ricaricare fino a identificazione affidabile. I fissaggi alternativi vanno verificati con la corretta revisione dell'assemblaggio. Nessuna accensione né collaudo eseguito. Le parti stampate appartengono a Epic E04, non sono classificate mancanti dal kit di elettronica.
