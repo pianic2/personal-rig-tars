@@ -7,9 +7,9 @@
 
 ## Perimetro e natura dell'evidenza
 
-Questa è una **classificazione documentale preliminare**: 13 etichette originali e 16 istanze stampabili, estratte dall'inventario verificato in RTARS-27. I ruoli sono dedotti dalla traduzione letterale dei nomi dei modelli e **non** da una ricostruzione certificata dell'assieme. Non si dichiara di aver ispezionato visivamente i dettagli degli accoppiamenti, misurato geometrie, stampato parti o provato il montaggio. Le interfacce nella colonna `candidate_interfaces_not_verified` del CSV sono **candidati da localizzare** sui modelli reali, non superfici già geometricamente identificate.
+Questa è una classificazione basata sull'inventario verificato in RTARS-27, con un controllo locale di corrispondenza del file sorgente per RTARS-28. Il file disponibile in `/tmp/rtars27-extract/armV3.3mf` ha SHA-256 `42912423fb2d91076ccc4721f9568fff6115fe686e7e3e51ca7572c15b5bc7c7`, uguale al digest atteso nel manifest. Il file è rimasto fuori dal repository. I riferimenti `3D/Objects/...model#<id>` e gli ID build riportati nel CSV collegano ciascuna etichetta agli oggetti mesh/istanze del manifest, senza coordinate.
 
-RTARS-27 ha già confermato la leggibilità strutturale delle 13 mesh e il grafo delle 16 istanze; questa verifica statica **non equivale** alla validazione delle interfacce. Non si importa la geometria della guida V4 nella baseline V3, né si deduce corrispondenza geometrica tra revisioni. Tre ripetizioni di `舵机盖.STEP` e due di `arm.STEP` sono istanze legittime. Il confronto documentale RTARS-27 resta la fonte per le discrepanze.
+**Esito della verifica geometrica RTARS-28: NOT TESTED per la localizzazione delle superfici specifiche.** È stata confermata la presenza/riferibilità delle 13 mesh e la verifica topologica statica preesistente di RTARS-27 (mesh leggibili, indici validi, nessun triangolo degenere/ripetuto e ogni edge-index condiviso da due triangoli). Questi controlli non identificano quali facce siano piani di appoggio, fori, sedi, incastri, guide, interfacce mobili o superfici di fissaggio. Non è stata completata una ispezione faccia-per-faccia delle mesh; pertanto non viene registrata alcuna superficie specifica come osservata e nessuna coppia come mate verificato. Le descrizioni di `candidate_interfaces_not_verified` restano ipotesi basate sui nomi e sul ruolo provvisorio.
 
 ## Scala di priorità (priorità del controllo, non certificazione di rischio)
 
@@ -21,9 +21,9 @@ P0: `arm.STEP` (2), `主体.STEP` (1), `摇杆.STEP` (1), `舵臂.STEP` (1).
 P1: gli altri 9 tipi (11 istanze).  
 **Totale:** 13 tipi / 16 istanze; ogni riga ha priorità e piano di verifica.
 
-## Registro delle interfacce da accertare
+## Registro delle interfacce candidate e stato dell'evidenza
 
-| Gruppo | Parti | Interfaccia candidata — non verificata | Controllo successivo |
+| Gruppo | Parti | Interfaccia ipotizzata — non osservata sulla mesh in RTARS-28 | Verifica necessaria |
 | --- | --- | --- | --- |
 | Braccia e articolazioni | P01, P02, P03, P13 | Braccio/gusci, possibile giunto con servo | Identificare mate reali e assi; verificare spazio di rotazione, fissaggi e contatti |
 | Corpo | P04, P05, P09 | Guscio/corpo/staffa | Identificare bordi di appoggio e sedi; valutare chiusura e fissaggi |
@@ -31,7 +31,27 @@ P1: gli altri 9 tipi (11 istanze).
 | Comando | P08 | Eventuale perno/guide joystick | Stabilire natura dell'attuatore e controllare escursione, giochi e interferenze |
 | Servo | P12 (3), P13 | Gusci servo e interfaccia braccio-horn | Confrontare sagoma dei 3 servo e horn fisici; distinguere posizione delle 3 istanze |
 
-**Avvertenza:** un gruppo indica una possibile relazione funzionale, **non** una coppia di mate confermata nel CAD. Il file 3MF documenta la disposizione di stampa, non vincoli di assieme; non permette di identificare automaticamente tutte le superfici accoppiate.
+**Avvertenza:** ogni riga sopra è una ipotesi da verificare; non è una caratteristica geometrica osservata. Il CSV assegna riferimenti mesh e build instance stabili per rendere ripetibile la successiva ispezione senza pubblicare geometria. La disposizione delle istanze sul piatto non prova alcuna relazione di assemblaggio. Una mesh statica, da sola, non dimostra cinematica, compatibilità con hardware esterno o un mate tra due parti.
+
+## Registro per parte — evidenza RTARS-28
+
+| ID | Riferimento mesh (`MODEL_MANIFEST.json`) | Osservazioni geometriche localizzate | Accoppiamenti ipotizzati | Mate verificati |
+| --- | --- | --- | --- | --- |
+| P01 | `object_5.model#1`; build `2`, `13` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Gusci/attuatori, da etichetta | Nessuno |
+| P02 | `object_16.model#9`; build `10` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Chiusura/fissaggio con braccio, da etichetta | Nessuno |
+| P03 | `object_17.model#11`; build `12` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Chiusura/fissaggio con braccio, da etichetta | Nessuno |
+| P04 | `object_26.model#16`; build `17` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Guscio/corpo, da etichetta | Nessuno |
+| P05 | `object_39.model#28`; build `29` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Sedi/supporti/gusci, da etichetta | Nessuno |
+| P06 | `object_38.model#26`; build `27` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Adesivo/display, da etichetta | Nessuno |
+| P07 | `object_31.model#18`; build `19` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Copertura/apertura camera, da etichetta | Nessuno |
+| P08 | `object_12.model#3`; build `4` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Perno/guide/escursione, da etichetta | Nessuno |
+| P09 | `object_35.model#20`; build `21` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Sostegno/fissaggio, funzione ignota | Nessuno |
+| P10 | `object_36.model#22`; build `23` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Supporto PCB, da etichetta | Nessuno |
+| P11 | `object_37.model#24`; build `25` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Supporto PCB, da etichetta | Nessuno |
+| P12 | `object_14.model#5`; build `6`, `14`, `15` | Una mesh referenziata da tre istanze; nessuna superficie interna/esterna localizzata | Copertura/sede servo, da etichetta | Nessuno |
+| P13 | `object_15.model#7`; build `8` | Nessuna faccia/interfaccia localizzata; integrità mesh solo come in RTARS-27 | Servo horn/albero, da etichetta | Nessuno |
+
+**Interpretazione rigorosa:** “integrità mesh” è un risultato topologico del controllo RTARS-27, non una descrizione funzionale della forma. Questo registro non attribuisce fori, sedi o piani specifici a parti in assenza di ispezione sufficiente.
 
 ## Politica dimensionale e tolleranze
 
@@ -54,13 +74,13 @@ P1: gli altri 9 tipi (11 istanze).
 | --- | --- | --- |
 | G01 | 13 tipi, 16 istanze da RTARS-27, trascritti nel CSV | PASS documentale |
 | G02 | Una classificazione provvisoria e motivazione per ognuno dei 13 tipi | PASS documentale |
-| G03 | Candidati di accoppiamento, gruppi d'interfaccia e limiti espliciti | PASS come **piano**; localizzazione geometrica effettiva NOT TESTED |
+| G03 | Riferimento mesh per ciascuna parte e descrizione di superfici osservate | **NOT TESTED** — riferimenti mesh disponibili, ma superfici specifiche non localizzate |
 | G04 | Ogni tipo dispone di priorità e controllo successivo | PASS documentale |
 | G05 | Nessuna tolleranza fittizia, modifica CAD o asset ridistribuito | PASS per questi documenti |
-| G06 | Versionamento/PR integrata | Da verificare in GitHub |
-| G07 | DoD, link Jira e transizione Done | Da verificare in Jira |
+| G06 | Versionamento/PR integrata di questa revisione | Da verificare in GitHub |
+| G07 | AC di localizzazione superfici, DoD e link Jira | **NOT TESTED / non soddisfatto**; non portare Jira a Done |
 
-**Decisione di ambito:** il criterio Jira richiede elenco parti con criticità, superfici di accoppiamento e verifiche previste. Le superfici sono registrate qui come **candidate, non identificate geometricamente**. Se il criterio viene interpretato come *identificazione reale delle superfici su ciascuna mesh*, questo risultato da solo **non** soddisfa integralmente l'AC; serve un'ispezione geometrica ulteriore. Non convertire `NOT TESTED` in `PASS`.
+**Decisione di ambito:** l'AC richiede superfici di accoppiamento e verifiche previste; RTARS-28 ha completato classificazione e piano di verifica, ma la localizzazione delle effettive superfici sulla mesh non è dimostrata. L'AC resta quindi **parzialmente soddisfatto** e il gate geometrico `NOT TESTED`; non dichiarare Done finché l'ispezione per tutte le 13 tipologie non registra caratteristiche osservate con riferimento mesh stabile. Non dedurre contatti dalla sola disposizione sul piatto. Nessuna stampa, misura dimensionale o prova di montaggio è inclusa.
 
 ## Licenza
 
