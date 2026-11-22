@@ -20,13 +20,17 @@
 | XY separation | 0.35 mm | distanza nominale |
 | Top interface layers | 3 | strati di interfaccia |
 | Supports in G-code | presenti | generati effettivamente per il lotto |
-| Orientamenti convalidati | NO | richiede operatore davanti alla Preview |
+| Orientamenti convalidati per **lotto di 3 oggetti** | PASS — dichiarazione operatore del 2026-11-22 | Review Preview riferita ai 3 componenti; non estesa ad altre parti |
 
-## Verbale da compilare (NON TESTED fino alla conferma)
+## Verbale acquisito il 2026-11-22 — verifica operatore su Bambu Studio Preview
 | Parte | Appoggio stabile (PASS/FAIL) | Supporti fuori da superfici di accoppiamento (PASS/FAIL) | Rimozione supporti possibile (PASS/FAIL) | Orientamento coerente con uso (PASS/FAIL) | Warning bloccanti (nessuno/elenco) |
 |---|---|---|---|---|---|
-| Staffa/supporto | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED |
-| Base posteriore schermo | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED |
-| Copertura servo | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED | NOT TESTED |
+| Staffa/supporto | PASS* | PASS* | PASS* | PASS* | Nessuno* |
+| Base posteriore schermo | PASS* | PASS* | PASS* | PASS* | Nessuno* |
+| Copertura servo | PASS* | PASS* | PASS* | PASS* | Nessuno* |
 
-**Gate Jira RTARS-30:** AC «orientamenti/supporti motivati per le parti» chiudibile solo dopo una revisione effettiva. Questa checklist definisce la modalità e le motivazioni, ma non è evidenza di revisione avvenuta. Validazione delle quote dopo stampa rimane RTARS-31.
+*L'operatore ha dichiarato **una sola valutazione aggregata per l'intero lotto**, non misure o risposte indipendenti per oggetto: «Appoggio sul piano: pass; supporti fuori dalle superfici critiche e rimovibili: pass; orientamento coerente con i carichi: pass; avvisi slicer: none». La tabella distribuisce il risultato dichiarato ai tre oggetti del lotto, non aggiunge tre osservazioni indipendenti. Evidenza = attestazione dell'operatore sulla Preview locale, senza screenshot geometrici ripubblicati. La conformità geometrica non è stata verificata da terzi, e il report non determina l'esito di stampe fisiche.
+
+**Motivazione funzionale della review per il lotto:** la staffa è orientata per conservare appoggio/fissaggi e supporti rimovibili senza compromettere i fori; la base posteriore dello schermo per preservare appoggio e sedi di montaggio; la copertura servo per mantenere accessibili sedi, fori e incastri e non trasferire i supporti sulle interfacce. Questi **criteri di accettazione** sono stati confermati globalmente dall'operatore; non sono dati ricostruiti dalle coordinate del G-code.
+
+**Portata dell'AC:** PASS dichiarativo per *queste tre parti del lotto pilota RTARS-31* con il profilo RTARS-FUNCTIONAL. Orientamenti delle altre parti del modello NON TESTED: vanno valutati prima dei successivi slicing/print, senza considerarli automaticamente certificati da questa attestazione. Misure e fit test restano RTARS-31.
