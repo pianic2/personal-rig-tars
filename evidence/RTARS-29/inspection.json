@@ -30,11 +30,59 @@
     "version_source": "operator_declaration",
     "printer_preset_claim": "PASS",
     "printer_preset_name": null,
-    "filament_preset_name": "Generic PLA",
+    "filament_preset_name": "Generic PLA @Elegoo",
     "process_preset_name": "QUALITY",
     "process_preset_source": "operator_declaration",
     "filament_preset_source": "operator_declaration",
-    "filament_preset_material_match": "not_verified_generic_preset_for_elegoo_pla_metallic"
+    "filament_preset_material_match": "not_verified_generic_preset_for_elegoo_pla_metallic",
+    "filament_preset_evidence": "user_uploaded_filament_manager_photos_2026-11-22",
+    "visible_filament_settings": {
+      "type": "PLA",
+      "diameter_mm": 1.75,
+      "pressure_advance_enabled": false,
+      "velocity_adaptation_factor": 1,
+      "softening_temperature_c": 60,
+      "recommended_nozzle_temperature_c": {
+        "min": 205,
+        "max": 210
+      },
+      "bed_temperature_c": {
+        "initial_layer": 60,
+        "other_layers": 60
+      },
+      "nozzle_temperature_c": {
+        "initial_layer": 210,
+        "other_layers": 205
+      },
+      "prime_volume_mm3": {
+        "filament_change": 45,
+        "hotend_change": 60
+      }
+    },
+    "visible_cooling_settings": {
+      "initial_layer_fan": {
+        "layers": 1,
+        "speed_percent": 0
+      },
+      "min_fan_speed_threshold": {
+        "speed_percent": 100,
+        "layer_time_seconds": 100
+      },
+      "max_fan_speed_threshold": {
+        "speed_percent": 100,
+        "layer_time_seconds": 8
+      },
+      "keep_fan_always_on": true,
+      "slow_printing_for_layer_cooling": true,
+      "force_cooling_overhangs_bridges": true,
+      "auxiliary_fan": {
+        "initial_layers": 1,
+        "initial_speed_percent": 0,
+        "ramp_up_to_percent": 70,
+        "physical_operation_verified": false
+      }
+    },
+    "settings_overrides_examined": false
   },
   "temperature_c": {
     "nozzle_first_layer": 210,
@@ -63,8 +111,9 @@
     "conditions": "PARTIAL",
     "risks_identified": "PASS",
     "dod": "BLOCKED",
-    "filament_preset_identity": "PASS_OPERATOR_DECLARATION",
-    "filament_preset_suitability": "NOT_TESTED"
+    "filament_preset_identity": "PASS_SCREENSHOT",
+    "filament_preset_suitability": "PARTIAL",
+    "filament_preset_visible_settings": "PASS_SCREENSHOT"
   },
   "personal_information_removed": true
 }
