@@ -1,0 +1,16 @@
+# RTARS-19 — SANITIZED BUILD SUMMARY (not complete build.log)
+# Source: 2,838-line sanitized build.log supplied 2026-11-22.
+# Full build.log is retained in the separately provided sanitized evidence archive.
+# This summary intentionally omits intermediate Ninja steps.
+Executing action: all (aliases: build)
+Running ninja in directory <PROJECT_ROOT>/build
+Executing "ninja all"...
+[0/1] Re-running CMake...
+-- Board [tars] version: 3.8.0
+-- Minimal build - ON
+-- Building ESP-IDF components for target esp32s3
+Generated <PROJECT_ROOT>/build/rig-tars.bin
+[2432/2433] cd <PROJECT_ROOT>/build/esp-idf/esptool_py && <HOME>/.espressif/python_env/idf5.5_py3.13_env/bin/python <ESP_IDF_ROOT>/components/partition_table/check_sizes.py --offset 0x8000 partition --type app <PROJECT_ROOT>/build/partition_table/partition-table.bin <PROJECT_ROOT>/build/rig-tars.bin
+rig-tars.bin binary size 0x36c8e0 bytes. Smallest app partition is 0x3f0000 bytes. 0x83720 bytes (13%) free.
+Project build complete.
+BUILD_EXIT_CODE=0
