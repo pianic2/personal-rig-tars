@@ -1,7 +1,7 @@
 {
   "issue": "RTARS-30",
   "date": "2026-11-22",
-  "decision": "ready_for_merge_after_repo_review_due_to_three_part_operator_preview_pass",
+  "decision": "done_for_exported_process_presets_and_operator_verified_three_part_preview_pilot",
   "source_evidence": {
     "hardware": "evidence/RTARS-29/inspection.json",
     "source_profiles_archive_sha256": "26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae",
@@ -85,7 +85,7 @@
     "other_parts_orientation_support": "NOT_TESTED_DOWNSTREAM_PER_PART_PREPRINT",
     "aesthetic_process_slice": "NOT_TESTED_NOT_REQUIRED_FOR_FUNCTIONAL_TEST_BATCH"
   },
-  "done": false,
+  "done": true,
   "merge_permitted": true,
   "production_authorized": false,
   "three_part_functional_slicing": {
@@ -98,5 +98,10 @@
     "support_generated": true,
     "actual_printed": false,
     "source_file_published": false
-  }
+  },
+  "merged": true,
+  "merge_commit_sha": "cff1f567c45b619f8b97f93c3025a9a5320ece71",
+  "github_pr": 28,
+  "jira_status": "Fatto",
+  "scope_note": "Other geometry orientations, live print safety, dimensions, strength and fit remain RTARS-31/RTARS-32; no broader validation implied."
 }
