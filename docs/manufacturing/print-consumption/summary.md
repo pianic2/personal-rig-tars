@@ -2,7 +2,16 @@
 
 > **Non è un consuntivo di stampe eseguite.** Valori di slicing comunicati dall'utente e trascritti da screenshot; nessun consumo effettivo attestato.
 
-## Inventario di slicing osservato
+## Nuovo run QUALITY da screenshot RTARS-30 (2026-11-22)
+
+- **Non sovrascrive il run precedente**, conservato per audit in `summary_slicing_estimate`.
+- Screenshot: Elegoo Neptune 4, processo HL-18 QUALITY 0.20 mm, filamento selezionato **Generic PLA** (non preset esplicitamente calibrato per Elegoo Metallic Bronze).
+- Stima tempo 4 piatti **23h19m**: PLATE-01 1h50m, PLATE-02 3h45m, PLATE-03 7h59m, PLATE-04 9h45m.
+- Filamento modello **87.04 m / 259.61 g** (aggregato, non consumo reale); costo visualizzato **5.49**, valuta non visibile.
+- Differenza osservata dal run precedente: tempo +11h15m46s (precisione nuova ai minuti), massa modello −10.24 g, lunghezza modello −3.44 m; non prova parità di impostazioni, modelli o supporti.
+- Nessuna prova di esecuzione fisica, misura di scarto o idoneità del G-code. Evidenza testuale: [evidence/slicer-summary-quality-2026-11-22.md](evidence/slicer-summary-quality-2026-11-22.md).
+
+## Inventario di slicing osservato (run precedente)
 
 | ID | Durata stimata | Massa per piatto | Scarti per piatto | Stato stampa fisica |
 | --- | ---: | ---: | ---: | --- |
