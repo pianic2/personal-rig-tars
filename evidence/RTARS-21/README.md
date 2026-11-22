@@ -122,3 +122,18 @@ La [guida rapida TARS](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_
 - **G07: PASS per registrazione delle evidenze e verbale.**
 
 **Esito della DoD:** le prove passive G02/G03 precedentemente mancanti sono adesso documentate con esito positivo. **Non** sono stati risolti i requisiti critici di alimentazione G04 e G05. `HARDWARE_SAFETY.md` richiede specifiche compatibili verificate per la revisione reale; di conseguenza **RTARS-21 non può essere portata a Fatto secondo la DoD vigente**. La documentazione è pronta e integrabile, ma **non autorizza** a collegare, alimentare o ricaricare la batteria.
+
+## Decisione di accettazione dei gap e chiusura del perimetro passivo — 2026-11-22
+
+**Decisione esplicita del responsabile del progetto:** «segnali come gap accettati. e chiudi la task», riferita ai gap G04/G05 con specifiche non disponibili.
+
+La presente decisione **accetta il differimento**, **non** la validità tecnica né la sicurezza dei requisiti sconosciuti. I criteri di RTARS-21 hanno per perimetro l'ispezione passiva di polarità, cablaggio e mappa dei connettori con alimentazioni scollegate: le evidenze G01–G03, G06 sono disponibili; G07 è il verbale versionato. Il testo originario dell'issue specifica: «La presenza di un valore di tensione non verificato blocca l'alimentazione, non la sola ispezione». Non si trasforma pertanto un esito NOT VERIFIED in PASS.
+
+| Gap accettato | Stato tecnico reale | Accettazione limitata | Tracciamento del requisito prima dell'alimentazione |
+| --- | --- | --- | --- |
+| **G04** — specifiche batteria del pacco fisico (chimica, numero di celle, limiti, protezioni) | **NOT VERIFIED**; sola tensione misurata 8,10 V | **ACCEPTED FOR PASSIVE INSPECTION ONLY** | [RTARS-46](https://niccolopiazzi01.atlassian.net/browse/RTARS-46) |
+| **G05** — requisiti della specifica revisione PCB e compatibilità completa col pacco | **NOT VERIFIED**; coerenza con SLM6800/kit non sufficiente | **ACCEPTED FOR PASSIVE INSPECTION ONLY** | [RTARS-46](https://niccolopiazzi01.atlassian.net/browse/RTARS-46) |
+
+**Decisione DoD riferita a RTARS-21:** mappa visiva con foto già versionate, prove passive di continuità e assenza cortocircuiti con esito positivo, polarità e percorso dei fili documentati, controlli di sicurezza **eseguiti e registrati** per la sola ispezione disalimentata. La task può essere conclusa **come ispezione passiva**, con limiti espliciti, senza pretendere un collaudo funzionale o di sicurezza dell'alimentazione. La successiva operazione di collegare/ricaricare/accendere il pacco **rimane bloccata** dalla task RTARS-46; il suo gate **non** viene superato da questa chiusura.
+
+L'accettazione non modifica né disapplica `docs/process/HARDWARE_SAFETY.md`. La classificazione del safety gate **alimentazione = NOT TESTED / NOT VERIFIED** persiste fino al completamento di RTARS-46.
