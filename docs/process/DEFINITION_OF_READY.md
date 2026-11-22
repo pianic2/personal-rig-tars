@@ -1,23 +1,23 @@
 # Definition of Ready (DoR)
 
-**Project:** RIG-TARS · **Tracking:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Status:** proposed policy
+**Progetto:** RIG-TARS · **Task di riferimento:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Stato:** approvata
 
-A Jira issue is **Ready** when an implementer can begin work without needing to guess its scope, prerequisites or success criteria. This gate applies before starting work, not before opening an issue.
+Una issue Jira è **Ready** quando è possibile iniziare il lavoro senza dover indovinare obiettivo, perimetro, prerequisiti o criteri di successo. Questa verifica si applica **prima di iniziare** un'attività, non prima di crearla nel backlog.
 
 ## Checklist
 
-- [ ] Objective and expected deliverable are explicit.
-- [ ] Acceptance criteria are observable and testable.
-- [ ] Dependencies, blockers and prerequisites are identified; any blockers preventing safe execution are resolved.
-- [ ] Required sources, specifications and references are linked, or knowledge gaps are explicitly identified with a plan to resolve them.
-- [ ] Required tools, hardware, access and environment are available, **when applicable**.
-- [ ] Known risks and safety constraints are identified, **when applicable**.
-- [ ] Completion can be judged objectively using the acceptance criteria and the [DoD](DEFINITION_OF_DONE.md).
+- [ ] Obiettivo, perimetro e risultato atteso sono espliciti.
+- [ ] Gli Acceptance Criteria (AC) sono osservabili e verificabili.
+- [ ] Dipendenze, impedimenti e prerequisiti sono identificati; quelli indispensabili per iniziare in sicurezza sono risolti.
+- [ ] Fonti, specifiche e riferimenti necessari sono collegati, oppure le lacune informative sono dichiarate con un piano di verifica.
+- [ ] Strumenti, hardware, accessi e ambiente necessari sono disponibili, **se applicabile**.
+- [ ] Rischi noti e vincoli di sicurezza sono identificati, **se applicabile**.
+- [ ] È possibile valutare oggettivamente il completamento tramite gli AC e la [Definition of Done](DEFINITION_OF_DONE.md).
 
-## Operating rules
+## Regole operative
 
-1. Record the applicable criteria in the Jira issue. Mark irrelevant criteria `N/A` with a short reason rather than treating them as failed.
-2. For *research/discovery* issues, unknowns are expected: the deliverable must instead define which questions, evidence and decisions the research will produce. Unknowns do not prevent Ready unless they make the work unsafe or unbounded.
-3. An issue not meeting this gate remains in backlog/clarification; do not silently treat it as ready.
-4. A hardware activity with unresolved electrical or motion safety prerequisites is **not** Ready. See [Hardware Safety](HARDWARE_SAFETY.md).
-5. Jira is the source of truth for scope, status and acceptance criteria; repository documents are the versioned source for project policies and evidence.
+1. Verificare i criteri pertinenti prima di avviare la issue. Registrare in Jira gli eventuali prerequisiti, impedimenti ed esiti **N/A**, con una breve motivazione; non è necessario duplicare l'intera checklist in ogni issue.
+2. Nelle attività di ricerca (*discovery*) sono ammesse incognite: la issue deve specificare le domande da risolvere e le evidenze o decisioni da produrre. Le incognite non bloccano lo stato Ready, salvo impediscano un lavoro sicuro o rendano il perimetro indefinito.
+3. Una issue che non soddisfa la DoR resta da chiarire o nel backlog: non deve essere avviata come se fosse pronta.
+4. Un'attività hardware con prerequisiti critici non verificati per alimentazione, cablaggio o movimentazione **non è Ready**. Consultare la [checklist di sicurezza hardware](HARDWARE_SAFETY.md).
+5. Jira è la fonte di riferimento per perimetro, stato e AC; il repository conserva regole di progetto, artefatti tecnici ed evidenze versionate.
