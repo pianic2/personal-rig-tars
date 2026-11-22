@@ -74,3 +74,15 @@ L'operatore ha fornito due fotografie dell'interfaccia Bambu Studio, schede **Fi
 ## Verifica Setting Overrides — dichiarazione operatore
 
 Il 2026-11-22 l'operatore dichiara che la scheda **Setting Overrides** del preset `Generic PLA @Elegoo` è **vuota**, senza override visualizzati. Evidenza: dichiarazione diretta; non è stata ricevuta una fotografia della scheda né un export del preset. Esito: **PASS dichiarativo** per assenza di override mostrati nella scheda; non equivale a verifica di ogni impostazione avanzata, di un preset ereditato o del G-code effettivo. Restano aperti la valutazione del rischio ugello ottone e la compatibilità tecnica completa.
+
+## Esito finale di ricognizione — 2026-11-22 (prevale sulle valutazioni precedenti)
+
+L'operatore conferma di aver **sostituito l'ugello in ottone con acciaio temprato, diametro 0,4 mm**. Verifica dichiarativa; non si sostiene di aver eseguito ispezione indipendente. Il materiale ora dichiarato è coerente con la raccomandazione ELEGOO. La precedente criticità dell'ottone è **risolta secondo testimonianza operatore**.
+
+L'operatore conferma inoltre che **la stampante legge correttamente il G-code**; aveva già riferito stampe riuscite con la configurazione. Ciò fornisce evidenza operativa dichiarativa per questa ricognizione, non una revisione statica dei singoli comandi start/end.
+
+**Matrice AC aggiornata**: (1) configurazione identificata: PASS, con dichiarazioni e fotografie del Filament Manager; (2) condizioni macchina, filamento e ugello: PASS dichiarativo, con limitazioni esplicite; (3) criticità identificate: PASS, con precedente rischio dell'ottone risolto. Temperature visibili coerenti con i limiti del materiale. Il preset Generic PLA @Elegoo (processo QUALITY) è documentato, inclusa l'assenza dichiarata di Setting Overrides. Non si dichiara qualificazione definitiva del preset, prova strumentale dell'essiccazione o audit statico del G-code.
+
+**Limiti non bloccanti della ricognizione**: export completo del preset e test quantitativi dimensionali/di prestazione appartengono alla validazione dei profili e alle stampe successive (RTARS-30/31/32), non agli AC di RTARS-29. La verifica di eventuali fenomeni di raffreddamento non è stata effettuata. Nessuna prestazione non osservata è rivendicata.
+
+**Verdetto aggiornato**: AC della ricognizione soddisfatti con evidenza proporzionata al perimetro; READY FOR REVIEW / MERGE. I precedenti OPEN e NON READY FOR DONE rimangono cronologia, superata dalla presente rivalutazione. Jira Done solo dopo merge e controlli di repository.
