@@ -37,7 +37,8 @@ Le misure riportate di seguito sono **dichiarazioni dell'operatore**, non misure
 | Essiccazione dichiarata e misure RH/ambiente acquisite | PASS (dichiarazioni operatore, senza certificazione sensori) |
 | Filamento pienamente asciutto a livello materiale | NOT TESTED |
 | Preflight macchina immediatamente prima della stampa (5 controlli della checklist operatore) | PASS — attestazione operatore 2026-11-22; non misura strumentale indipendente |
-| Avvio, primo layer e stampa effettiva | NOT TESTED |
+| Avvio effettivo, homing, spurgo e primo layer | PASS — testimonianza operatore (3/3 pezzi aderenti); foto ravvicinata parzialmente corroborante |
+| Stampa completa e verifica post-stampa | NOT TESTED — PRINTING_IN_PROGRESS |
 | Misure, fotografie, fit test e correzioni tracciate | NOT TESTED |
 | Jira RTARS-31 Done | NON AUTORIZZATO |
 
@@ -52,6 +53,6 @@ L'operatore ha dichiarato **PASS** per tutti e cinque i controlli della checklis
 4. Setpoint confermati: 210/205 °C ugello, 60 °C piano.
 5. Possibilità di presidiare homing, spurgo e primo layer.
 
-**Ambito esatto dell'attestazione:** checklist completata prima dell'avvio. L'operatore scrive «Procedo ad avviare», non conferma che la macchina sia già partita. Conseguentemente `started_at`, G-code eseguito, homing effettivo, purge e primo layer restano **NOT TESTED**. Il controllo n. 5 riguarda disponibilità alla supervisione, non avvenuta supervisione.
+**Ambito originale dell'attestazione:** la checklist era stata completata *prima* dell'avvio. **Aggiornamento successivo 2026-11-22:** l'operatore ha ora confermato **Avvio: SI; Homing: PASS; Spurgo: PASS; Primo layer: PASS; Pezzi aderenti: 3/3; Anomalie: nessuna**. Il timestamp effettivo `started_at` non è stato dichiarato. I risultati sono documentati in [FIRST-LAYER-RESULTS.md](RTARS-31-FIRST-LAYER-RESULTS.md). La stampa è **in corso**, non conclusa.
 
 Prossima fonte: [protocollo primo layer](RTARS-31-FIRST-LAYER-RUNBOOK.md).
