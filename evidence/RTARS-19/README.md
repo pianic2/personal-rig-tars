@@ -12,8 +12,8 @@ Issue: https://niccolopiazzi01.atlassian.net/browse/RTARS-19
 - Flash: NOT PERFORMED as part of RTARS-19
 - Output: rig-tars.bin SHA-256 `7efd1514bed279a690a817c9a54cce1f1f73bc0fc1eecb48e7caa989dc070185`
 
-Files: `toolchain.txt`, `result.txt`, `sha256.txt` are transcribed from the supplied anonymized evidence. `build-summary.log` is an explicitly abridged excerpt from a 2,838-line sanitized full log; **it is not the complete build log**.
+Files: `toolchain.txt`, `result.txt`, `sha256.txt` are transcribed from the supplied anonymized evidence. The complete sanitized `build.log` is archived here (2,838 lines, 307,648 bytes, SHA-256 `5f40794605bedce22a82c2a830b5fe29046f736900aaa359e4b39f93bf68216b`). `build-summary.log` remains a labeled, abridged excerpt for quick review.
 
 Privacy: original workstation paths replaced with `<HOME>`, `<ESP_IDF_ROOT>` and `<PROJECT_ROOT>` in excerpt. Do not upload non-sanitized source log.
 
-**Outstanding archive gate**: publish the complete sanitized build.log (or the sanitized archive containing it) to durable project evidence storage and link it here before claiming all RTARS-19 acceptance criteria are closed.
+**Acceptance evidence**: complete sanitized build log, build result, toolchain version and SHA-256 manifests are archived under this directory. No binary firmware payloads were committed.
