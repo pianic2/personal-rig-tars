@@ -1,5 +1,5 @@
 # RTARS-30 — Bambu Studio print profiles (draft)
-Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
+Status: TWO NATIVE PRESETS VERSIONED / FUNCTIONAL THREE-PART SLICING VERIFIED / ORIENTATION SUPPORT REVIEW PENDING. Jira: RTARS-30.
 
 ## Inputs and constraints
 - Slicer: **Bambu Studio only**; OrcaSlicer references in Jira were corrected.
@@ -8,7 +8,7 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 - Source: RTARS-28 `PART_CLASSIFICATION.csv` (13 types / 16 instances). Geometric mating surfaces and actual tolerances remain **NOT TESTED**.
 - Source geometry is subject to MakerWorld Exclusive restrictions. Do not commit 3MF/STL, embedded geometry, G-code or screenshots exposing restricted geometry without permission.
 
-## Proposed profile families — not exported or validated
+## Profile families — exported and versioned as candidates; physical performance not validated
 | Field | RTARS-AESTHETIC | RTARS-FUNCTIONAL |
 |---|---|---|
 | Intended use | Visible outer shells, where no critical interface is affected | Structural, motion, mounting and interface features |
@@ -40,7 +40,7 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 ## Per-part provisional routing (not a validated plate layout)
 - Functional priority P0: P01 arm (2), P05 main body (1), P08 joystick (1), P13 servo arm (1).
 - Mixed-purpose P1: P02/P03 arm shells, P04 body shell, P06 display housing, P07 camera cover, P09 bracket, P10/P11 PCB supports, P12 servo covers (3). Select profile per interface/face after visual inspection, not by name alone.
-- Every orientation and support decision is **PENDING** actual Bambu Studio preview. Do not infer geometry from source labels.
+- Every orientation and support decision is **PENDING** local Bambu Studio Preview inspection. Three-part `3_parts.gcode` contains generated support features, but no spatial review. Checklist: [THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md). Do not infer geometry from source labels.
 
 ## Minimal capture procedure
 1. In Bambu Studio, capture About/version and specifically select **Elegoo Neptune 4 (Standard), 0.4 mm** rather than Neptune 4 Pro/Plus/Max or a Bambu Lab machine. Capture printer, filament (ELEGOO PLA Metallic Bronze), nozzle and selected process presets, build plate; mask account/device identifiers. If the exact Neptune 4 Standard 0.4 mm preset is absent, STOP: no G-code export or machine execution based on another printer's profile.
@@ -59,11 +59,13 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 | RTARS-29 hardware and filament identification | PASS for RTARS-29 AC; operator record and partial UI evidence, issue Done |
 | Hardened-steel nozzle 0.4 mm, temperature setpoints 210/205/60°C | PASS for manufacturer range and operator declaration; physical measurement NOT TESTED |
 | Bambu Studio version and Generic PLA @Elegoo settings | PASS documented via RTARS-29 (version operator-declared, Filament/Cooling screenshots); full printer G-code still NOT TESTED |
-| Native presets exported/versioned | NOT TESTED |
-| Part-by-part orientation/support justification | NOT TESTED |
+| Native candidate presets exported/versioned | PASS — both native JSONs under `docs/manufacturing/presets/`, byte-identical to original ZIP |
+| User import in Bambu Studio | PASS — user declaration |
+| Three-part functional G-code slicing | PASS — metadata inspected; see [`RTARS-30-THREE-PART-GCODE-AUDIT.md`](RTARS-30-THREE-PART-GCODE-AUDIT.md) |
+| Part-by-part orientation/support justification | NOT TESTED — [inspection checklist](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md) prepared |
 | Four-plate Bambu Studio slicing **with legacy QUALITY + Generic PLA** | PASS — screenshot of estimates only; toolpaths/supports not shown |
 | Four-plate Bambu Studio slicing **with dedicated RTARS target presets** | NOT TESTED |
 | RTARS-31 functional fit test | NOT TESTED (downstream) |
 | RTARS-32 definitive production | BLOCKED (downstream) |
 
-No new physical prints, fit tests, dimensional measurements, *static* G-code safety verification, **dedicated profile slicing** or GitHub-hosted native RTARS preset files are claimed. A screenshot confirms that the user obtained **one four-plate slicing summary using a legacy QUALITY process and Generic PLA**; detailed per-part toolpaths and support inspection remain NOT TESTED.
+No new physical prints, fit tests or dimensional measurements are claimed. **Functional-profile slicing is documented for three distinct objects**; static G-code inspection completed, while spatial support and orientation verification remains NOT TESTED. Both complete native candidate process JSONs are committed in GitHub. A screenshot confirms that the user obtained **one four-plate slicing summary using a legacy QUALITY process and Generic PLA**; detailed per-part toolpaths and support inspection remain NOT TESTED.
