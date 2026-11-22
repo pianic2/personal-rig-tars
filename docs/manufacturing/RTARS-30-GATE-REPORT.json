@@ -1,0 +1,69 @@
+{
+  "issue": "RTARS-30",
+  "date": "2026-11-22",
+  "decision": "functional_profile_for_first_coupon",
+  "source_evidence": {
+    "hardware": "evidence/RTARS-29/inspection.json",
+    "source_profiles_archive_sha256": "26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae",
+    "candidate_archive_sha256": "c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db",
+    "slicing": "docs/manufacturing/RTARS-30-QUALITY-SLICING-EVIDENCE.md"
+  },
+  "hardware": {
+    "printer": "ELEGOO Neptune 4 Standard",
+    "nozzle_diameter_mm": 0.4,
+    "nozzle_material": "hardened_steel",
+    "nozzle_material_evidence": "operator declaration recorded RTARS-29",
+    "material": "ELEGOO PLA Metallic Metal Bronze",
+    "slicer": "Bambu Studio",
+    "slicer_version": "2.8.2.61",
+    "version_evidence": "operator declaration RTARS-29",
+    "filament_preset": "Generic PLA @Elegoo",
+    "nozzle_temperature_c": {
+      "initial": 210,
+      "subsequent": 205
+    },
+    "bed_temperature_c": 60,
+    "manufacturer_limits": {
+      "nozzle_c": [
+        190,
+        230
+      ],
+      "bed_c": [
+        35,
+        65
+      ]
+    }
+  },
+  "profiles": [
+    {
+      "name": "RTARS-AESTHETIC CANDIDATE",
+      "layer_height_mm": 0.16,
+      "sha256": "d1de21d70d9146e16a79656243147c75295e3930dd79bdadab5c5b7741c6ece8",
+      "import": "PASS_OPERATOR_DECLARATION"
+    },
+    {
+      "name": "RTARS-FUNCTIONAL CANDIDATE",
+      "layer_height_mm": 0.2,
+      "sha256": "3493204d0bd54ac68945e28208d2c294cd1e08be1f99b952b525a0f487c6d38d",
+      "import": "PASS_OPERATOR_DECLARATION"
+    }
+  ],
+  "gates": {
+    "machine_identification": "PASS_DECLARATIVE_AND_REPO_EVIDENCE",
+    "nozzle_requirement": "PASS_DECLARATIVE",
+    "temperature_within_material_spec": "PASS_DOCUMENTAL",
+    "legacy_quality_slicing_summary": "PASS_SCREENSHOT",
+    "two_process_imports": "PASS_OPERATOR_DECLARATION",
+    "candidate_json_generation": "PASS_SHA256_REPRODUCIBLE",
+    "native_candidate_json_in_github": "NOT_TESTED_NOT_COMMITTED",
+    "machine_start_end_gcode_review": "NOT_TESTED",
+    "selected_process_after_import_comparison": "NOT_TESTED",
+    "functional_coupon_orientation_and_support_review": "NOT_TESTED",
+    "target_preset_slicing": "NOT_TESTED",
+    "target_3mf_source_geometry": "NOT_PUBLISHED_LICENSE_RESTRICTED",
+    "fit_test": "NOT_TESTED_DOWNSTREAM"
+  },
+  "done": false,
+  "merge_permitted": false,
+  "production_authorized": false
+}
