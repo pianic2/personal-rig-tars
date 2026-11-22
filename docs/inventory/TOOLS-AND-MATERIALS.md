@@ -52,7 +52,7 @@ Gli ID sono stabili. Non considerare l'elenco un ordine d'acquisto. L'utente dic
 
 | ID | Risorsa | Stato | Specifiche documentate / limiti |
 | --- | --- | --- | --- |
-| EQUIP-001 | ELEGOO Neptune 4 **Standard** | DISPONIBILE — dichiarato | FDM, volume nominale 225 × 225 × 265 mm; ugello stock brass 0,4 mm riportato in precedenza; verificare stato fisico corrente |
+| EQUIP-001 | ELEGOO Neptune 4 **Standard** | DISPONIBILE — dichiarato | FDM, volume nominale 225 × 225 × 265 mm; ugello stock brass 0,4 mm storico; sostituito con acciaio temprato 0,4 mm (dichiarazione operatore 2026-11-22, RTARS-29) |
 | EQUIP-002 | Ventilazione stampante | DOCUMENTATO — storico | Gruppo ausiliario posteriore a quattro ventole descritto; funzionalità corrente non testata in questa task |
 | EQUIP-003 | Controllo stampante via LAN | DOCUMENTATO — storico | Klipper ELEGOO / Fluidd / Moonraker riportati come configurazione; versione e connettività attuali da verificare |
 | EQUIP-004 | Ambiente di stampa | DOCUMENTATO — storico | Misurazione indicativa ~25 °C e 50% UR in precedente conversazione, **non** valore attuale |
