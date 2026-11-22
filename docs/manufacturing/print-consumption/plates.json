@@ -48,7 +48,7 @@
     },
     {
       "plate_id": "PLATE-02",
-      "status": "pending",
+      "status": "unconfirmed",
       "material": null,
       "slicer": {
         "application": "Bambu Studio",
@@ -74,19 +74,19 @@
         "attempts": [],
         "evidence_files": []
       },
-      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
       "gaps": [
         "material_not_reported",
         "slicer_export_missing",
         "profile_not_reported",
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
-        "physical_print_not_executed"
+        "physical_print_status_not_confirmed"
       ]
     },
     {
       "plate_id": "PLATE-03",
-      "status": "pending",
+      "status": "unconfirmed",
       "material": null,
       "slicer": {
         "application": "Bambu Studio",
@@ -112,19 +112,19 @@
         "attempts": [],
         "evidence_files": []
       },
-      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
       "gaps": [
         "material_not_reported",
         "slicer_export_missing",
         "profile_not_reported",
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
-        "physical_print_not_executed"
+        "physical_print_status_not_confirmed"
       ]
     },
     {
       "plate_id": "PLATE-04",
-      "status": "pending",
+      "status": "unconfirmed",
       "material": null,
       "slicer": {
         "application": "Bambu Studio",
@@ -150,14 +150,14 @@
         "attempts": [],
         "evidence_files": []
       },
-      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
       "gaps": [
         "material_not_reported",
         "slicer_export_missing",
         "profile_not_reported",
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
-        "physical_print_not_executed"
+        "physical_print_status_not_confirmed"
       ]
     }
   ],
@@ -176,6 +176,7 @@
     "sum_of_individual_plate_durations_seconds": 43394,
     "total_plates_in_screenshot": 4,
     "material_type": null,
-    "model_mass_is_total_consumption": false
+    "model_mass_is_total_consumption": false,
+    "print_status_note": "Only PLATE-01 is explicitly pending in the user-supplied record; physical status of PLATE-02/03/04 is unconfirmed by this screenshot."
   }
 }
