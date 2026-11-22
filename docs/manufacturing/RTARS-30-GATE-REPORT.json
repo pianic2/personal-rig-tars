@@ -1,0 +1,102 @@
+{
+  "issue": "RTARS-30",
+  "date": "2026-11-22",
+  "decision": "ready_for_merge_after_repo_review_due_to_three_part_operator_preview_pass",
+  "source_evidence": {
+    "hardware": "evidence/RTARS-29/inspection.json",
+    "source_profiles_archive_sha256": "26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae",
+    "candidate_archive_sha256": "c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db",
+    "slicing": "docs/manufacturing/RTARS-30-QUALITY-SLICING-EVIDENCE.md",
+    "three_part_gcode_sha256": "32fec82a5f94c0d36b87587c2e853acb7f2462dc7703ec7e0fd6e9e1563a99fa",
+    "three_part_gcode_audit": "docs/manufacturing/RTARS-30-THREE-PART-GCODE-AUDIT.md",
+    "native_preset_paths": [
+      "docs/manufacturing/presets/RTARS-AESTHETIC-CANDIDATE-0.16mm@Elegoo-Neptune4-0.4.json",
+      "docs/manufacturing/presets/RTARS-FUNCTIONAL-CANDIDATE-0.20mm@Elegoo-Neptune4-0.4.json"
+    ],
+    "orientation_checklist": "docs/manufacturing/RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md",
+    "orientation_review": {
+      "date": "2026-11-22",
+      "source": "direct operator report in current conversation",
+      "scope": "three-part functional test batch only",
+      "statement": "Appoggio sul piano: pass. Supporti fuori dalle superfici critiche e rimovibili: pass. Orientamento coerente con i carichi: pass. Avvisi slicer: none.",
+      "photo_published": false,
+      "individual_per_object_confirmations": false
+    }
+  },
+  "hardware": {
+    "printer": "ELEGOO Neptune 4 Standard",
+    "nozzle_diameter_mm": 0.4,
+    "nozzle_material": "hardened_steel",
+    "nozzle_material_evidence": "operator declaration recorded RTARS-29",
+    "material": "ELEGOO PLA Metallic Metal Bronze",
+    "slicer": "Bambu Studio",
+    "slicer_version": "2.8.2.61",
+    "version_evidence": "operator declaration RTARS-29",
+    "filament_preset": "Generic PLA @Elegoo",
+    "nozzle_temperature_c": {
+      "initial": 210,
+      "subsequent": 205
+    },
+    "bed_temperature_c": 60,
+    "manufacturer_limits": {
+      "nozzle_c": [
+        190,
+        230
+      ],
+      "bed_c": [
+        35,
+        65
+      ]
+    }
+  },
+  "profiles": [
+    {
+      "name": "RTARS-AESTHETIC CANDIDATE",
+      "layer_height_mm": 0.16,
+      "sha256": "d1de21d70d9146e16a79656243147c75295e3930dd79bdadab5c5b7741c6ece8",
+      "import": "PASS_OPERATOR_DECLARATION"
+    },
+    {
+      "name": "RTARS-FUNCTIONAL CANDIDATE",
+      "layer_height_mm": 0.2,
+      "sha256": "3493204d0bd54ac68945e28208d2c294cd1e08be1f99b952b525a0f487c6d38d",
+      "import": "PASS_OPERATOR_DECLARATION"
+    }
+  ],
+  "gates": {
+    "machine_identification": "PASS_DECLARATIVE_AND_REPO_EVIDENCE",
+    "nozzle_requirement": "PASS_DECLARATIVE",
+    "temperature_within_material_spec": "PASS_DOCUMENTAL",
+    "legacy_quality_slicing_summary": "PASS_SCREENSHOT",
+    "two_process_imports": "PASS_OPERATOR_DECLARATION",
+    "candidate_json_generation": "PASS_SHA256_REPRODUCIBLE",
+    "native_candidate_json_in_github": "PASS_BOTH_NATIVE_JSON_FILES_PRESENT_AND_BYTE_IDENTICAL_TO_ORIGINAL_ZIP",
+    "machine_start_end_gcode_review": "PASS_STATIC_ONLY_UNVERIFIED_ON_HARDWARE",
+    "selected_process_after_import_comparison": "PASS_GCODE_METADATA_FUNCTIONAL_ONLY_AESTHETIC_IMPORT_OPERATOR_DECLARATION",
+    "functional_coupon_orientation_and_support_review": "PASS_OPERATOR_REPORTED_THREE_PART_BATCH_ONLY",
+    "target_preset_slicing": "PASS_STATIC_GCODE_3_PARTS_FUNCTIONAL_ONLY",
+    "target_3mf_source_geometry": "NOT_PUBLISHED_LICENSE_RESTRICTED",
+    "fit_test": "NOT_TESTED_DOWNSTREAM",
+    "target_process_parameters": "PASS_STATIC_GCODE",
+    "target_support_generation": "PASS_STATIC_GCODE_NOT_SPATIAL_APPROVAL",
+    "part_by_part_support_and_orientation_justification": "PASS_OPERATOR_REPORTED_FOR_THREE_TEST_PARTS_WITH_FUNCTIONAL_CRITERIA",
+    "physical_execution": "NOT_TESTED",
+    "native_preset_checksums": "PASS_SHA256_AND_GIT_BLOB_SHA1",
+    "other_parts_orientation_support": "NOT_TESTED_DOWNSTREAM_PER_PART_PREPRINT",
+    "aesthetic_process_slice": "NOT_TESTED_NOT_REQUIRED_FOR_FUNCTIONAL_TEST_BATCH"
+  },
+  "done": false,
+  "merge_permitted": true,
+  "production_authorized": false,
+  "three_part_functional_slicing": {
+    "process": "RTARS-FUNCTIONAL CANDIDATE 0.20mm",
+    "object_count": 3,
+    "estimated_duration_seconds": 9132,
+    "estimated_filament_mass_g": 20.59,
+    "estimated_filament_length_mm": 6903.65,
+    "layer_count": 129,
+    "support_generated": true,
+    "actual_printed": false,
+    "source_file_published": false
+  }
+}
