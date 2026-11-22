@@ -25,7 +25,9 @@ Tutti gli altri campi restano **identici** ai rispettivi JSON di input: **non** 
 - **PASS:** generazione automatizzata e sintattica dei due JSON da file autentici forniti dall'utente.
 - **PASS — dichiarazione utente (2026-11-22):** entrambi i JSON candidati importati correttamente in Bambu Studio, senza errori segnalati. Conferma operativa dell'importazione, non verifica indipendente del contenuto dopo l'import.
 - **NOT TESTED:** comparazione delle impostazioni effettivamente importate con i JSON (layer, velocità, supporti e override).
-- **PASS:** entrambi i JSON nativi sono presenti su GitHub, letti dopo il commit e verificati byte-identici al file distribuito (SHA-256 in tabella sopra e Git blob SHA-1).\n- **PASS statico:** file `3_parts.gcode` mostra uso del profilo FUNCTIONAL.\n- **PARTIAL:** macchina/G-code in revisione statica, preset Generic PLA @Elegoo documentato in RTARS-29 senza calibrazione Metallic Bronze dedicata.
+- **PASS:** entrambi i JSON nativi sono presenti su GitHub, letti dopo il commit e verificati byte-identici al file distribuito (SHA-256 in tabella sopra e Git blob SHA-1).
+- **PASS statico:** file `3_parts.gcode` mostra uso del profilo FUNCTIONAL.
+- **PARTIAL:** macchina/G-code in revisione statica, preset Generic PLA @Elegoo documentato in RTARS-29 senza calibrazione Metallic Bronze dedicata.
 - **NOT TESTED:** revisione locale motivata degli orientamenti/supporti del lotto (vedi [`RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md`](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md)); slicing di entrambi i profili su tutti i quattro piatti non richiesto per il primo lotto di RTARS-31; fit test fisici downstream.
 
 Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio HL-18 QUALITY. Non creare G-code da lanciare sulla macchina fino alla verifica del vero preset Neptune 4 Standard con ugello 0,4, della temperatura/ventilazione del PLA Metallic e delle istruzioni di avvio/fine Klipper. Non pubblicare modelli e derivati MakerWorld.
@@ -51,6 +53,7 @@ Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio
 
 ### Gate di esecuzione
 - **PASS:** entrambi i preset importati, secondo dichiarazione utente; decisione quantitativa riproducibile.
-- **PENDING obbligatori prima di generare/eseguire G-code:** selezione macchina Neptune 4 Standard/ugello 0,4 e verifica dimensioni, start/end G-code, compatibilità Klipper; controlli temperatura e ventilazione per ELEGOO PLA Metallic Bronze (Generic PLA attualmente selezionato); controllo supporti e orientamento del singolo provino.
-- **PENDING per Done RTARS-30:** profili effettivamente versionati come artefatti nativi, motivazioni orientamenti/supporti per le parti, preview target e relative evidenze.
+- **PARTIAL macchina/materiale:** Neptune 4 Standard/ugello 0,4, flavor Klipper e 210/205/60°C documentati da RTARS-29 e G-code effettivo. Lo start/end G-code è stato ispezionato staticamente; sicurezza esecutiva, verifica supporti per interfacce e calibrazione Generic PLA per Metallic Bronze non certificate. Prima di avviare stampa reale eseguire preflight locale.
+- **PASS per Done RTARS-30:** i due profili sono versionati come JSON nativi in `docs/manufacturing/presets/`, con SHA originali verificati; il G-code `3_parts` prova lo slicing FUNCTIONAL.
+- **PENDING per Done RTARS-30:** verifica motivata di orientamenti e supporti per le parti su Preview, con verbale di ispezione locale; nessun test fisico viene implicitamente considerato completato.
 - **NON autorizzata:** stampa definitiva RTARS-32.
