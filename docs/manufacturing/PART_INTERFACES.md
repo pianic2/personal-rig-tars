@@ -77,8 +77,8 @@ P1: gli altri 9 tipi (11 istanze).
 | G03 | Riferimento mesh per ciascuna parte e descrizione di superfici osservate | **NOT TESTED** — riferimenti mesh disponibili, ma superfici specifiche non localizzate |
 | G04 | Ogni tipo dispone di priorità e controllo successivo | PASS documentale |
 | G05 | Nessuna tolleranza fittizia, modifica CAD o asset ridistribuito | PASS per questi documenti |
-| G06 | Versionamento/PR integrata di questa revisione | Da verificare in GitHub |
-| G07 | AC di localizzazione superfici, DoD e link Jira | **NOT TESTED / non soddisfatto**; non portare Jira a Done |
+| G06 | Versionamento/PR integrata di questa revisione | PASS — [PR #23](https://github.com/pianic2/personal-rig-tars/pull/23), squash `c6ab6ae6eb24a6335bd8353fd54813f9fa2bfaff` |
+| G07 | AC di localizzazione superfici, DoD e link Jira | **AC non soddisfatto** — localizzazione `NOT TESTED`; evidenze registrate su [RTARS-28](https://niccolopiazzi01.atlassian.net/browse/RTARS-28), stato In Progress |
 
 **Decisione di ambito:** l'AC richiede superfici di accoppiamento e verifiche previste; RTARS-28 ha completato classificazione e piano di verifica, ma la localizzazione delle effettive superfici sulla mesh non è dimostrata. L'AC resta quindi **parzialmente soddisfatto** e il gate geometrico `NOT TESTED`; non dichiarare Done finché l'ispezione per tutte le 13 tipologie non registra caratteristiche osservate con riferimento mesh stabile. Non dedurre contatti dalla sola disposizione sul piatto. Nessuna stampa, misura dimensionale o prova di montaggio è inclusa.
 
