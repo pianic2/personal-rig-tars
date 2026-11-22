@@ -1,7 +1,7 @@
 # RTARS-30 — Due preset di processo CANDIDATI da importare
 
 ## Provenienza e integrità
-L'utente ha fornito `Process presets.zip` (SHA-256 `26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae`). Sono stati generati due JSON nativi derivati dai preset di processo utente, distribuiti temporaneamente come allegato privato in chat `RTARS-30-BambuStudio-Preset-CANDIDATI.zip` (SHA-256 `c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db`). **L'allegato ZIP non è ancora parte della PR o del repository**: questa pagina versione la ricetta riproducibile e gli SHA dei due JSON.
+L'utente ha fornito `Process presets.zip` (SHA-256 `26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae`). Sono stati generati due JSON nativi derivati dai preset di processo utente, distribuiti temporaneamente come allegato privato in chat `RTARS-30-BambuStudio-Preset-CANDIDATI.zip` (SHA-256 `c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db`). **Entrambi i JSON nativi sono ora committati nella PR #28** sotto [`docs/manufacturing/presets/`](presets/). Lo ZIP originale resta privato; questa pagina versione la ricetta riproducibile e gli SHA dei due JSON. Il loro Git blob SHA-1 è stato confrontato con i bytes originali dello ZIP e coincide esattamente.
 
 | Preset candidato | Sorgente originale | Campi modificati |
 |---|---|---|
@@ -25,8 +25,8 @@ Tutti gli altri campi restano **identici** ai rispettivi JSON di input: **non** 
 - **PASS:** generazione automatizzata e sintattica dei due JSON da file autentici forniti dall'utente.
 - **PASS — dichiarazione utente (2026-11-22):** entrambi i JSON candidati importati correttamente in Bambu Studio, senza errori segnalati. Conferma operativa dell'importazione, non verifica indipendente del contenuto dopo l'import.
 - **NOT TESTED:** comparazione delle impostazioni effettivamente importate con i JSON (layer, velocità, supporti e override).
-- **NOT TESTED:** preset macchina corretto e relativo G-code, preset filamento ELEGOO PLA Metallic Metal Bronze; al momento lo screenshot usa Generic PLA.
-- **NOT TESTED:** slicing dei quattro piatti con i due profili dedicati, verifica orientamenti/supporti e fit test.
+- **PASS:** entrambi i JSON nativi sono presenti su GitHub, letti dopo il commit e verificati byte-identici al file distribuito (SHA-256 in tabella sopra e Git blob SHA-1).\n- **PASS statico:** file `3_parts.gcode` mostra uso del profilo FUNCTIONAL.\n- **PARTIAL:** macchina/G-code in revisione statica, preset Generic PLA @Elegoo documentato in RTARS-29 senza calibrazione Metallic Bronze dedicata.
+- **NOT TESTED:** revisione locale motivata degli orientamenti/supporti del lotto (vedi [`RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md`](RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md)); slicing di entrambi i profili su tutti i quattro piatti non richiesto per il primo lotto di RTARS-31; fit test fisici downstream.
 
 Per RTARS-30 **non** basta il test di parsing JSON, né lo screenshot di vecchio HL-18 QUALITY. Non creare G-code da lanciare sulla macchina fino alla verifica del vero preset Neptune 4 Standard con ugello 0,4, della temperatura/ventilazione del PLA Metallic e delle istruzioni di avvio/fine Klipper. Non pubblicare modelli e derivati MakerWorld.
 
