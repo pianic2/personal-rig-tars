@@ -14,7 +14,7 @@
 - **BOM di costruzione di riferimento:** https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa — `LuwuDynamics Products BOM V1.0 · TARS`. La versione V1.0 è **del documento**, NON del kit fisico.
 - **Assemblaggio:** https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly
 - **Firmware upstream:** https://github.com/LuwuDynamics/rig_omni
-- **Fonte primaria del contenuto ricevuto:** foto zenitale del kit del 2026-11-22 ([manifest e hash](../../../evidence/hardware/RTARS-9/MANIFEST.md)) + [verifica fisica riferita dal proprietario](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) con risposte Q1–Q16.
+- **Fonte primaria del contenuto ricevuto:** foto zenitale del kit del 2026-11-22 ([manifest e hash](../../../evidence/hardware/RTARS-9/MANIFEST.md)) + [verifica fisica riferita dal proprietario](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) con risposte Q1–Q16 e rettifica successiva riportata in appendice.
 
 La pagina commerciale identifica il prodotto ma non costituisce, da sola, una distinta di confezionamento verificata della variante effettivamente spedita. Le differenze rispetto alla BOM V1.0 sono **scostamenti rispetto al riferimento di costruzione**, non automaticamente errori di fornitura.
 
@@ -31,7 +31,7 @@ La pagina commerciale identifica il prodotto ma non costituisce, da sola, una di
 - `status`: classifica osservazioni e limitazioni, non esito di test funzionali.
 - `ABSENT_VS_REFERENCE` / `SPEC_NOT_RECONCILED`: non equivale automaticamente a non conformità contrattuale; per stabilirla servono la packing list della variante e/o istruzioni di assemblaggio aggiornate.
 
-**Non sommare automaticamente** le righe `OBSERVED_EXTRA` e `OFFICIAL`: `A008` e `E008` indicano lo stesso cavo interruttore (identificato dal proprietario), diverso dalla prolunga `E005`. Le viti alternative non sono considerate intercambiabili con le specifiche ufficiali senza prove.
+**Non sommare automaticamente** le righe `OBSERVED_EXTRA` e `OFFICIAL`: `A008` e `E008` indicano lo stesso cavo interruttore (identificato dal proprietario), diverso dalla prolunga `E005`. Le denominazioni delle due tipologie M2×4 riferite dal proprietario non coincidono con le etichette fotografate A003/A004: il conflitto rimane aperto prima dell'assemblaggio, e tali voci non vanno conteggiate due volte.
 
 ## Rilevazioni nuove confermate dal proprietario
 
@@ -70,6 +70,7 @@ Il conteggio delle M2×6 è **55**, non 60 e non 52. Non sovrascrivere il dato o
 **Risolti a livello di rilievo inventariale:**
 
 - **D10:** contati 3 servo horn e tutte e sei le tipologie di minuteria effettivamente elencate nelle buste; verificata come **assente** la spugna. Il divario rispetto al riferimento rimane tracciato altrove, in particolare `D13`.
+- **D11:** cavo interruttore E008 identificato dal proprietario come cavo nero libero nella zona inferiore sinistra della foto; A008 e la stessa unità. Pinout e lunghezze restano controlli successivi.
 - **D12:** marcatura del flat camera leggibile `HBVCAM-2526 V11`; la chiusura non attesta il chip del sensore camera.
 
 **Restano OPEN:** `D01`–`D09`, `D13` (10). Principali questioni: quantità 55/60/52; driver display; fissaggi non riconciliati; M2×10, M3×10, dadi M3 non presenti; batteria non marcata; modello servo/PCB revision sconosciuti; identificazione cavo interruttore; spugna assente. Consultare [discrepancies.csv](discrepancies.csv) per causa e prossima verifica.
@@ -82,7 +83,7 @@ Il conteggio delle M2×6 è **55**, non 60 e non 52. Non sovrascrivere il dato o
 | Quantità fisiche registrate per ogni componente | PASS come dichiarazioni | `qty_observed` valorizzato in **25/25** voci; A003/A004/A008 sono alias storici, non scorte aggiuntive |
 | Revisione registrata *se disponibile* | PASS come registrazione negativa | Nessuna revisione del kit dichiarata; i codici presenti sono registrati senza dedurre numeri di revisione |
 | Stato registrato per ogni voce | PASS | Colonna `status` piena |
-| Differenze annotate con evidenze | PASS | 13 discrepanze, 2 risolte, 11 ancora aperte |
+| Differenze annotate con evidenze | PASS | 13 discrepanze: 3 risolte e 10 aperte; quelle aperte restano vincoli espliciti per assemblaggio/validazione |
 | Evidenza fotografica permanentemente versionata | **PARZIALE** | Solo hash nel repo, immagine originale ancora non archiviata |
 
 **Decisione:** i criteri originali di RTARS-9 (nome, quantità, revisione se disponibile, stato, differenze annotate) risultano soddisfatti come inventario dichiarativo e tracciato. La task può passare a **Fatto**; PR soggetta a review senza merge automatico. I conflitti di classificazione D03/D04 e i rischi hardware restano documentati e vanno verificati prima dell'assemblaggio.
