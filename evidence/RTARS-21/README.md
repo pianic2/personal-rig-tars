@@ -75,3 +75,23 @@ La [guida rapida TARS](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_
 **Decisione evidence-first:** G02/G03 ottengono un nuovo riferimento del produttore per la disposizione funzionale, ma rimangono parziali per i pin individuali e la continuità complessiva. G04/G05 ottengono coerenza con il circuito di carica 2S da 8,4 V e batteria misurata 8,10 V; **non** si può certificare il pacco fisico né la compatibilità della revisione PCB senza attestazione, schema o prova adeguata. G01 è PASS; G06 è PASS nel perimetro inventario visivo; G07 è completo come verbale. La dichiarazione di «tutti i gap chiusi» sarebbe contraria ai dati e alla DoD.
 
 **Restrizione operativa invariata:** non alimentare/ricaricare o dichiarare superato il safety gate elettrico sulla sola base di compatibilità dei connettori, colore dei fili o tensione a vuoto.
+
+## Audit fonte primaria: schema applicativo SLM6800 (2026-11-22)
+
+**Fonte primaria tecnica:** [SLM6800 datasheet, versione 1.0, pagina stampata 10/11, figura 5](https://atta.szlcsc.com/upload/public/pdf/source/20250528/77EB65359B52EB0DFA816FE7B9514242.pdf). La figura descrive il circuito applicativo di **ricarica boost per due celle Li-ion**, con **VIN = 5 V** (ingresso del caricatore) e terminali batteria **BAT+** e **BAT− (GND)**. Il riferimento a 5 V **non** va interpretato come tensione nominale del pacco: sono reti diverse. La serigrafia BAT+/BAT− sulla RIG-Board è coerente per denominazione, ma **non è provato** che la PCB replichi integralmente la figura applicativa.
+
+**Fonte ufficiale TARS:** [guida assemblaggio, §1](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly) (ultimo aggiornamento dichiarato 29 settembre 2026): richiede cablaggio secondo lo schema/foto specifico del kit e con alimentazione scollegata; non descrive nella pagina una netlist della scheda posseduta. [Quick start, §2](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_start) dichiara che manca una sequenza pin-by-pin completa pubblica per ogni revisione.
+
+### Matrice gap: risolvibilità documentale
+
+| Gap | Risolto dalla documentazione? | Evidenza e confine |
+| --- | --- | --- |
+| G01 | Sì: **PASS strumentale dichiarato dall'operatore** | Continuità ON/OFF realmente riferita; non richiede ulteriore fonte |
+| G02 | **Parziale** | Schema/foto TARS conferma architettura prevista, non connessioni elettriche reali punto-punto |
+| G03 | **Parziale** | Marcature BAT+/BAT− e innesto vincolato dichiarato; non è una misura della continuità end-to-end |
+| G04 | **Parziale** | Datasheet IC dimostra che il caricatore è progettato per 2S; 8,10 V misurati sono coerenti, ma non identificano composizione/protezioni pacco |
+| G05 | **Parziale** | Fonte ufficiale kit + datasheet IC sostengono compatibilità prevista dal progetto; non certificano limiti della specifica PCB e del pacco |
+| G06 | **PASS inventario visivo**, non pinout di ogni periferica | RTARS-20 e foto del produttore |
+| G07 | **PASS documentazione** | Questo verbale, riscontri e limiti registrati |
+
+**Decisione:** nessuna ulteriore inferenza può sostituire le prove mancanti. Per DoD e HARDWARE_SAFETY, l'alimentazione e il cablaggio completo **non** possono ricevere PASS e l'issue non deve essere chiusa come validazione completa. La pubblicazione di questo audit non costituisce autorizzazione all'accensione.
