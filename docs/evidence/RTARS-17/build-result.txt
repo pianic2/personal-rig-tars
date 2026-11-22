@@ -1,0 +1,9 @@
+exit_code=0
+Project build complete.
+Image: rig-tars.bin
+Image bytes: 3590368
+Smallest app partition: 0x3f0000 bytes
+Available: 0x83720 bytes (13%)
+Source commit: c2b42cd73ef65f5cd2a158d6949f0273869454dc
+Warning: TAG defined but not used in main/boards/tars/robot.cc:20
+Warning: Kconfig Bluetooth choice symbol BT_NIMBLE_ENABLED selected with no effect

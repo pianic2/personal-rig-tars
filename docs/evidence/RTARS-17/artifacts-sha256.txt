@@ -1,0 +1,6 @@
+# sha256 | relative artifact path | byte size
+1f02232280bb411eff2850cc921364ba4d67b3bf0f8cc9833de3fa9a1beb71f2  rig-tars.bin  3590368
+54a03b4f767aeae82fea2584f6e5222319d173b4624572d65dcbd8f9a225116d  bootloader/bootloader.bin  16256
+4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5  partition_table/partition-table.bin  3072
+7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f  ota_data_initial.bin  8192
+50cd3bee9a84d836456f902dec4814a08f953f2b9f9646f650c2d81bc7c07bb9  board_assets.bin  1853427
