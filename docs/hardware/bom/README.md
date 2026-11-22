@@ -1,6 +1,6 @@
 # RTARS-9 — Inventario e riconciliazione BOM RIG-TARS
 
-**Baseline:** `v0.5-source-audit` (2026-11-22), con conteggi fisici invariati rispetto a v0.4  
+**Baseline:** `v0.6-pcb-inspection` (2026-11-22), con conteggi fisici invariati rispetto a v0.4  
 **Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9 — Fatto nel perimetro dell'inventario  
 **Pull request:** https://github.com/pianic2/personal-rig-tars/pull/1 — in revisione, non mergiata
 
@@ -25,7 +25,8 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 - [rig-tars-bom.csv](rig-tars-bom.csv) — 25 righe (17 di riferimento, 8 osservazioni della foto), quantità, stato, marcature e fonte della verifica.
 - [discrepancies.csv](discrepancies.csv) — 13 discrepanze storiche, **4 RESOLVED** (D03, D10, D11, D12) e **9 OPEN**.
 - [owner-inventory-2026-11-22.md](../../../evidence/hardware/RTARS-9/owner-inventory-2026-11-22.md) — risposte originali Q1–Q16 e **due rettifiche cronologiche**, ultima delle quali prevale sulle precedenti.
-- [MANIFEST.md](../../../evidence/hardware/RTARS-9/MANIFEST.md) — metadati e digest SHA-256 della fotografia; la copia originale **non è ancora nel repository**.
+- [MANIFEST.md](../../../evidence/hardware/RTARS-9/MANIFEST.md) — metadati e digest SHA-256 della fotografia panoramica; la copia originale **non è ancora nel repository**.
+- [pcb-inspection-2026-11-22.md](../../../evidence/hardware/RTARS-9/pcb-inspection-2026-11-22.md) — **nuove foto fronte/retro PCB**, marcatura ESP32-S3-WROOM-1/MCN16R8, SLM6800, polarità +/- sul connettore inferiore; SHA-256 delle immagini.
 - [source-verification-2026-11-22.md](source-verification-2026-11-22.md) — revisione delle fonti del produttore per tutte le **9 anomalie aperte**, con esito, blocchi di sicurezza e fonti.
 - [supplier-clarifications-2026-11-22.md](supplier-clarifications-2026-11-22.md) — richiesta di chiarimenti tecnico-commerciali in inglese e cinese, pronta per invio ma **non inviata**.
 
@@ -108,3 +109,13 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 **Decisione:** RTARS-9 resta `Fatto` come inventario documentale; l'audit esterno è completo ma **9 gap restano OPEN**, con richiesta di chiarimento al venditore pronta per invio. I gate di sicurezza delle voci D08/D09 e le differenze meccaniche non sono stati rimossi. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. Nessun merge automatico della PR.
 
 **Sicurezza:** batteria senza parametri noti: non collegare o ricaricare fino a identificazione affidabile. I fissaggi alternativi vanno verificati con la corretta revisione dell'assemblaggio. Nessuna accensione né collaudo eseguito. Le parti stampate appartengono a Epic E04, non sono classificate mancanti dal kit di elettronica.
+
+## Aggiornamento v0.6 — immagini ravvicinate RIG-Board
+
+- **PCB:** lato retro: `RIG-Board 26/6/25` e modulo **ESP32-S3-WROOM-1 / MCN16R8**. La variante N16R8 documentata da Espressif ha **16 MB flash e 8 MB PSRAM**; questa identificazione del modulo **non risolve la revisione della carrier**.
+- **Batteria — polarità presa PCB:** lato connettori rivolto verso l'osservatore, **tre porte servo in alto e USB-C in basso a destra**, il connettore bianco a due pin in basso ha **`+` a sinistra, `−` a destra** nella serigrafia. L'orientamento va sempre esplicitato; il pinout del *plug batteria* non segue automaticamente dalla serigrafia.
+- **Ricarica:** il chip marcato **SLM6800** è un caricatore a due celle Li-ion secondo SOLA Microelectronics. La batteria fisica blu è **senza marcature**: modello, 2S effettivo, V/mAh, protezione, pinout del plug non sono verificati. **D08 rimane OPEN, senza alimentazione/ricarica autorizzata**.
+- **Servo:** tre porte servo serigrafate e connettore SPK identificabili; i servo non hanno marcature di modello: **D09 rimane OPEN** per modello e revisione PCB, pur essendo stato identificato il modulo ESP32-S3.
+- Foto analizzate direttamente e registrate con hash in [pcb-inspection-2026-11-22.md](../../../evidence/hardware/RTARS-9/pcb-inspection-2026-11-22.md). I file binari non sono presenti nel repository. **Restano 9 discrepanze OPEN, 4 RESOLVED**: hanno nuovi riscontri parziali, non false chiusure.
+
+Fonti: [Espressif ESP32-S3-WROOM-1](https://www.espressif.com/en/products/modules/esp32-s3-wroom-1-wroom-1u); [SOLA SLM6800](https://www.slm-ic.com/en/show-27-9-1.html).
