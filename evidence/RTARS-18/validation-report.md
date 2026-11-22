@@ -1,4 +1,4 @@
-# RTARS-18 automated validation
+# RTARS-18 automated validation — historical isolated-environment dry-run
 
 Generated: 2026-11-22 14:39 UTC
 Mode: DRY-RUN
