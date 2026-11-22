@@ -1,51 +1,56 @@
-# Hardware safety checklist
+# Checklist di sicurezza hardware
 
-**Project:** RIG-TARS · **Tracking:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Status:** proposed policy
+**Progetto:** RIG-TARS · **Task di riferimento:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Stato:** approvata
 
-Use this checklist **before first power-on and after changes to power, wiring, actuators or mechanical assembly**, as appropriate. It is a project inspection aid, **not** a substitute for verified manufacturer instructions, qualified electrical assessment or formal product certification.
+Usare i controlli pertinenti **prima della prima accensione e dopo modifiche ad alimentazione, cablaggio, attuatori o assemblaggio meccanico**. Questa checklist supporta le ispezioni del progetto: **non sostituisce** le istruzioni verificate del produttore, una valutazione elettrica qualificata o una certificazione di prodotto.
 
-**Stop rule:** If a relevant safety check fails, the specification is uncertain, or an unexpected behavior occurs, stop the test, disconnect power when safe, document the issue and do not resume until it has been resolved.
+**Regola di arresto:** se un controllo obbligatorio fallisce, una specifica critica resta incerta o compare un comportamento anomalo, interrompere la prova, disconnettere l'alimentazione quando è possibile farlo in sicurezza e registrare il problema. Non riprendere finché la condizione non è stata risolta.
 
-## 1. Power — before energizing
+## 1. Alimentazione — prima di fornire energia
 
-- [ ] Intended supply voltage and polarity are verified against documentation for the **actual board revision**; do not assume values from another variant.
-- [ ] The supply's current capability, connectors and cable rating are appropriate for the connected load according to verified specifications.
-- [ ] No visible short, damaged insulation, exposed conductor or loose conductive object is present.
-- [ ] Wiring changes were made **with power removed** and any relevant stored energy handled safely.
-- [ ] The power disconnect is known, reachable and suitable for promptly stopping an unsafe test.
-- [ ] When applicable, voltage/polarity checks are recorded **before** connecting sensitive electronics.
+- [ ] Tensione prevista e polarità sono verificate sulle specifiche della **revisione reale della scheda**; non si assumono valori validi per altre varianti.
+- [ ] Alimentatore, connettori e cavi hanno caratteristiche adeguate al carico collegato, secondo specifiche verificate.
+- [ ] Non sono presenti cortocircuiti evidenti, isolamento danneggiato, conduttori esposti o oggetti conduttivi liberi.
+- [ ] Le modifiche ai collegamenti sono state effettuate **ad alimentazione scollegata**, gestendo in sicurezza eventuale energia residua.
+- [ ] Il sistema di disconnessione dell'alimentazione è noto, accessibile e utilizzabile tempestivamente in caso di anomalia.
+- [ ] Le verifiche strumentali di tensione e polarità sono registrate prima del collegamento di elettronica sensibile, **quando applicabile**.
 
-## 2. Wiring — before energizing or moving
+## 2. Cablaggio — prima dell'alimentazione o del movimento
 
-- [ ] Pinout, cable orientation and connector placement match the **actual hardware revision**.
-- [ ] Connectors are fully seated; no cable or joint is visibly damaged or insecure.
-- [ ] Cables cannot enter actuator travel, be pinched, snagged or abraded during the intended test.
-- [ ] Exposed conductors and temporary connections are secured/insulated appropriately.
-- [ ] Ground and power connections have been checked against the applicable verified schematic, when available.
+- [ ] Pinout, orientamento dei cavi e posizione dei connettori corrispondono alla **revisione hardware effettiva**.
+- [ ] I connettori sono inseriti correttamente; non sono presenti cavi o giunzioni visibilmente danneggiati o instabili.
+- [ ] I cavi non possono entrare nella corsa degli attuatori né essere schiacciati, trascinati o abrasi durante la prova.
+- [ ] Eventuali conduttori esposti o connessioni provvisorie sono protetti e fissati in modo adeguato.
+- [ ] Collegamenti di massa e alimentazione sono stati verificati rispetto allo schema elettrico applicabile, **quando disponibile**; la mancanza dello schema non autorizza collegamenti basati su supposizioni.
 
-## 3. Motion — before and during the first test
+## 3. Movimentazione — prima e durante la prova
 
-- [ ] Robot stands on a stable surface with a cleared test area, away from people, pets and fragile objects.
-- [ ] Initial motion uses conservative limits and a controlled test sequence **if supported by the hardware/firmware**; unknown safe limits must not be guessed.
-- [ ] No obvious mechanical interference, loose fastener or trapped cable exists through the planned travel.
-- [ ] A practical, immediate stop/disconnect procedure is available and tested without creating an additional hazard.
-- [ ] An operator continuously supervises the first power-on and initial motion tests.
-- [ ] Motion stops immediately if there is abnormal sound, overheating, smoke, unexpected motion or loss of control.
+- [ ] Il robot è collocato su una superficie stabile, in un'area libera da persone, animali e oggetti fragili.
+- [ ] Il primo movimento avviene mediante una sequenza controllata, con limiti prudenti **solo se supportati e verificati** per hardware e firmware utilizzati; non si inventano limiti di sicurezza.
+- [ ] Non sono presenti interferenze meccaniche evidenti, fissaggi allentati o cavi intrappolati lungo la corsa prevista.
+- [ ] È disponibile una procedura di arresto o disconnessione immediata, verificata senza introdurre rischi aggiuntivi.
+- [ ] Un operatore sorveglia continuamente la prima accensione e le prove iniziali di movimento.
+- [ ] In presenza di rumori anomali, surriscaldamento, fumo, movimento imprevisto o perdita di controllo, la prova viene interrotta immediatamente.
 
-## Inspection record (copy into Jira or an evidence document)
+## Verbale di verifica
 
-| Field | Value |
+Compilare un verbale in Jira o in un documento di evidenza collegato alla issue. Assegnare **un esito distinto a ciascuna categoria applicabile**.
+
+| Campo | Valore |
 | --- | --- |
-| Jira issue | RTARS-… |
-| Date / operator | … |
-| Hardware/board revision | … / unknown (do not assume) |
-| Firmware version / commit | … / N/A |
-| Manufacturer reference(s) | … |
-| Checks applied | Power / Wiring / Motion / N/A with reason |
-| Result | PASS / FAIL / NOT TESTED |
-| Evidence | Link to measurements, photos or test log |
-| Outstanding risks / follow-up | … |
+| Issue Jira | RTARS-… |
+| Data e operatore | … |
+| Scheda e revisione hardware | … / non verificata |
+| Versione firmware / commit | … / N/A motivato |
+| Fonti del produttore consultate | … |
+| Alimentazione | PASS / FAIL / NOT TESTED / N/A (motivo) |
+| Cablaggio | PASS / FAIL / NOT TESTED / N/A (motivo) |
+| Movimentazione | PASS / FAIL / NOT TESTED / N/A (motivo) |
+| Evidenze per ciascuna categoria | Link a fotografie, misure, log o note di prova |
+| Anomalie, rischi e attività successive | … |
 
-## Limits and source discipline
+Gli esiti seguono le definizioni della [DoD](DEFINITION_OF_DONE.md). **PASS** richiede che tutti i controlli applicabili della categoria siano superati. Un controllo pertinente non eseguito è **NOT TESTED**, non **N/A**. Se un dato critico è sconosciuto, bloccare la prova interessata e riportarlo nel verbale.
 
-The checklist does **not** prescribe numerical voltage/current thresholds, fuse sizes, actuator speeds or torque limits: these must come from authoritative documentation and/or validated measurements for the installed configuration. Use the repository [official sources index](../references/OFFICIAL_SOURCES_INDEX.md) to trace source documents; mark missing or contradictory specifications as **unverified**. Never perform a risky test solely to fill in missing evidence.
+## Limiti e tracciabilità delle fonti
+
+Questa checklist **non** stabilisce soglie numeriche di tensione o corrente, dimensionamento dei fusibili, velocità o coppie degli attuatori. Tali parametri richiedono fonti autorevoli riferite alla configurazione installata e/o misure validate. Consultare l'[indice delle fonti ufficiali](../references/OFFICIAL_SOURCES_INDEX.md); contrassegnare le specifiche mancanti o contraddittorie come **non verificate**. Non effettuare prove rischiose allo scopo di colmare lacune documentali.
