@@ -15,3 +15,10 @@
 For auditability, the repository should eventually contain the original image under `evidence/hardware/RTARS-9/kit-overview-original.jpg`, with the **same bytes** as the uploaded source (renaming extension to JPEG is acceptable; re-encoding would change the hash). Until then, this manifest refers to evidence available **only in the conversation**.
 
 Reference source: https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa
+
+## Rilievo aggiuntivo del proprietario (2026-11-22)
+
+- Trascrizione Q1–Q16: [owner-inventory-2026-11-22.md](owner-inventory-2026-11-22.md)
+- Da questa attestazione sono derivate 22 quantità osservate su 25 voci (alcune righe rappresentano categorie alternative e non vanno sommate).
+- La fotografia originale è stata nuovamente verificata nell'ambiente di lavoro: SHA-256 identico al valore sopra riportato. **Nessuna immagine binaria è stata aggiunta al repository.**
+- Le risposte sono dichiarazioni del proprietario, non ispezioni indipendenti dell'assistente né prove di compatibilità meccanica/elettrica.
