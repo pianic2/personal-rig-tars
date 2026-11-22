@@ -85,3 +85,17 @@ Testo originale: «nella foto lo vedi in basso a sinistra e non ha buste. le vit
 - Le due categorie di viti M2×4 vengono specificate dal proprietario come **svasate autofilettanti (F002)** e **a brugola con frenafiletti (F003)**. Sono state ricondotte ai due gruppi già contati in Q11 (**4 + 4**, non altre 8 viti).
 - La fonte fotografica riporta tuttavia le etichette `M2*4圆头十字机丝` (testa tonda a croce per macchina) e `M2*4十字自攻螺丝` (autofilettante a croce), diverse dalla nuova classificazione fisica. La differenza rimane **OPEN in D03/D04**, senza sostituire l'una all'altra come fatto certo. Verificare materialmente prima dell'assemblaggio.
 - Non modificare retroattivamente le risposte Q1–Q16: questa nota documenta la revisione successiva.
+
+## Seconda rettifica del proprietario — 22 novembre 2026 (prevale su quella precedente)
+
+Testo esatto: «nessuna e a dado scusa sono tutte a croce solo con testa svasata e con testa tonda.»
+
+**Interpretazione nel contesto:** il proprietario rettifica la precedente classificazione delle viti M2×4 “a brugola con frenafiletti”: **nessuna delle M2×4 è a esagono incassato/a brugola**. Tutte le viti M2×4 osservate hanno impronta a **croce**, distribuite in due gruppi di testa **tonda (4)** e **svasata (4)**, coerenti con i due conteggi da quattro della prima risposta Q11. La forma del filetto (autofilettante/per macchina) resta identificata dall'etichetta, non da un'ispezione indipendente dei filetti.
+
+- **A003 = 4 M2×4 testa tonda a croce**; la bustina riporta precisamente “testa tonda a croce per macchina”.
+- **A004 = 4 M2×4 a croce, testa svasata dichiarata dal proprietario**; la bustina riporta “autofilettante a croce”, senza precisare la testa. Ai fini dell'inventario è lo stesso gruppo censito in F002; non sommare F002 e A004.
+- **F003 = 0 viti M2×4 a brugola con frenafiletti** rispetto alla BOM di costruzione V1.0; la precedente dichiarazione di 4 viti a brugola era inesatta. D04 rimane OPEN come scostamento rispetto alla fonte.
+- **D03 RESOLVED** sul problema di classificazione delle teste: la precedente corrispondenza A003→F002 era errata. L'eventuale natura autofilettante si valuterà dai filetti prima dell'assemblaggio.
+- Il riferimento alla precedente risposta Q11 “1 dado esagonale M2 di bloccaggio” viene **conservato**: l'attuale rettifica riguarda le viti M2×4 a croce, non dimostra che il dado M2 separato sia assente. Se il proprietario intendesse negare anche la presenza del dado M2, servirà ulteriore specificazione.
+
+Questa è una rettifica cronologica: le risposte originali e la prima correzione non sono cancellate, ma non sono più da considerare la classificazione corrente delle M2×4.
