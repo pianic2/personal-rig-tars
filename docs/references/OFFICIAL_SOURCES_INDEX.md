@@ -35,7 +35,8 @@ source_policy: "primary-sources-only"
 | Release binaria TARS | **v3.8.1**, pubblicata **2026-11-11**; archivi separati `cn` e `gb` | [Release ufficiale](https://github.com/LuwuDynamics/rig_tars_rl/releases/tag/v3.8.1) |
 | Firmware multiprodotto | `LuwuDynamics/rig_omni`, `main` = `c2b42cd73ef65f5cd2a158d6949f0273869454dc`; TARS `version.txt` = **3.8.0** | [Snapshot](https://github.com/LuwuDynamics/rig_omni/tree/c2b42cd73ef65f5cd2a158d6949f0273869454dc), [version.txt](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/main/boards/tars/version.txt) |
 | Toolchain documentata | **ESP-IDF 5.5.3** per TARS; eventuali versioni più recenti richiedono validazione separata | [README TARS](https://github.com/LuwuDynamics/rig_tars_rl/blob/main/README.md), [Espressif docs 5.5.3](https://docs.espressif.com/projects/esp-idf/en/v5.5.3/esp32s3/) |
-| Materiale meccanico citato | BOM cinese **V1.0**; sorgenti nominati `tars.SLDASM`, `tars.STEP` e profilo di stampa `tarsV3.3mf`. Disponibilità/download e compatibilità con il kit **non accertati** | [BOM ufficiale TARS](https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa), [Stampa 3D](https://wiki.xgorobot.com/kb/pet-tars/ce6c7c0540e8ab67a56cbbe5f) |
+| Modelli 3D TARS | [MakerWorld modello 3318467, profilo 3767953](https://makerworld.com/it/models/3318467-rig-tars-open-source-desktop-sci-fi-robot#profileId-3767953), **link del modello specifico fornito dal proprietario**; autore indicizzato: `CyberBionicMaker`. La pagina originale non è stata letta direttamente; contenuti, download e revisione singoli file non verificati | [Pagina originale](https://makerworld.com/it/models/3318467-rig-tars-open-source-desktop-sci-fi-robot#profileId-3767953), [riscontro indice terzo](https://3dgo.app/models/makerworld/3318467) |
+| Materiale meccanico di riferimento | BOM cinese **V1.0**; nomi CAD `tars.SLDASM`, `tars.STEP` e progetto di stampa `tarsV3.3mf`. Nessuna equivalenza automatica con il profilo 3767953 finché non si confrontano i file | [BOM ufficiale TARS](https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa), [Stampa 3D](https://wiki.xgorobot.com/kb/pet-tars/ce6c7c0540e8ab67a56cbbe5f) |
 
 **Distinzione essenziale tra firmware:** `rig_tars_rl` non è semplicemente un alias di `rig_omni`. Il primo documenta recupero cadute con PPO, mantenimento heading via IMU, simulazione MuJoCo, 21 azioni, versione 3.8.1 e specifici flussi di reset/calibrazione. Il secondo è la base multiprodotto 3.8.0 della documentazione internazionale precedente. **Non mischiare comandi, configurazioni, pacchetti firmware, gestione touch o calibrazione senza identificare la variante in esecuzione.**
 
@@ -61,6 +62,10 @@ source_policy: "primary-sources-only"
 | **FW-14** | [Luwu Tools — web flasher](https://tools.xgorobot.com/) | **V**, servizio dinamico | Accesso al flasher; scegliere **modello e lingua/regione** con attenzione |
 | **FW-15** | [Firmware installation and recovery](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_firmware) | **V**, Wiki dinamica, EN | Flusso generale di flashing e recupero, requisiti USB |
 | **FW-16** | [Development environment and build](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_development) | **V**, Wiki dinamica, EN | Installazione e build di riferimento; per 3.8.1 dare precedenza a FW-01 |
+| **FW-17** | [TARS `board_config.h` — RIG-Omni 3.8.0](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/main/boards/tars/board_config.h) | **V**, SHA sorgente fissato | GPIO motori, touch, IMU; impostazioni pannello, tempi controllo |
+| **FW-18** | [Driver comuni `config.h` — RIG-Omni 3.8.0](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/main/boards/common/config.h) | **V**, SHA sorgente fissato | Config GPIO audio, camera, display e pulsanti **di default**; verificare override TARS |
+| **FW-19** | [TARS `motor.cc` — RIG-Omni 3.8.0](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/main/boards/tars/motor.cc) | **V**, SHA sorgente fissato | Protocollo SCS009, selezione dei tre motori, feedback e inversioni logiche; **non** identifica quale servo fisico abbia ogni ID |
+| **FW-20** | [TARS `tars_board.cc` — RIG-Omni 3.8.0](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/main/boards/tars/tars_board.cc) | **V**, SHA sorgente fissato | Inizializzazione periferiche, callback pulsanti e camera, display e strumenti MCP |
 
 **Mappa per leggere il codice:** nel repository **effettivamente selezionato** partire da `main/boards/tars/tars_board.cc` (inizializzazione/MCP), `board_config.h` (pin e display), `robot.cc` (zeri, calibrazione), `robot_action.cc` (movimenti), `motor.cc` e `main/boards/common/motors/` (bus), `tars_display.cc` (terminale), `main/mcp_server.cc` (tool). Per l'RL leggere `tars_rl/model/` e `tars_rl/README.md`. **Verificare sempre l'esistenza dei percorsi nel commit indicato**, senza dedurre che due repository contengano identici file.
 
@@ -81,18 +86,46 @@ source_policy: "primary-sources-only"
 
 **Attenzione alla revisione:** il manuale inglese di primo avvio indica esplicitamente che la documentazione pubblica non specifica una sequenza pin-per-pin completa né una mappa verificata degli ID di ogni giunto. Le immagini di test preassemblaggio non sono lo schema di cablaggio completo. Evitare di attivare motori finché assemblaggio, alimentazione, IDs e procedura di calibrazione non corrispondono all'hardware posseduto.
 
+### B.1 Riferimenti hardware ricostruibili dal codice (NON uno schema elettrico)
+
+Per la baseline **RIG-Omni 3.8.0** (`c2b42cd73ef65f5cd2a158d6949f0273869454dc`), sono stati letti direttamente FW-17, FW-18, FW-19 e FW-20:
+
+| Componente/logica | Parametro osservabile nel sorgente | Provenienza |
+| --- | --- | --- |
+| Servocomandi bus SCS009 | UART TX **GPIO46**, RX **GPIO38**; firmware usa `MOTOR_NUM` e gli ID numerici **1–3** per interrogazione | FW-17, FW-19 |
+| Sensore touch esterno | **GPIO3**, attivo basso (non touch capacitivo ESP32) | FW-17 |
+| IMU | SDA **GPIO14**, SCL **GPIO48** | FW-17 |
+| Display TARS | ST7789V2 **320×240**; pin di SPI, reset, CS, DC definiti nei driver comuni e utilizzati dall'inizializzazione TARS | FW-17, FW-18, FW-20 |
+| Camera e audio | GPIO e protocollo presenti nella configurazione condivisa; l'inizializzazione della camera è in `tars_board.cc` | FW-18, FW-20 |
+| Motori e movimento | `motor.cc` converte angoli, inversioni, zeri e comandi SCS009 | FW-19; per semantica dei giunti leggere `robot.cc` e `robot_action.cc` nella stessa revisione |
+
+**Confine delle evidenze:** il codice documenta **assegnazioni logiche del firmware**, non fornisce netlist, piedinatura fisica dei connettori, polarità di alimentazione, protezioni, mappa ID→giunto o prova di compatibilità con la PCB marcata `RIG-Board 26/6/2025` (dichiarata in RTARS-9). Non equivalere `GPIO46` a un particolare piedino di un connettore della scheda senza schema/silk e verifica. Per firmware TARS 3.8.1 consultare l'**omonima directory** di FW-04, invece di trasferire automaticamente i valori della 3.8.0.
+
 ### C. CAD, modelli 3D e schemi elettrici
 
 | ID | Fonte | Versione / stato | Limitazione |
 | --- | --- | --- | --- |
 | **CAD-01** | [Guida ufficiale stampa TARS](https://wiki.xgorobot.com/kb/pet-tars/ce6c7c0540e8ab67a56cbbe5f) | **V**, `tarsV3.3mf` citato, Bambu Studio 02.07.01.57 | **Guida verificata**, **download 3MF non verificato** |
 | **CAD-02** | [Guida BOM TARS](https://wiki.xgorobot.com/kb/pet-tars/cmtvbmd1m00051zasro6ju2aa) | **V**, V1.0; cita `tars.SLDASM` / `tars.STEP` | L'esistenza dei nomi in una guida **non prova** disponibilità pubblica dei sorgenti CAD |
-| **CAD-03** | [Directory MakerWorld LuwuDynamics](https://makerworld.com/en/@LuwuDynamics) | **R**, profilo segnalato dalla Wiki ufficiale | Non è stato verificato un **singolo modello TARS** proveniente da questo profilo né la revisione, la licenza o il suo contenuto |
+| **CAD-03** | [RIG-TARS: Open-Source Desktop Sci-Fi Robot — MakerWorld](https://makerworld.com/it/models/3318467-rig-tars-open-source-desktop-sci-fi-robot#profileId-3767953) | **R**, modello **3318467**, profilo **3767953**, URL consegnato dal proprietario; autore indicizzato: **CyberBionicMaker**; pubblicazione riportata da archivio terzo: 2026-09-17 | **Link specifico risolto**; MakerWorld non accessibile direttamente dalla sessione. File allegati/revisioni/checksum non verificati; indice esterno [3dgo](https://3dgo.app/models/makerworld/3318467) riporta **MakerWorld Exclusive License**, da confermare sull'originale |
+| **CAD-07** | [Profilo MakerWorld LuwuDynamics](https://makerworld.com/en/@LuwuDynamics) | **R**, indicato nella Wiki | Profilo distinto dal nome **CyberBionicMaker** visibile nelle indicizzazioni del modello CAD-03; l'associazione commerciale non equivale da sola a prova di identità/autorialità |
 | **CAD-04** | [RIG Series Design Files — risorse comuni](https://wiki.xgorobot.com/kb/common-resources-en/dc036a811b7b5b80ebb8cef0f) | **V**, Wiki dinamica | La pagina dichiara applicabilità **Puppy / Hover / Arm**, **non TARS**; non usarla come attestazione di STL/STEP TARS |
 | **CAD-05** | [RIG Series Driver Board Schematic](https://wiki.xgorobot.com/kb/common-resources-en/e83d2b6f9491257670d2b05d2) | **V**, schemi **v2026.09.22** | Sono dichiarati per **Puppy** e **Hover+Arm**; **nessuno schema TARS** dimostrato |
 | **CAD-06** | [Modello MuJoCo nel repository TARS](https://github.com/LuwuDynamics/rig_tars_rl/tree/main/tars_rl/model) | **V**, sorgente simulazione 3.8.1 | MJCF/mesh per simulazione: **non** assumere che siano STL per fabbricazione o disegni esecutivi |
 
-Il catalogo **non** attribuisce a LuwuDynamics modelli ospitati da account terzi. Prima di scaricare, stampare o redistribuire STL/3MF verificare **autore, revisione, contenuti e licenza** della pagina MakerWorld del singolo modello. La licenza Apache-2.0 del firmware **non concede automaticamente** diritti identici sulle parti 3D.
+Il proprietario ha identificato **CAD-03** come la pubblicazione ufficiale del suo kit. L'indicizzazione esterna mostra autore **CyberBionicMaker** e riferimenti a LuwuDynamics, alla Wiki e allo shop del kit; **l'affiliazione formale e i singoli file non sono stati verificati direttamente su MakerWorld**. L'URL è ora noto, ma non la revisione dei file `3MF/STEP`, né il loro SHA-256. La licenza del modello riportata dal catalogo terzo è **MakerWorld Exclusive License**, distinta dalla licenza firmware: **non attribuire Apache-2.0 o MIT ai file di stampa** senza licenza esplicita del modello.
+
+### C.1 Provenienza delle licenze (conflitto documentato)
+
+| ID | Oggetto | Dichiarazione rintracciata | Esito |
+| --- | --- | --- | --- |
+| **LIC-01** | [README di `rig_omni`](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/README.md), sezione License | **Apache License 2.0** | **V**, dichiarazione primaria sul firmware |
+| **LIC-02** | [README di `rig_tars_rl`](https://github.com/LuwuDynamics/rig_tars_rl/blob/456e3ee95ccbe94deae9484568719e8686b4b68b/README.md), sezione License | **Apache License 2.0** | **V**, dichiarazione primaria sul firmware TARS 3.8.1 |
+| **LIC-03** | [Contributing Guidelines `rig_omni`](https://github.com/LuwuDynamics/rig_omni/blob/c2b42cd73ef65f5cd2a158d6949f0273869454dc/docs/content/Contributing%20Guidelines.md), sezione Licensing and Intellectual Property | **MIT** | **V**, **in conflitto** con README; la guida contiene riferimenti legacy a Puppy |
+| **LIC-04** | [Modello MakerWorld TARS #3318467](https://makerworld.com/it/models/3318467-rig-tars-open-source-desktop-sci-fi-robot#profileId-3767953) | **MakerWorld Exclusive License** riportata da [indice non ufficiale](https://3dgo.app/models/makerworld/3318467) | **R**, verificare la licenza direttamente nella pagina originale prima di riutilizzare o ridistribuire |
+| **LIC-05** | [Root di `rig_omni`](https://github.com/LuwuDynamics/rig_omni/tree/c2b42cd73ef65f5cd2a158d6949f0273869454dc) | Nessun file `LICENSE` presente nell'elenco root consultato | **V**, un README che dichiara Apache non sostituisce automaticamente la verifica della copertura di singoli asset |
+
+**Conclusione per gli agenti:** i README dichiarano **Apache-2.0 per il firmware**; esiste un documento contributori che dichiara **MIT**, perciò non sostituire l'analisi delle condizioni d'uso con un'etichetta unica di progetto. Soprattutto, **firmware e modello stampabile sono artefatti distinti**. Conservare il link alla fonte originale e trattare la licenza CAD come separata; per riutilizzi incompatibili chiedere chiarimento al titolare.
 
 ### D. Risorse di piattaforma / rinvii
 
@@ -113,9 +146,9 @@ Per domande dell'utente, usare **prima** l'ID indicato; approfondire solo se ser
 | --- | --- | --- |
 | versione, binary, update, region, download | FW-01 → FW-03 → FW-04 | FW-08 → FW-13 |
 | compilazione, toolchain, sdkconfig, ESP-IDF | FW-01 → FW-10 → FW-05 | FW-11 / FW-16 |
-| collegamenti, pin, cablaggio, servo ID | HW-02 → HW-03 → FW-04 | HW-07; **GAP** per schema TARS |
+| collegamenti, pin, cablaggio, servo ID | FW-17 → FW-18 → FW-19 → FW-20 | HW-02 → HW-03; codice ≠ schema PCB, verificare versione 3.8.1 su FW-04 |
 | distinta base, quantità, viteria | HW-07 → HW-08 | RTARS-9 nel repo, quando disponibile |
-| STL, STEP, stampa, slicing, geometrie | CAD-01 → CAD-02 → CAD-03 | CAD-06 soltanto per simulazione |
+| STL, STEP, stampa, slicing, geometrie | CAD-03 → CAD-01 → CAD-02 | CAD-06 soltanto per simulazione; LIC-04 per termini di licenza |
 | boot, pairing, Wi-Fi, reset, touch | FW-01 → HW-03 → HW-05 | HW-04; verificare variante firmware |
 | display, status, honesty/humor | HW-06 → FW-04 | HW-04 |
 | servo, gait, recovery, heading, IMU | FW-01 → FW-04 → FW-06 | FW-05 |
@@ -146,12 +179,13 @@ Non usare schemi Puppy/Hover/Arm per TARS e non inventare pin/servo ID.
 
 | ID | Gap / conflitto | Conseguenza e criterio di chiusura |
 | --- | --- | --- |
-| **G-01** | Modello MakerWorld **specifico TARS**, provenienza, revisione, checksum e licenza **non verificati** | La guida CAD è indicizzata, ma non va dichiarato completato il requisito di un **download di modello 3D TARS verificato** senza identificare e aprire l'asset originale |
-| **G-02** | Schemi elettrici in GEN-03/CAD-05 escludono TARS; assente pinout approvato per la revisione reale | Ottenere disegno elettrico/BOM kit del produttore e confermare codice scheda e revisione, senza riutilizzare lo schema di altri modelli |
+| **G-01** | **LINK RISOLTO**: MakerWorld **3318467**, profilo **3767953**, segnalato dal proprietario come ufficiale; autore indicizzato **CyberBionicMaker** | URL di modello specifico registrato in CAD-03. **Restano non verificati** i file reali e la relazione formale autore-produttore; nessun download o hash acquisito |
+| **G-02** | **PARZIALMENTE RISOLTO**: GPIO e mappa logica del firmware TARS documentati in FW-17/FW-18/FW-19/FW-20. Netlist/piedinatura dei connettori della PCB marcata `RIG-Board 26/6/2025` non dimostrate | La mappa GPIO **non è uno schema elettrico**. Per il solo AC «link hardware» la fonte TARS è presente; per assemblaggio elettrico servono conferma di connettori, alimentazione e revisione fisica |
 | **G-03** | Wiki EN costruita attorno a `rig_omni` 3.8.0; README dedicato TARS e Wiki ZH trattano `rig_tars_rl` 3.8.1 | Applicare sempre la documentazione della **variante realmente in uso**; non fondere procedure touch, reset, calibrazione e flash |
-| **G-04** | Wiki BOM/print cita file `tars.STEP`, `tars.SLDASM`, `tarsV3.3mf` ma non è stato verificato un URL di download dei singoli file | Acquisire manifest ufficiale e controllare compatibilità dimensionale/revisione prima di stampe o CAD |
+| **G-04** | **PARZIALMENTE RISOLTO**: pagina MakerWorld TARS esatta individuata, ma allegati `3MF/STEP/SLDASM`, versione, licenza originale e checksum **non scaricati/verificati** | Per un indice di collegamenti il modello ha URL diretto; per validare i file scaricare profilo 3767953, confrontare con BOM V1.0 e guida stampa e calcolare SHA-256 |
 | **G-05** | Versioni dei manuali dinamici spesso non esplicite | `verified_on` = data della ricognizione, **non** versione della pagina. Registrare aggiornamento e checksum al prossimo riesame |
-| **G-06** | Nessuna prova di build/flash e funzionamento su un robot reale in questa task | La verifica dell'URL **non** soddisfa test di integrazione hardware; mantenere separata dai gate delle task successive |
+| **G-06** | Nessuna prova di build/flash e funzionamento su un robot reale in questa task | **Fuori scope RTARS-10**: la verifica dell'URL non sostituisce test di integrazione hardware | 
+| **G-07** | **Conflitto licenze** tra README firmware Apache-2.0, Contributing Guidelines MIT e riferimento MakerWorld Exclusive per il modello | Riferimenti registrati in LIC-01…05. Non redistribuire CAD sulla base della licenza firmware; verificare direttamente la pagina originale prima di affermare i permessi sui file meccanici |
 
 ## Manutenzione del catalogo
 
@@ -161,4 +195,4 @@ Non usare schemi Puppy/Hover/Arm per TARS e non inventare pin/servo ID.
 - Per cambiamenti di comportamento (reset, motori, pin, alimentazione), aprire un issue di verifica e mantenere la vecchia evidenza tracciabile.
 - Preferire **link** e piccole annotazioni anziché copiare manuali, file 3D, PDF o contenuti soggetti a licenze distinte.
 
-**Limite della ricognizione:** sono stati verificati contenuti/documenti delle fonti citate, file e release GitHub; **non** è stato effettuato download o audit dei binari, della meccanica e della licenza dei modelli 3D, né alcuna prova fisica sul kit.
+**Limite della ricognizione:** sono stati verificati documenti, file sorgente e release GitHub, oltre a un URL MakerWorld esatto **fornito dal proprietario e riscontrato in un indice terzo**. La pagina originale MakerWorld non era direttamente leggibile durante questa verifica; **non** è stato effettuato download/audit dei modelli 3D o dei binari, né alcuna prova fisica sul kit. Le licenze dei file meccanici non sono state convalidate sul contenuto originale.
