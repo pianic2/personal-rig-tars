@@ -29,7 +29,7 @@ Il wizard precedente dichiarava **63 minuti**, **24.5 g** e **0.12 g scarti**. L
 - Non è visibile l'applicazione/edizione/versione esatta dello slicer, né il profilo macchina per ciascun piatto; "Bambu Studio" è dichiarato dall'utente.
 - Il nome del profilo già dichiarato per PLATE-01 contiene `Elegoo Neptune4`: occorre verificare corrispondenza alla stampante effettiva.
 - Non sono leggibili materiale (PLA/PETG/altro), costo unitario, distribuzione per piatto della massa, tipo/quantità degli scarti o dati di pesatura.
-- La foto non documenta l'esecuzione della stampa; tutti e quattro i piatti restano `pending` ai fini della consuntivazione.
+- La foto non documenta l'esecuzione della stampa; PLATE-01 è dichiarato `pending` dal wizard precedente; lo stato fisico di PLATE-02/03/04 non è attestato dalla fotografia e resta `unconfirmed`. Nessun consumo effettivo è attestato.
 - La fotografia e il progetto/export dello slicer restano da archiviare come evidenze binarie (dopo sanitizzazione e controlli di licenza, se pertinenti).
 - La presenza di quattro piatti nel riepilogo **non prova** che siano tutti i piatti previsti per RTARS-32: riconciliare con l'inventario canonico.
 
