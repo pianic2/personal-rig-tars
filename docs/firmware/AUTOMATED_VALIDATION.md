@@ -25,8 +25,12 @@ and clean state, target/configuration and component manifest; validates an
 existing saved `sdkconfig` without creating one; reuses
 `build/packages/tars-gb` artifacts only when a validator provenance marker
 matches the source, configuration, dependency lock and every artifact hash. It
-validates `flash_args`, the generated partition table, image capacities, asset
-presence and SHA-256. Unmarked artifacts are not assumed valid. Add `--build`
+validates the **five-image** `flash_args` including `ota_data_initial.bin` at
+`0xD000`, rejects extra/duplicate images, invalid options and path escapes,
+checks image non-overlap and partition capacities, validates the generated
+partition table (including `16K`/`8M` size notation), and computes SHA-256.
+A reused build requires an **exact complete** artifact-hash inventory, not just
+an arbitrary subset. Unmarked artifacts are not assumed valid. Add `--build`
 to run `idf.py build` when needed; this can resolve/download upstream
 components and needs network access. It does not flash. Global and CN asset
 staging share upstream build resources, so do not run their builds
@@ -42,6 +46,12 @@ also writes `.rtars18-validation.json` inside the local build directory; it
 contains only the pinned source/config/lock/artifact checksums and allows a
 later dry-run to verify a reusable build. See the [official ESP Component
 Manager lockfile reference](https://docs.espressif.com/projects/idf-component-manager/en/latest/reference/dependencies_lock.html).
+
+Offline regression checks (including malicious/invalid manifests) are in
+`tests/test_validate_rtars18.py` and run by the RTARS-18 GitHub Actions workflow.
+They do not depend on ESP-IDF or connected hardware. The firmware build and
+physical probe must still be executed on the operator's machine; passing unit
+tests does **not** prove the physical device works.
 
 The script writes the sanitized result to
 `evidence/RTARS-18/validation-report.md`. Inspect it before publication. It
@@ -94,6 +104,14 @@ flows that clear calibration, or a generic hard-coded address list. A write
 can still interrupt the device; follow [RECOVERY.md](RECOVERY.md) if it fails.
 
 ## Current evidence and gaps
+
+The five-image manifest, generated partition layout, 3.8.1 Global build and
+powered chip/16 MB flash probe were performed on the operator's Debian host,
+with **sanitized operator-provided transcripts** preserved in the evidence
+register. The initial `validation-report.md` was produced in an isolated
+environment without the required toolchain; its older FAIL statuses must not
+be misrepresented as the Debian host's current status. A new execution of the
+corrected validator on Debian remains a separate reproducibility check.
 
 The checked-in [evidence register](../../evidence/RTARS-18/README.md) separates
 source review from actual local build and physical checks. Do not mark RTARS-18
