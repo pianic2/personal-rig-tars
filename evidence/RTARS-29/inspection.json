@@ -5,10 +5,11 @@
   "printer": "ELEGOO Neptune 4 Standard",
   "nozzle": {
     "diameter_mm": 0.4,
-    "material": "brass",
-    "evidence": "operator_declaration",
+    "material": "hardened_steel",
+    "evidence": "operator_declaration_replacement",
     "manufacturer_recommended": "hardened steel >=0.4mm",
-    "risk": "OPEN"
+    "risk": "RESOLVED_OPERATOR_REPORT",
+    "previous_material": "brass"
   },
   "machine_visual_inspection": {
     "result": "PASS",
@@ -102,19 +103,21 @@
   },
   "gcode": {
     "compatibility_claim": "PASS",
-    "file_examined": false
+    "file_examined": false,
+    "printer_reads_generated_gcode": "PASS_OPERATOR_DECLARATION",
+    "static_review_performed": false
   },
   "prior_prints": {
     "reported_success": true,
     "evidence_files": []
   },
   "gates": {
-    "configuration": "PARTIAL",
-    "conditions": "PARTIAL",
+    "configuration": "PASS_DECLARATIVE_AND_SCREENSHOTS",
+    "conditions": "PASS_DECLARATIVE",
     "risks_identified": "PASS",
-    "dod": "BLOCKED",
+    "dod": "READY_FOR_REVIEW",
     "filament_preset_identity": "PASS_SCREENSHOT",
-    "filament_preset_suitability": "PARTIAL",
+    "filament_preset_suitability": "FOLLOWUP_RTARS_30",
     "filament_preset_visible_settings": "PASS_SCREENSHOT",
     "settings_overrides_visible": "PASS_OPERATOR_DECLARATION"
   },
