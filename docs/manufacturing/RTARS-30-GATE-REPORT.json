@@ -1,7 +1,7 @@
 {
   "issue": "RTARS-30",
   "date": "2026-11-22",
-  "decision": "functional_profile_for_first_coupon",
+  "decision": "ready_for_merge_after_repo_review_due_to_three_part_operator_preview_pass",
   "source_evidence": {
     "hardware": "evidence/RTARS-29/inspection.json",
     "source_profiles_archive_sha256": "26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae",
@@ -13,7 +13,15 @@
       "docs/manufacturing/presets/RTARS-AESTHETIC-CANDIDATE-0.16mm@Elegoo-Neptune4-0.4.json",
       "docs/manufacturing/presets/RTARS-FUNCTIONAL-CANDIDATE-0.20mm@Elegoo-Neptune4-0.4.json"
     ],
-    "orientation_checklist": "docs/manufacturing/RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md"
+    "orientation_checklist": "docs/manufacturing/RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md",
+    "orientation_review": {
+      "date": "2026-11-22",
+      "source": "direct operator report in current conversation",
+      "scope": "three-part functional test batch only",
+      "statement": "Appoggio sul piano: pass. Supporti fuori dalle superfici critiche e rimovibili: pass. Orientamento coerente con i carichi: pass. Avvisi slicer: none.",
+      "photo_published": false,
+      "individual_per_object_confirmations": false
+    }
   },
   "hardware": {
     "printer": "ELEGOO Neptune 4 Standard",
@@ -63,20 +71,22 @@
     "two_process_imports": "PASS_OPERATOR_DECLARATION",
     "candidate_json_generation": "PASS_SHA256_REPRODUCIBLE",
     "native_candidate_json_in_github": "PASS_BOTH_NATIVE_JSON_FILES_PRESENT_AND_BYTE_IDENTICAL_TO_ORIGINAL_ZIP",
-    "machine_start_end_gcode_review": "NOT_TESTED",
-    "selected_process_after_import_comparison": "NOT_TESTED",
-    "functional_coupon_orientation_and_support_review": "NOT_TESTED",
+    "machine_start_end_gcode_review": "PASS_STATIC_ONLY_UNVERIFIED_ON_HARDWARE",
+    "selected_process_after_import_comparison": "PASS_GCODE_METADATA_FUNCTIONAL_ONLY_AESTHETIC_IMPORT_OPERATOR_DECLARATION",
+    "functional_coupon_orientation_and_support_review": "PASS_OPERATOR_REPORTED_THREE_PART_BATCH_ONLY",
     "target_preset_slicing": "PASS_STATIC_GCODE_3_PARTS_FUNCTIONAL_ONLY",
     "target_3mf_source_geometry": "NOT_PUBLISHED_LICENSE_RESTRICTED",
     "fit_test": "NOT_TESTED_DOWNSTREAM",
     "target_process_parameters": "PASS_STATIC_GCODE",
     "target_support_generation": "PASS_STATIC_GCODE_NOT_SPATIAL_APPROVAL",
-    "part_by_part_support_and_orientation_justification": "NOT_TESTED_CHECKLIST_READY",
+    "part_by_part_support_and_orientation_justification": "PASS_OPERATOR_REPORTED_FOR_THREE_TEST_PARTS_WITH_FUNCTIONAL_CRITERIA",
     "physical_execution": "NOT_TESTED",
-    "native_preset_checksums": "PASS_SHA256_AND_GIT_BLOB_SHA1"
+    "native_preset_checksums": "PASS_SHA256_AND_GIT_BLOB_SHA1",
+    "other_parts_orientation_support": "NOT_TESTED_DOWNSTREAM_PER_PART_PREPRINT",
+    "aesthetic_process_slice": "NOT_TESTED_NOT_REQUIRED_FOR_FUNCTIONAL_TEST_BATCH"
   },
   "done": false,
-  "merge_permitted": false,
+  "merge_permitted": true,
   "production_authorized": false,
   "three_part_functional_slicing": {
     "process": "RTARS-FUNCTIONAL CANDIDATE 0.20mm",
