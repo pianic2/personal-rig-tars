@@ -30,7 +30,9 @@
     "version_source": "operator_declaration",
     "printer_preset_claim": "PASS",
     "printer_preset_name": null,
-    "filament_preset_name": null
+    "filament_preset_name": null,
+    "process_preset_name": "QUALITY",
+    "process_preset_source": "operator_declaration"
   },
   "temperature_c": {
     "nozzle_first_layer": 210,
