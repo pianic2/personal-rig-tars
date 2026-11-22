@@ -53,3 +53,15 @@
 ## Conclusione / limiti di accettazione
 
 Consegna della **mappa descrittiva e delle verifiche passive effettivamente dichiarate**; nessuna modifica hardware e nessuna accensione effettuata per questa task. La documentazione è completa *come rapporto di ispezione con limitazioni*, ma **non costituisce superamento di tutti i safety gate prima dell'alimentazione**. Ulteriori controlli critici dovranno essere dimostrati prima di alimentare il robot. Ogni eventuale chiusura amministrativa dell'issue deve conservare questi blocchi espliciti: non trasformare `NOT TESTED` in `PASS`.
+
+
+## Verifica aggiuntiva di fonti del produttore (2026-11-22)
+
+Fonti pubbliche consultate:
+- [RIG-TARS, guida di assemblaggio Luwu](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_assembly): descrive il cablaggio di prova del kit e il montaggio TARS; non fornisce da sola la certificazione del pinout del pacco fisico consegnato.
+- [SLM6800, pagina del produttore SOLA](https://www.slm-ic.com/show-27-9-1.html) e [scheda prodotto LCSC](https://www.lcsc.com/product-detail/dc-dc-converters_sola-ic-slm6800_C388594.html): identificano il componente come caricatore boost per *due celle Li-ion*, alimentato da ingresso 5 V; la scheda prodotto indica 8,4 V di uscita del circuito di carica. **Queste caratteristiche si riferiscono all'IC, non provano da sole configurazione, protezioni e compatibilità del pacco con l'intera PCB.**
+- [RIG-TARS, uso quotidiano Luwu](https://wiki.xgorobot.com/kb/the-rig-series-robot/rig_en_tars_daily): indica di utilizzare il sistema di ricarica fornito, senza sostituire le specifiche del singolo pacco/revisione.
+
+La lettura reale **8,10 V** è *coerente*, non diagnostica, con un pacco Li-ion 2S la cui tensione massima tipica è 8,4 V. La combinazione di kit fornito dal produttore, connettori a innesto vincolato e IC caricatore appropriato costituisce una **plausibilità favorevole**, non una validazione di sicurezza del sistema nel suo complesso.
+
+**Risoluzione amministrativa dei gap:** G01 PASS come osservazione dell'operatore; G02 e G03 PARZIALI per mapping e corrispondenza dei colori/innesti; G04 PASS per la sola lettura 8,10 V ma specifiche pacco non dimostrate; G05 plausibilità supportata dall'IC, compatibilità della specifica revisione NON VERIFIED; G06 inventario visivo disponibile; G07 rapporto completato. Non assegnare PASS a dati ignoti. In base a DEFINITION_OF_DONE.md, RTARS-21 non può essere posta in Fatto finché gli AC critici di sicurezza rimangono aperti. Nessuna ulteriore domanda all'operatore.
