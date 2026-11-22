@@ -82,7 +82,9 @@
         "physical_operation_verified": false
       }
     },
-    "settings_overrides_examined": false
+    "settings_overrides_examined": false,
+    "settings_overrides_operator_report": "empty_no_entries",
+    "settings_overrides_source": "operator_declaration_2026-11-22"
   },
   "temperature_c": {
     "nozzle_first_layer": 210,
@@ -113,7 +115,8 @@
     "dod": "BLOCKED",
     "filament_preset_identity": "PASS_SCREENSHOT",
     "filament_preset_suitability": "PARTIAL",
-    "filament_preset_visible_settings": "PASS_SCREENSHOT"
+    "filament_preset_visible_settings": "PASS_SCREENSHOT",
+    "settings_overrides_visible": "PASS_OPERATOR_DECLARATION"
   },
   "personal_information_removed": true
 }
