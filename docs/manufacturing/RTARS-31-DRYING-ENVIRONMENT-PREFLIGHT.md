@@ -36,9 +36,22 @@ Le misure riportate di seguito sono **dichiarazioni dell'operatore**, non misure
 | Precedente profilo RTARS-30 versionato e Preview lotto 3 pezzi | PASS (evidenze RTARS-30) |
 | Essiccazione dichiarata e misure RH/ambiente acquisite | PASS (dichiarazioni operatore, senza certificazione sensori) |
 | Filamento pienamente asciutto a livello materiale | NOT TESTED |
-| Preflight macchina immediatamente prima della stampa | NOT TESTED |
+| Preflight macchina immediatamente prima della stampa (5 controlli della checklist operatore) | PASS — attestazione operatore 2026-11-22; non misura strumentale indipendente |
 | Avvio, primo layer e stampa effettiva | NOT TESTED |
 | Misure, fotografie, fit test e correzioni tracciate | NOT TESTED |
 | Jira RTARS-31 Done | NON AUTORIZZATO |
 
 Nessuna stampa viene dichiarata avviata o completata in questa evidenza.
+
+## Attestazione preflight acquisita — 2026-11-22
+
+L'operatore ha dichiarato **PASS** per tutti e cinque i controlli della checklist interattiva del lotto da tre pezzi:
+1. Piatto pulito, libero da ostacoli e correttamente livellato.
+2. Ugello e percorso filamento senza impedimenti.
+3. G-code corretto per Neptune 4 Standard e lotto tre pezzi.
+4. Setpoint confermati: 210/205 °C ugello, 60 °C piano.
+5. Possibilità di presidiare homing, spurgo e primo layer.
+
+**Ambito esatto dell'attestazione:** checklist completata prima dell'avvio. L'operatore scrive «Procedo ad avviare», non conferma che la macchina sia già partita. Conseguentemente `started_at`, G-code eseguito, homing effettivo, purge e primo layer restano **NOT TESTED**. Il controllo n. 5 riguarda disponibilità alla supervisione, non avvenuta supervisione.
+
+Prossima fonte: [protocollo primo layer](RTARS-31-FIRST-LAYER-RUNBOOK.md).
