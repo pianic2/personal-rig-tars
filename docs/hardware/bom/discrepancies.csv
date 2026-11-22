@@ -1,0 +1,13 @@
+id,status,finding,affected_bom_ids,required_check,classification
+D01,OPEN,M2x6: qty reference 60 vs 52 in description; bag actual not counted,F001,Count every screw and confirm required qty against actual assembly,documentation_conflict
+D02,OPEN,Display ST7789P3 in hardware BOM vs ST7789V2 in firmware reference,E002,Read display rear marking and connector model before firmware,documentation_conflict
+D03,OPEN,M2x4 flat countersunk self-tapping expected vs M2x4 round-head machine pictured,F002;A003,Identify both fastener types physically; compare assembly instructions,observed_spec_difference
+D04,OPEN,M2x4 socket head pre-glued expected vs M2x4 Phillips self-tapping pictured,F003;A004,Check actual drive heads and intended joints,observed_spec_difference
+D05,OPEN,M2x10 hex screw expected: not directly identifiable in photo,F004,Inspect combined bag or label contents,not_observed_not_proven_missing
+D06,OPEN,M3x10 expected vs M3x8 labeled in photo,F005;A006,Measure length and follow revision-matched assembly instructions,observed_spec_difference
+D07,OPEN,M3 locknuts expected vs M2 hex lock nuts labeled in photo,F006;A007,Measure nut thread diameter and review assembly revision,observed_spec_difference
+D08,OPEN,Battery included in photograph but not in extracted core list,A001,Read battery voltage capacity chemistry and connector polarity before energizing,source_scope_difference
+D09,OPEN,Servo model SCS009 and PCB revision not readable,E001;E009,Close-up reverse PCB and servo labels,identity_revision_unverified
+D10,OPEN,"Servo horns qty, fastener qty and foam presence cannot be established from closed bags",E010;E011;F001;F002;F003;F004;F005;F006,Physically count screws and horns; identify any foam,count_unverified
+D11,OPEN,"USB cable, switch cable and sensor identity ambiguous from overhead photo",E005;E006;E008;A002;A008,Photograph connectors from both sides and read markings,identity_unverified
+D12,OPEN,Camera flat has partially legible marking but exact model/revision cannot be read with confidence,E003,High-resolution macro of flex cable marking,revision_unverified
