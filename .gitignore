@@ -1,0 +1,40 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# ESP-IDF / embedded build artifacts
+build/
+sdkconfig.old
+managed_components/
+dependencies.lock.tmp
+*.elf
+*.bin
+*.map
+*.o
+*.obj
+*.d
+
+# Python, Node, IDE and OS
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+coverage/
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and transient files
+*.log
+*.tmp
+*.swp
