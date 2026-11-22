@@ -2,7 +2,7 @@
 
 **Baseline:** `v0.6-pcb-inspection` (2026-11-22), con conteggi fisici invariati rispetto a v0.4  
 **Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9 — Fatto nel perimetro dell'inventario  
-**Pull request:** https://github.com/pianic2/personal-rig-tars/pull/1 — in revisione, non mergiata
+**Pull request:** https://github.com/pianic2/personal-rig-tars/pull/1 — storico della proposta e dell'integrazione; stato verificabile su GitHub
 
 ## Provenienza e limiti
 
@@ -106,7 +106,7 @@ La revisione complessiva del kit non è indicata sulla confezione. La marcatura 
 | Stato di ogni componente | PASS |
 | Differenze annotate | PASS: registro con 13 voci storiche e stato per ciascuna |
 
-**Decisione:** RTARS-9 resta `Fatto` come inventario documentale; l'audit esterno è completo ma **9 gap restano OPEN**, con richiesta di chiarimento al venditore pronta per invio. I gate di sicurezza delle voci D08/D09 e le differenze meccaniche non sono stati rimossi. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. Nessun merge automatico della PR.
+**Decisione:** RTARS-9 resta `Fatto` come inventario documentale; l'audit esterno è completo ma **9 gap restano OPEN**, con richiesta di chiarimento al venditore pronta per invio. I gate di sicurezza delle voci D08/D09 e le differenze meccaniche non sono stati rimossi. La fotografia originale è disponibile nella conversazione, con hash registrato, ma **non** come binario nel repo. L'integrazione della PR è gestita esplicitamente nel workflow GitHub; lo storico del merge è verificabile tramite il link alla pull request.
 
 **Sicurezza:** batteria senza parametri noti: non collegare o ricaricare fino a identificazione affidabile. I fissaggi alternativi vanno verificati con la corretta revisione dell'assemblaggio. Nessuna accensione né collaudo eseguito. Le parti stampate appartengono a Epic E04, non sono classificate mancanti dal kit di elettronica.
 
