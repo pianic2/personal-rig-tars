@@ -37,8 +37,8 @@ Le misure riportate di seguito sono **dichiarazioni dell'operatore**, non misure
 | Essiccazione dichiarata e misure RH/ambiente acquisite | PASS (dichiarazioni operatore, senza certificazione sensori) |
 | Filamento pienamente asciutto a livello materiale | NOT TESTED |
 | Preflight macchina immediatamente prima della stampa (5 controlli della checklist operatore) | PASS — attestazione operatore 2026-11-22; non misura strumentale indipendente |
-| Avvio effettivo, homing, spurgo e primo layer | PASS — testimonianza operatore (3/3 pezzi aderenti); foto ravvicinata parzialmente corroborante |
-| Stampa completa e verifica post-stampa | NOT TESTED — PRINTING_IN_PROGRESS |
+| Avvio effettivo, homing, spurgo e primo layer | **PRINT_ABORTED / L03 FAIL_VISUAL** dopo nuove foto. Homing/spurgo precedentemente PASS dichiarato; non è confermata adesione 3/3 nell'evento finale. [Verbale aggiornato](RTARS-31-FIRST-LAYER-RESULTS.md) |
+| Stampa completa e verifica post-stampa | **ABORTED** — nessuna stampa completata; richiede nuovo test primo layer dopo calibrazione |
 | Misure, fotografie, fit test e correzioni tracciate | NOT TESTED |
 | Jira RTARS-31 Done | NON AUTORIZZATO |
 
@@ -53,6 +53,6 @@ L'operatore ha dichiarato **PASS** per tutti e cinque i controlli della checklis
 4. Setpoint confermati: 210/205 °C ugello, 60 °C piano.
 5. Possibilità di presidiare homing, spurgo e primo layer.
 
-**Ambito originale dell'attestazione:** la checklist era stata completata *prima* dell'avvio. **Aggiornamento successivo 2026-11-22:** l'operatore ha ora confermato **Avvio: SI; Homing: PASS; Spurgo: PASS; Primo layer: PASS; Pezzi aderenti: 3/3; Anomalie: nessuna**. Il timestamp effettivo `started_at` non è stato dichiarato. I risultati sono documentati in [FIRST-LAYER-RESULTS.md](RTARS-31-FIRST-LAYER-RESULTS.md). La stampa è **in corso**, non conclusa.
+**Ambito originale dell'attestazione:** la checklist era stata completata *prima* dell'avvio. **Aggiornamento successivo 2026-11-22:** l'operatore ha ora confermato **Avvio: SI; Homing: PASS; Spurgo: PASS; Primo layer: PASS; Pezzi aderenti: 3/3; Anomalie: nessuna**. Il timestamp effettivo `started_at` non è stato dichiarato. I risultati sono documentati in [FIRST-LAYER-RESULTS.md](RTARS-31-FIRST-LAYER-RESULTS.md). **Aggiornamento successivo prevalente:** l'operatore ha interrotto la stampa dopo aver inviato nuove fotografie indicanti primo layer non uniforme; vedi [verbale rettificato](RTARS-31-FIRST-LAYER-RESULTS.md). Stato attuale **PRINT_ABORTED**, non «in corso».
 
 Prossima fonte: [protocollo primo layer](RTARS-31-FIRST-LAYER-RUNBOOK.md).
