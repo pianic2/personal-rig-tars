@@ -23,7 +23,8 @@ Tutti gli altri campi restano **identici** ai rispettivi JSON di input: **non** 
 
 ## Gate di validazione
 - **PASS:** generazione automatizzata e sintattica dei due JSON da file autentici forniti dall'utente.
-- **NOT TESTED:** importazione reale in Bambu Studio e comparazione delle impostazioni importate.
+- **PASS — dichiarazione utente (2026-11-22):** entrambi i JSON candidati importati correttamente in Bambu Studio, senza errori segnalati. Conferma operativa dell'importazione, non verifica indipendente del contenuto dopo l'import.
+- **NOT TESTED:** comparazione delle impostazioni effettivamente importate con i JSON (layer, velocità, supporti e override).
 - **NOT TESTED:** preset macchina corretto e relativo G-code, preset filamento ELEGOO PLA Metallic Metal Bronze; al momento lo screenshot usa Generic PLA.
 - **NOT TESTED:** slicing dei quattro piatti con i due profili dedicati, verifica orientamenti/supporti e fit test.
 
