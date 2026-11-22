@@ -44,7 +44,19 @@
         "physical_print_not_executed",
         "individual_mass_not_shown_in_photo",
         "individual_waste_not_shown_in_photo"
-      ]
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 110,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
     },
     {
       "plate_id": "PLATE-02",
@@ -82,7 +94,19 @@
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
         "physical_print_status_not_confirmed"
-      ]
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 225,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
     },
     {
       "plate_id": "PLATE-03",
@@ -120,7 +144,19 @@
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
         "physical_print_status_not_confirmed"
-      ]
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 479,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
     },
     {
       "plate_id": "PLATE-04",
@@ -158,7 +194,19 @@
         "individual_consumed_mass_not_reported",
         "individual_waste_not_reported",
         "physical_print_status_not_confirmed"
-      ]
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 585,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
     }
   ],
   "summary_slicing_estimate": {
@@ -178,5 +226,38 @@
     "material_type": null,
     "model_mass_is_total_consumption": false,
     "print_status_note": "Only PLATE-01 is explicitly pending in the user-supplied record; physical status of PLATE-02/03/04 is unconfirmed by this screenshot."
+  },
+  "latest_slicing_overview": {
+    "source_id": "slicer-quality-2026-11-22",
+    "source_type": "user_uploaded_photo_manual_transcription",
+    "image_sha256": "ab3a74239d7851b0c0368ca87cac6341a91418363b3e3d34f898e65c1bc33166",
+    "original_photo_in_repository": false,
+    "printer_selection_visible": "Elegoo Neptune 4",
+    "process_visible": "HL-18 QUALITY 0.20mm",
+    "filament_selection_visible": "Generic PLA",
+    "filament_actual_user_declared": "ELEGOO PLA Metallic Metal Bronze",
+    "displayed_total_time": "23h19m",
+    "sum_plate_times_minutes": 1399,
+    "model_filament_length_m": 87.04,
+    "model_mass_g": 259.61,
+    "displayed_cost": "5.49",
+    "cost_currency": null,
+    "number_of_plates": 4,
+    "plate_durations_minutes": [
+      110,
+      225,
+      479,
+      585
+    ],
+    "model_mass_is_total_consumption": false,
+    "actual_print_data_present": false,
+    "previous_baseline_preserved_in": "summary_slicing_estimate",
+    "limitations": [
+      "No proof of actual printed mass, time or waste",
+      "No per-plate mass shown",
+      "No visible toolpaths, supports or validated G-code",
+      "Actual filament is not represented by a validated named filament preset",
+      "No confirmation of consistent geometry and settings versus previous baseline"
+    ]
   }
 }
