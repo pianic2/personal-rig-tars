@@ -1,0 +1,713 @@
+{
+  "exact_duplicate_hashes": [
+    "c44b2a6f09e7c89be1c6b1d8d0e5e8bb9b3cb28daff94452eb73ddbeee46b232"
+  ],
+  "limitations": [
+    "3MF metadata/mesh topology inspected without geometry repair.",
+    "Only 3MF units are explicit when declared; other CAD formats are not parsed.",
+    "No official MakerWorld download or physical fit test is asserted."
+  ],
+  "records": [
+    {
+      "archive": {
+        "archive_status": "PASS",
+        "format": "ZIP",
+        "path": "RIG-TARS_+Open-Source+Desktop+Sci-Fi+Robot.zip",
+        "provenance": "local_upstream_unverified",
+        "sha256": "73f824fa02f36a52d28e1931989fcd17b53dbbba5dd7d9e73a874f45c8ca7fa9",
+        "size_bytes": 2419557
+      },
+      "members": [
+        {
+          "analysis": {
+            "build_instance_count": 16,
+            "build_instances": [
+              "2",
+              "4",
+              "6",
+              "8",
+              "10",
+              "12",
+              "13",
+              "14",
+              "15",
+              "17",
+              "19",
+              "21",
+              "23",
+              "25",
+              "27",
+              "29"
+            ],
+            "component_file_count": 16,
+            "distinct_mesh_hash_count": 13,
+            "mesh_checks_pass": true,
+            "mesh_file_count": 13,
+            "named_instance_counts": {
+              "R arm_shell.STEP": 1,
+              "arm.STEP": 2,
+              "arm_shell.STEP": 1,
+              "body_shell.STEP": 1,
+              "主体.STEP": 1,
+              "屏幕贴胶底壳.STEP": 1,
+              "摄像头盖板.STEP": 1,
+              "摇杆.STEP": 1,
+              "支架.STEP": 1,
+              "电路板支架小.STEP": 1,
+              "电路板支架小L.STEP": 1,
+              "舵机盖.STEP": 3,
+              "舵臂.STEP": 1
+            },
+            "objects": [
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "2"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "4"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "6"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "8"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "10"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "12"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "13"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "14"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "15"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "17"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "19"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "21"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "23"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "25"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "27"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "object_id": "29"
+              }
+            ],
+            "package_member_count": 40,
+            "package_status": "PASS",
+            "plate_count": 3,
+            "resource_object_count": 16,
+            "unit_declared": "millimeter"
+          },
+          "format": "3MF",
+          "package_members": [
+            {
+              "path": "3D/3dmodel.model",
+              "sha256": "3e22db071751a5f76e9aee304190c667d198c18a51cd825506b8385b662b068c",
+              "size_bytes": 8615
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -23.0,
+                    23.0
+                  ],
+                  [
+                    -2.0,
+                    2.0
+                  ],
+                  [
+                    -3.0,
+                    3.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 1506
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 1004,
+                "unit_declared": "millimeter",
+                "vertex_count": 500,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_12.model",
+              "sha256": "044ca1dabd1919a03d5700efe88b3289a95047dd46b317c4e6238197b9692fda",
+              "size_bytes": 70164
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -18.7000008,
+                    18.7000008
+                  ],
+                  [
+                    -8.02499962,
+                    8.02499962
+                  ],
+                  [
+                    -9.19999981,
+                    9.19999981
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 8349
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 5566,
+                "unit_declared": "millimeter",
+                "vertex_count": 2775,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_14.model",
+              "sha256": "3227eed57147c1c7d3f0f57a1fe2ab01f1151ec7d6a1638aa893d166f3eeb236",
+              "size_bytes": 422202
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -18.0,
+                    18.0
+                  ],
+                  [
+                    -5.8499999,
+                    5.8499999
+                  ],
+                  [
+                    -7.0,
+                    7.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 32289
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 21526,
+                "unit_declared": "millimeter",
+                "vertex_count": 10753,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_15.model",
+              "sha256": "4d2dc7843fd850b9774216bc30efc8e6c9be7189263b34cd5ed1daea0c6022c0",
+              "size_bytes": 1664318
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -15.3999996,
+                    15.3999996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11904
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7936,
+                "unit_declared": "millimeter",
+                "vertex_count": 3956,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_16.model",
+              "sha256": "91476bf59bc1195dbcd06ae771960bc1dbe81cd20bc67a42c9fedc4473667101",
+              "size_bytes": 603563
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -15.3999996,
+                    15.3999996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11904
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7936,
+                "unit_declared": "millimeter",
+                "vertex_count": 3956,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_17.model",
+              "sha256": "6a8546b7ec91539e6406c75208eced752ce383701710cc310eec77a07347313f",
+              "size_bytes": 603331
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -35.0,
+                    35.0
+                  ],
+                  [
+                    -6.4000001,
+                    6.4000001
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 16956
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 11304,
+                "unit_declared": "millimeter",
+                "vertex_count": 5638,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_26.model",
+              "sha256": "977476f74d34bc88c9003845c173f60b6b49c122cef80ca9133940b44a2aec59",
+              "size_bytes": 887489
+            },
+            {
+              "path": "3D/Objects/object_27.model",
+              "sha256": "c44b2a6f09e7c89be1c6b1d8d0e5e8bb9b3cb28daff94452eb73ddbeee46b232",
+              "size_bytes": 406
+            },
+            {
+              "path": "3D/Objects/object_28.model",
+              "sha256": "c44b2a6f09e7c89be1c6b1d8d0e5e8bb9b3cb28daff94452eb73ddbeee46b232",
+              "size_bytes": 406
+            },
+            {
+              "path": "3D/Objects/object_29.model",
+              "sha256": "c44b2a6f09e7c89be1c6b1d8d0e5e8bb9b3cb28daff94452eb73ddbeee46b232",
+              "size_bytes": 406
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -17.5,
+                    17.5
+                  ],
+                  [
+                    -1.0,
+                    1.0
+                  ],
+                  [
+                    -6.52013922,
+                    6.52013922
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 4014
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 2676,
+                "unit_declared": "millimeter",
+                "vertex_count": 1336,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_31.model",
+              "sha256": "9effea827fa26c7458dafdf8ef767787c151a33cbf2da9ee9e418b7e6921e0d4",
+              "size_bytes": 196753
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -29.1499996,
+                    29.1499996
+                  ],
+                  [
+                    -19.0,
+                    19.0
+                  ],
+                  [
+                    -9.82206631,
+                    9.82206631
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 10485
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 6990,
+                "unit_declared": "millimeter",
+                "vertex_count": 3489,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_35.model",
+              "sha256": "96f05fcdf7fbc4c875b6f700d916f302ae692cc0c18a9a9aeb989adf54191284",
+              "size_bytes": 533564
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -8.32500076,
+                    8.32499886
+                  ],
+                  [
+                    -11.7492514,
+                    11.7492514
+                  ],
+                  [
+                    -10.0,
+                    10.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11352
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7568,
+                "unit_declared": "millimeter",
+                "vertex_count": 3770,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_36.model",
+              "sha256": "0fc50ad8a2f2260776eb47325f6ccb85a482d7a8fea3388f2ac5013cca170ceb",
+              "size_bytes": 581612
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -8.32500076,
+                    8.32499886
+                  ],
+                  [
+                    -11.7492514,
+                    11.7492514
+                  ],
+                  [
+                    -10.0,
+                    10.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11352
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7568,
+                "unit_declared": "millimeter",
+                "vertex_count": 3770,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_37.model",
+              "sha256": "5e1cf924d5629a5ea7f419798e813a8670811e80bf7641f84a3ef41273b528e8",
+              "size_bytes": 582377
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -32.0,
+                    32.0
+                  ],
+                  [
+                    -31.4499931,
+                    31.4499931
+                  ],
+                  [
+                    -2.0,
+                    2.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 184692
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 123128,
+                "unit_declared": "millimeter",
+                "vertex_count": 61444,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_38.model",
+              "sha256": "89b054f417b4382bb86abf053a92986464f9c1507374ebd9a46da790d8a47f5f",
+              "size_bytes": 9877467
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -35.0,
+                    35.0
+                  ],
+                  [
+                    -18.5,
+                    18.5
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 25242
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 16828,
+                "unit_declared": "millimeter",
+                "vertex_count": 8388,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_39.model",
+              "sha256": "0857334419780e56fbb12290c66a6522757903ac7e66bc1a7d0459c1323fe006",
+              "size_bytes": 1277823
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -12.1499996,
+                    12.1499996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 14682
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 9788,
+                "unit_declared": "millimeter",
+                "vertex_count": 4884,
+                "watertight_by_edge_count": true
+              },
+              "path": "3D/Objects/object_5.model",
+              "sha256": "3f47b028c0c41cee11d877b6997a408e1ce25280523214b9a462a203478cb45d",
+              "size_bytes": 753193
+            },
+            {
+              "path": "3D/_rels/3dmodel.model.rels",
+              "sha256": "ad5b7cf2ac8514342c80e1aadeee6036e25cb2a2797c8ac9271ab9fbffd068fd",
+              "size_bytes": 2274
+            },
+            {
+              "path": "Metadata/cut_information.xml",
+              "sha256": "abab8dd9c07aeed92c17f59f43433fd8d89f1429f0eace823817b6392041a54b",
+              "size_bytes": 1346
+            },
+            {
+              "path": "Metadata/filament_sequence.json",
+              "sha256": "a74af4c8629c70eceec0e2f5fada465d1e2b214bd35b7e35b833e4bdb5b1d60d",
+              "size_bytes": 214
+            },
+            {
+              "path": "Metadata/model_settings.config",
+              "sha256": "838e1fa24e4c6d084b78ebe345a089486a4894e0eb60cf71c763641e78818e3c",
+              "size_bytes": 18965
+            },
+            {
+              "path": "Metadata/pick_1.png",
+              "sha256": "2647699ac8ff98e85443781b48a514446674f18b22f63b9e2883db94740f25d8",
+              "size_bytes": 3357
+            },
+            {
+              "path": "Metadata/pick_2.png",
+              "sha256": "4a3b425e688c3cb5915743d41f4feb95d399b5c929bc0978717aa90fd1943f44",
+              "size_bytes": 2301
+            },
+            {
+              "path": "Metadata/pick_3.png",
+              "sha256": "f6df1f456015cf65a8bf776d9d68b2fe49caaad5f362a94f06fcbfe453056476",
+              "size_bytes": 3776
+            },
+            {
+              "path": "Metadata/plate_1.png",
+              "sha256": "b30654e5f8fbe8c65abbbd036adcbc230b611ca6407f1bf10075a4854db20e0d",
+              "size_bytes": 18564
+            },
+            {
+              "path": "Metadata/plate_1_small.png",
+              "sha256": "72391a1a05badabfc4aff5ed39fc5e6d6c0ddb0be8f5cb6c103600f8cf6fc833",
+              "size_bytes": 5648
+            },
+            {
+              "path": "Metadata/plate_2.png",
+              "sha256": "c8a3b2d943fab8958980c21d30c6783da885d42aac2d578d3d068ab495d0da6a",
+              "size_bytes": 8104
+            },
+            {
+              "path": "Metadata/plate_2_small.png",
+              "sha256": "9b1ddee4d29057d1ea5fcc4df7ac962a609814218cf471f1f0c7475df0943dcf",
+              "size_bytes": 3185
+            },
+            {
+              "path": "Metadata/plate_3.png",
+              "sha256": "a9e9aecd75a44ec17a468644f69263380f46fb004d0eba6134c664a53a645605",
+              "size_bytes": 16900
+            },
+            {
+              "path": "Metadata/plate_3_small.png",
+              "sha256": "31f583ac3e3e88c02396b2549bffd8c675aa67af6522dc40b8a1b806bb52ebe9",
+              "size_bytes": 4176
+            },
+            {
+              "path": "Metadata/plate_no_light_1.png",
+              "sha256": "f87ffe5ffb6f557f14e1d66ebc5452590192d586fcaf9b2b934e4da306f7da88",
+              "size_bytes": 3793
+            },
+            {
+              "path": "Metadata/plate_no_light_2.png",
+              "sha256": "772845cfbf6a2b423ce1c19bb6b71237c6a4bcf4035b9c1d60ea90a351e94f6c",
+              "size_bytes": 3254
+            },
+            {
+              "path": "Metadata/plate_no_light_3.png",
+              "sha256": "9dd2c34952b4c6fbb8dc521dd3ad1803d6119aafaa46cc9396bd11ae7c616194",
+              "size_bytes": 4721
+            },
+            {
+              "path": "Metadata/project_settings.config",
+              "sha256": "0ea42aa780a510cd1596e3d7e44d3010270bba27927a5bdc0605a92f938adf74",
+              "size_bytes": 75067
+            },
+            {
+              "path": "Metadata/slice_info.config",
+              "sha256": "ba9637c53b7798967768dfd09b0535e04e454a6cffba64e34a103f96dec64250",
+              "size_bytes": 205
+            },
+            {
+              "path": "Metadata/top_1.png",
+              "sha256": "4a0ec5ecc958d90e81316c48d0d0b9bc87c8bda54719139d3f2681bb19eb4963",
+              "size_bytes": 9977
+            },
+            {
+              "path": "Metadata/top_2.png",
+              "sha256": "4502381349e3f3328105d874271963039cd962f4c0b3a34ed6b1c6b21e2df28b",
+              "size_bytes": 3547
+            },
+            {
+              "path": "Metadata/top_3.png",
+              "sha256": "4e61e6d563988cfb655729308c944b3f40dbda612ba0d755089bb02ad851fa02",
+              "size_bytes": 10425
+            },
+            {
+              "path": "[Content_Types].xml",
+              "sha256": "4acce1f577c7f0af6d9d5923faac96a76aeb1c06f0eef1762b2c8905cc0c846b",
+              "size_bytes": 432
+            },
+            {
+              "path": "_rels/.rels",
+              "sha256": "eba9728f3f5482ecaee5c07f78ab85ac1b537747f60035da471f79678f858aa9",
+              "size_bytes": 673
+            }
+          ],
+          "path": "armV3.3mf",
+          "provenance": "member_of_local_archive",
+          "sha256": "42912423fb2d91076ccc4721f9568fff6115fe686e7e3e51ca7572c15b5bc7c7",
+          "size_bytes": 2481283
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "scope": "assets/3d/upstream"
+}

@@ -38,3 +38,6 @@ Thumbs.db
 *.log
 *.tmp
 *.swp
+
+# Protected upstream 3D source files (keep local; do not commit without license review)
+assets/3d/upstream/
