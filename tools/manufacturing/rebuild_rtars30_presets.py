@@ -40,7 +40,9 @@ def main() -> None:
     with zipfile.ZipFile(source) as archive:
         for filename, dest, name, changes, expected_hash in SOURCES:
             original = json.loads(archive.read(filename))
-            assert original.get("type") == "process", "Expected process preset"
+            assert original.get("name") == filename[:-5], "Unexpected source process preset"
+            assert "layer_height" in original and "print_settings_id" in original, "Missing process preset keys"
+            assert len(original) == 280, "Unexpected process export field count"
             output = {**original, "name": name, "print_settings_id": name, **changes}
             assert len(output) == len(original), "Unexpected change in field count"
             changed = {k for k in original if original[k] != output[k]}
