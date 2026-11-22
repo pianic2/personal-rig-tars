@@ -46,3 +46,27 @@ Fonte: runbook compilato dall'operatore il 2026-11-22. Le osservazioni fisiche s
 **Decisione:** NON READY FOR DONE. I risultati dichiarativi sono registrati, le temperature sono compatibili con i limiti del materiale, ma un dato di configurazione obbligatorio è assente e il rischio ugello deve essere valutato. Nessuna stampa eseguita da questa attività; nessuna evidenza indipendente inventata.
 
 Regola: https://github.com/pianic2/personal-rig-tars/blob/main/docs/process/DEFINITION_OF_DONE.md
+
+## Evidenza aggiuntiva — schermate Filament Manager (2026-11-22)
+
+L'operatore ha fornito due fotografie dell'interfaccia Bambu Studio, schede **Filament** e **Cooling** del preset visualizzato **Generic PLA @Elegoo**. Le fotografie sono state esaminate in conversazione; non sono state copiate nel repository. Questa trascrizione anonimizzata non attribuisce alle immagini verifiche che non mostrano.
+
+### Valori visibili in Filament
+- Type: PLA; diameter 1,75 mm; pressure advance: checkbox non selezionata; velocity adaptation factor: 1; softening temperature: 60 °C.
+- Recommended nozzle temperature: min 205 °C, max 210 °C (intervallo configurato nel preset, **non** limiti ufficiali del produttore).
+- Smooth PEI/High Temp plate: 60 °C initial layer, 60 °C other layers.
+- Nozzle: 210 °C initial layer, 205 °C other layers.
+- Prime volume visualizzato: filament change 45 mm³, hotend change 60 mm³.
+
+### Valori visibili in Cooling
+- Initial layer fan: primi 1 layer a 0%.
+- Min fan speed threshold: 100% a layer time 100 s; max threshold: 100% a layer time 8 s.
+- Keep fan always on: enabled; slow printing down for better layer cooling: enabled; force cooling for overhangs and bridges: enabled.
+- Auxiliary fan: primi 1 layer a 0%; configurazione di ramp-up visualizzata fino al 70%. L'effettiva presenza/attivazione fisica della ventola ausiliaria e l'effetto dell'impostazione sulla Neptune 4 non sono dimostrati dalla schermata.
+- La scheda Setting Overrides non è stata fornita, né sono disponibili l'export completo del preset, i parametri start/end G-code o una prova di stampa riproducibile.
+
+### Rivalutazione
+- **G29-01 identità e parametri visibili**: PASS per i campi leggibili delle due schermate; compatibilità globale del preset Generic PLA per il materiale effettivo **PARTIAL / NON VERIFICATA** (Cooling, impostazioni avanzate e override non integralmente revisionati).
+- **G29-02** raccomandazione ugello acciaio temprato vs ottone: ancora da valutare; non è evidenza di usura effettiva.
+- **G29-03** compatibilità G-code e asciuttezza: rimangono evidenze dichiarative.
+- **DoD**: ancora non completamente superata; non effettuare merge/chiusura sulla base di queste due immagini.
