@@ -131,7 +131,7 @@ def image_ranges_valid(images: list[tuple[int, Path]]) -> bool:
 
 def parse_partition_number(value: str) -> int:
     """Decode ESP-IDF CSV offsets and sizes, including KiB/MiB suffixes."""
-    match = re.fullmatch(r"(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*([KMG]?)B?", value.strip(), re.I)
+    match = re.fullmatch(r"(0[xX][0-9A-Fa-f]+|[0-9]+)\s*([KMG]?)B?", value.strip(), re.I)
     if not match:
         raise ValueError("invalid partition number")
     number = int(match.group(1), 0) if match.group(1).lower().startswith("0x") else int(match.group(1))
