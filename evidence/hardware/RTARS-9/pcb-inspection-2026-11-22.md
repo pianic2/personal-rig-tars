@@ -31,8 +31,10 @@ Il primo file è il **retro** della PCB (ESP32 e antenna); il secondo è il **la
 **Orientamento obbligatorio per interpretare la frase sinistra/destra:** PCB con il **lato dei componenti e dei connettori verso l'osservatore**, i **tre servo socket in alto**, e la **porta USB-C in basso a destra**.
 
 Nell'orientamento sopra:
-- il **connettore bianco a due contatti sul bordo inferiore**, fra l'interruttore e USB-C, mostra **`+` sopra il contatto sinistro**;
-- e **`−` sopra il contatto destro**.
+- il **connettore bianco a due contatti sul bordo inferiore**, fra l'interruttore e USB-C, mostra **`+` sul pin vicino all'interruttore di accensione/spegnimento**;
+- e **`−` (GND) sul pin vicino alla porta USB-C**.
+
+Questa formulazione usa **riferimenti fisici stabili** e prevale sulle descrizioni «sinistro»/«destro», che dipendono dall'orientamento. La disposizione è confermata anche dal proprietario nel messaggio successivo alle fotografie: «pin terra e vicino alla porta usb-c mentre il pin positivo e vicino al bottone di accendimento/spengimento». Non dimostra la corrispondenza dei fili del plug della batteria.
 
 Queste sono **serigrafie** presenti sulla PCB, non una misurazione strumentale. La direzione può invertirsi osservando il plug della batteria dall'altro lato o dal lato cavi. Non ricavare la posizione di rosso/nero dall'aspetto dei connettori o dalla loro compatibilità meccanica. Identificare il pinout del plug batteria **nel medesimo sistema di riferimento** con schema ufficiale e controllo competente prima di inserire il connettore.
 
