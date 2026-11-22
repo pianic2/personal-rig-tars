@@ -1,34 +1,40 @@
 # Definition of Done (DoD)
 
-**Project:** RIG-TARS · **Tracking:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Status:** proposed policy
+**Progetto:** RIG-TARS · **Task di riferimento:** [RTARS-12](https://niccolopiazzi01.atlassian.net/browse/RTARS-12) · **Stato:** approvata
 
-A Jira issue may be marked **Done** only after all applicable conditions below are met. Passing the DoD does not imply that unrelated hardware characteristics have been certified.
+Una issue Jira può essere dichiarata **Done** soltanto quando tutti i criteri applicabili sono soddisfatti. Il superamento della DoD **non equivale** a una certificazione del robot o delle sue caratteristiche hardware.
 
 ## Checklist
 
-- [ ] Every acceptance criterion is satisfied and supported by reproducible or inspectable evidence.
-- [ ] Any deliverable and source changes are committed to the repository, **when applicable**.
-- [ ] Affected technical documentation, interfaces, setup instructions and source references are updated, **when applicable**.
-- [ ] Relevant tests or inspections have been executed and their results recorded (including failures and limitations).
-- [ ] No unresolved **blocking** defect or unacceptable safety risk remains in the delivered scope.
-- [ ] Residual limitations, follow-up work and accepted nonblocking risks are documented and linked to Jira.
-- [ ] Repository changes have passed the relevant review/checks and are integrated into the target branch, **when applicable**.
-- [ ] The Jira issue links the relevant commit, PR, document or inspection evidence and reflects the delivered result.
-- [ ] For powered, wired or moving hardware, the applicable items in [Hardware Safety](HARDWARE_SAFETY.md) have been checked and evidence recorded.
+- [ ] Tutti gli Acceptance Criteria (AC) sono soddisfatti e supportati da evidenze consultabili o riproducibili.
+- [ ] Codice, documenti e altri artefatti previsti sono versionati nel repository, **se applicabile**.
+- [ ] Documentazione tecnica, interfacce, istruzioni di configurazione e riferimenti interessati sono aggiornati, **se applicabile**.
+- [ ] Test e ispezioni pertinenti sono stati eseguiti e ne sono registrati esiti, errori e limitazioni, **se applicabile**.
+- [ ] Non rimangono difetti bloccanti né rischi di sicurezza inaccettabili nell'ambito consegnato.
+- [ ] Limitazioni residue, rischi non bloccanti accettati e attività successive sono documentati e tracciati in Jira.
+- [ ] Le modifiche al repository hanno superato i controlli pertinenti e sono state revisionate e integrate nel branch di destinazione, **se applicabile**.
+- [ ] Jira riporta i collegamenti a commit, PR, documenti o altre evidenze pertinenti e descrive il risultato consegnato.
+- [ ] Per attività hardware che coinvolgono alimentazione, cablaggio o movimentazione, i controlli applicabili della [checklist di sicurezza](HARDWARE_SAFETY.md) sono superati e documentati.
 
-## Evidence standard
+## Classificazione delle verifiche
 
-- **PASS:** link a test run, commit, PR, log, photograph, measurement or signed inspection note that actually demonstrates the criterion.
-- **FAIL / NOT TESTED:** never translate either into PASS. A blocking failure prevents Done.
-- **N/A:** give a concise reason. Do not require firmware flashing for a documentation-only task, or mechanical movement testing for an unrelated research task.
-- A follow-up ticket is **not** a substitute for acceptance of a blocking criterion or an unresolved safety issue.
+| Esito | Significato | Impatto sulla DoD |
+| --- | --- | --- |
+| **PASS** | Verifica eseguita con risultato positivo ed evidenza adeguata. | Criterio soddisfatto. |
+| **FAIL** | Verifica eseguita con risultato negativo. | Blocca Done se il controllo è obbligatorio; eventuali difetti non bloccanti devono essere valutati e tracciati. |
+| **NOT TESTED** | Verifica pertinente ma non eseguita, oppure senza evidenza sufficiente. | Non vale come PASS; se obbligatoria, blocca Done. |
+| **N/A** | Verifica non pertinente per il perimetro della issue, con motivazione registrata. | Non blocca Done. |
 
-## Completion workflow
+Le evidenze possono essere link a test, commit, PR, log, fotografie, misurazioni o verbali di ispezione. Devono dimostrare il criterio dichiarato: un semplice collegamento senza riscontro non è sufficiente.
 
-1. Verify all relevant acceptance criteria.
-2. Run the applicable tests/checklists and capture evidence.
-3. Update documents and link evidence in Jira.
-4. Review and integrate repository changes where applicable.
-5. Mark the issue Done only after the preceding gates pass.
+Una task successiva **non sostituisce** il soddisfacimento di un AC obbligatorio e non giustifica un rischio di sicurezza irrisolto.
 
-This policy is intentionally lightweight: the evidence and checks must scale with the actual scope and hazard of the change.
+## Procedura di chiusura
+
+1. Verificare gli AC applicabili.
+2. Eseguire test e checklist pertinenti; registrare gli esiti.
+3. Aggiornare la documentazione e collegare le evidenze in Jira.
+4. Revisionare e integrare nel branch di destinazione le modifiche al repository, quando previste.
+5. Impostare Done in Jira soltanto dopo il superamento dei controlli obbligatori.
+
+Il livello delle verifiche deve essere proporzionato al perimetro e ai rischi effettivi dell'attività.
