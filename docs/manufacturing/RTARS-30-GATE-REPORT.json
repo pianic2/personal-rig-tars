@@ -8,7 +8,12 @@
     "candidate_archive_sha256": "c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db",
     "slicing": "docs/manufacturing/RTARS-30-QUALITY-SLICING-EVIDENCE.md",
     "three_part_gcode_sha256": "32fec82a5f94c0d36b87587c2e853acb7f2462dc7703ec7e0fd6e9e1563a99fa",
-    "three_part_gcode_audit": "docs/manufacturing/RTARS-30-THREE-PART-GCODE-AUDIT.md"
+    "three_part_gcode_audit": "docs/manufacturing/RTARS-30-THREE-PART-GCODE-AUDIT.md",
+    "native_preset_paths": [
+      "docs/manufacturing/presets/RTARS-AESTHETIC-CANDIDATE-0.16mm@Elegoo-Neptune4-0.4.json",
+      "docs/manufacturing/presets/RTARS-FUNCTIONAL-CANDIDATE-0.20mm@Elegoo-Neptune4-0.4.json"
+    ],
+    "orientation_checklist": "docs/manufacturing/RTARS-30-THREE-PART-ORIENTATION-SUPPORT-CHECKLIST.md"
   },
   "hardware": {
     "printer": "ELEGOO Neptune 4 Standard",
@@ -57,7 +62,7 @@
     "legacy_quality_slicing_summary": "PASS_SCREENSHOT",
     "two_process_imports": "PASS_OPERATOR_DECLARATION",
     "candidate_json_generation": "PASS_SHA256_REPRODUCIBLE",
-    "native_candidate_json_in_github": "NOT_TESTED_NOT_COMMITTED",
+    "native_candidate_json_in_github": "PASS_BOTH_NATIVE_JSON_FILES_PRESENT_AND_BYTE_IDENTICAL_TO_ORIGINAL_ZIP",
     "machine_start_end_gcode_review": "NOT_TESTED",
     "selected_process_after_import_comparison": "NOT_TESTED",
     "functional_coupon_orientation_and_support_review": "NOT_TESTED",
@@ -66,8 +71,9 @@
     "fit_test": "NOT_TESTED_DOWNSTREAM",
     "target_process_parameters": "PASS_STATIC_GCODE",
     "target_support_generation": "PASS_STATIC_GCODE_NOT_SPATIAL_APPROVAL",
-    "part_by_part_support_and_orientation_justification": "NOT_TESTED",
-    "physical_execution": "NOT_TESTED"
+    "part_by_part_support_and_orientation_justification": "NOT_TESTED_CHECKLIST_READY",
+    "physical_execution": "NOT_TESTED",
+    "native_preset_checksums": "PASS_SHA256_AND_GIT_BLOB_SHA1"
   },
   "done": false,
   "merge_permitted": false,
