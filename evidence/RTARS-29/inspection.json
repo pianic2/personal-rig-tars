@@ -30,9 +30,11 @@
     "version_source": "operator_declaration",
     "printer_preset_claim": "PASS",
     "printer_preset_name": null,
-    "filament_preset_name": null,
+    "filament_preset_name": "Generic PLA",
     "process_preset_name": "QUALITY",
-    "process_preset_source": "operator_declaration"
+    "process_preset_source": "operator_declaration",
+    "filament_preset_source": "operator_declaration",
+    "filament_preset_material_match": "not_verified_generic_preset_for_elegoo_pla_metallic"
   },
   "temperature_c": {
     "nozzle_first_layer": 210,
@@ -60,7 +62,9 @@
     "configuration": "PARTIAL",
     "conditions": "PARTIAL",
     "risks_identified": "PASS",
-    "dod": "BLOCKED"
+    "dod": "BLOCKED",
+    "filament_preset_identity": "PASS_OPERATOR_DECLARATION",
+    "filament_preset_suitability": "NOT_TESTED"
   },
   "personal_information_removed": true
 }
