@@ -6,7 +6,9 @@
     "hardware": "evidence/RTARS-29/inspection.json",
     "source_profiles_archive_sha256": "26f41f13772589bdeb85dbb3520e3a09d85a93c722a14ac493b4700f354d13ae",
     "candidate_archive_sha256": "c9319301e111e8733a35fe460bce21c2f845ba192b307ce1a03ec63359fd10db",
-    "slicing": "docs/manufacturing/RTARS-30-QUALITY-SLICING-EVIDENCE.md"
+    "slicing": "docs/manufacturing/RTARS-30-QUALITY-SLICING-EVIDENCE.md",
+    "three_part_gcode_sha256": "32fec82a5f94c0d36b87587c2e853acb7f2462dc7703ec7e0fd6e9e1563a99fa",
+    "three_part_gcode_audit": "docs/manufacturing/RTARS-30-THREE-PART-GCODE-AUDIT.md"
   },
   "hardware": {
     "printer": "ELEGOO Neptune 4 Standard",
@@ -59,11 +61,26 @@
     "machine_start_end_gcode_review": "NOT_TESTED",
     "selected_process_after_import_comparison": "NOT_TESTED",
     "functional_coupon_orientation_and_support_review": "NOT_TESTED",
-    "target_preset_slicing": "NOT_TESTED",
+    "target_preset_slicing": "PASS_STATIC_GCODE_3_PARTS_FUNCTIONAL_ONLY",
     "target_3mf_source_geometry": "NOT_PUBLISHED_LICENSE_RESTRICTED",
-    "fit_test": "NOT_TESTED_DOWNSTREAM"
+    "fit_test": "NOT_TESTED_DOWNSTREAM",
+    "target_process_parameters": "PASS_STATIC_GCODE",
+    "target_support_generation": "PASS_STATIC_GCODE_NOT_SPATIAL_APPROVAL",
+    "part_by_part_support_and_orientation_justification": "NOT_TESTED",
+    "physical_execution": "NOT_TESTED"
   },
   "done": false,
   "merge_permitted": false,
-  "production_authorized": false
+  "production_authorized": false,
+  "three_part_functional_slicing": {
+    "process": "RTARS-FUNCTIONAL CANDIDATE 0.20mm",
+    "object_count": 3,
+    "estimated_duration_seconds": 9132,
+    "estimated_filament_mass_g": 20.59,
+    "estimated_filament_length_mm": 6903.65,
+    "layer_count": 129,
+    "support_generated": true,
+    "actual_printed": false,
+    "source_file_published": false
+  }
 }
