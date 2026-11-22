@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "task": "RTARS-34",
   "plates": [
     {
@@ -14,12 +14,18 @@
         "profile_validation_note": "Profile name refers to Elegoo Neptune4, while user reports Bambu Lab/Bambu Studio. Actual printer, profile mapping and export remain unverified."
       },
       "slicing_estimate": {
-        "duration_minutes": 63,
+        "duration_minutes": 59.233333333333334,
         "consumed_mass_g": 24.5,
         "waste_mass_g": 0.12,
-        "source": "user_reported_slicing_values",
+        "source": "mixed: photo_duration; earlier_user_report_for_mass_and_waste",
         "waste_definition": "unverified",
-        "evidence_file": null
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "prior_user_reported_duration_minutes": 63,
+        "duration_seconds": 3554,
+        "time_source": "slicer-overview-2026-11-22",
+        "mass_source": "earlier_user_report_unverified_by_photo",
+        "waste_source": "earlier_user_report_unverified_by_photo",
+        "duration_conflict_note": "Earlier wizard said 63 min; later screenshot shows Plate 1 59m14s (difference 3m46s). Screenshot time used as current slicing estimate; earlier value preserved for audit."
       },
       "actual_print": {
         "duration_minutes": null,
@@ -35,8 +41,141 @@
         "slicer_export_missing",
         "printer_profile_not_verified",
         "waste_category_not_defined",
+        "physical_print_not_executed",
+        "individual_mass_not_shown_in_photo",
+        "individual_waste_not_shown_in_photo"
+      ]
+    },
+    {
+      "plate_id": "PLATE-02",
+      "status": "pending",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 8040,
+        "duration_minutes": 134,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
+        "physical_print_not_executed"
+      ]
+    },
+    {
+      "plate_id": "PLATE-03",
+      "status": "pending",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 14460,
+        "duration_minutes": 241,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
+        "physical_print_not_executed"
+      ]
+    },
+    {
+      "plate_id": "PLATE-04",
+      "status": "pending",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 17340,
+        "duration_minutes": 289,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Duration displayed by slicer screenshot. Plate-level mass/waste unspecified.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
         "physical_print_not_executed"
       ]
     }
-  ]
+  ],
+  "summary_slicing_estimate": {
+    "source_id": "slicer-overview-2026-11-22",
+    "source_type": "user_uploaded_photo_manual_transcription",
+    "source_transcription": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+    "original_photo_in_repository": false,
+    "original_photo_sha256": "7a71943da07bf84a3ed422f615ed743423e0e6be687137181eac01a324f13616",
+    "filament_slot": "1",
+    "model_filament_length_m": 90.48,
+    "model_mass_g": 269.85,
+    "displayed_cost": "5.63",
+    "cost_currency": null,
+    "displayed_total_time": "12h3m",
+    "sum_of_individual_plate_durations_seconds": 43394,
+    "total_plates_in_screenshot": 4,
+    "material_type": null,
+    "model_mass_is_total_consumption": false
+  }
 }
