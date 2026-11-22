@@ -1,0 +1,37 @@
+name: RTARS-18 validator regression
+
+on:
+  pull_request:
+    paths:
+      - scripts/validate_rtars18.py
+      - tests/test_validate_rtars18.py
+      - .github/workflows/rtars18-validation.yml
+  push:
+    branches: [main]
+    paths:
+      - scripts/validate_rtars18.py
+      - tests/test_validate_rtars18.py
+      - .github/workflows/rtars18-validation.yml
+
+permissions:
+  contents: read
+
+jobs:
+  offline-regression:
+    name: Offline validator tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile Python source and tests
+        run: python -m compileall -q scripts/validate_rtars18.py tests/test_validate_rtars18.py
+      - name: Run offline manifest/partition/provenance unit tests
+        run: python -m unittest discover -s tests -p test_validate_rtars18.py -v
+      - name: Check CLI help
+        run: python scripts/validate_rtars18.py --help
