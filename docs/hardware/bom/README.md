@@ -1,9 +1,9 @@
 # RTARS-9 — BOM e riconciliazione kit fisico
 
-**Baseline:** `v0.2-owner-audit` · 2026-11-22  
+**Baseline:** `v0.3-owner-reconciliation` · 2026-11-22  
 **Issue Jira:** https://niccolopiazzi01.atlassian.net/browse/RTARS-9  
 **PR:** https://github.com/pianic2/personal-rig-tars/pull/1  
-**Esito:** inventario tracciato; ancora non completo per 3 quantità e specifiche hardware non verificabili. **Non è un collaudo elettrico, meccanico o funzionale.**
+**Esito:** inventario quantitativo compilato secondo dichiarazioni del proprietario; classificazioni fisiche non sempre concordi con le etichette. Nessun collaudo elettrico o meccanico. **Non è un collaudo elettrico, meccanico o funzionale.**
 
 ## Identità e fonti (non confondere il modello con la revisione)
 
@@ -21,7 +21,7 @@ La pagina commerciale identifica il prodotto ma non costituisce, da sola, una di
 ## Artefatti e semantica
 
 - [rig-tars-bom.csv](rig-tars-bom.csv): 25 voci, 17 `OFFICIAL` (distinta V1.0) + 8 `OBSERVED_EXTRA` (evidenze fotografiche non riconciliate con certezza).
-- [discrepancies.csv](discrepancies.csv): 13 registrazioni storiche, **2 RESOLVED** (`D10`, `D12`) e **11 OPEN**, inclusa `D13` sulla spugna assente.
+- [discrepancies.csv](discrepancies.csv): 13 registrazioni storiche, **3 RESOLVED** (`D10`, `D11`, `D12`) e **10 OPEN**, inclusa `D13` sulla spugna assente.
 - `qty_expected`: quantità della BOM pubblica V1.0; **non** quantità garantita nella confezione.
 - `qty_observed`: conteggio visto direttamente in foto oppure confermato dall'utente in Q1–Q16; il campo `evidence_source` indica la base. Un numero `0` significa *assenza riferita dal proprietario rispetto alla voce di riferimento*.
 - `packages_observed`: confezioni visibili, mai numero di viti. Le tre tipologie scritte sulla bustina mista sono associate alla **stessa bustina**.
@@ -31,7 +31,7 @@ La pagina commerciale identifica il prodotto ma non costituisce, da sola, una di
 - `status`: classifica osservazioni e limitazioni, non esito di test funzionali.
 - `ABSENT_VS_REFERENCE` / `SPEC_NOT_RECONCILED`: non equivale automaticamente a non conformità contrattuale; per stabilirla servono la packing list della variante e/o istruzioni di assemblaggio aggiornate.
 
-**Non sommare automaticamente** le righe `OBSERVED_EXTRA` e `OFFICIAL`: i codici `E005` e `A008` potrebbero rappresentare lo stesso cavo. Le viti alternative non sono considerate intercambiabili con le specifiche ufficiali senza prove.
+**Non sommare automaticamente** le righe `OBSERVED_EXTRA` e `OFFICIAL`: `A008` e `E008` indicano lo stesso cavo interruttore (identificato dal proprietario), diverso dalla prolunga `E005`. Le viti alternative non sono considerate intercambiabili con le specifiche ufficiali senza prove.
 
 ## Rilevazioni nuove confermate dal proprietario
 
@@ -46,7 +46,7 @@ La pagina commerciale identifica il prodotto ma non costituisce, da sola, una di
 | Batteria | 1 senza marcature | Tensione, chimica, capacità, polarità, protezione ignote |
 | Squadrette servo | 3 | Originalità/modello non dimostrati |
 | Contrappesi | 2 da 20 g ciascuno secondo proprietario | Composizione non misurata |
-| Prolunga | 1 presente | Lunghezza, pinout e corrispondenza E005/A008 non comprovate |
+| Prolunga | 1 presente (E005) | Lunghezza e pinout non accertati; non coincide con E008/A008 |
 | Cablaggi neri | 3 pezzi, 3 conduttori per pezzo, connettori a incastro | Destinazione e pinout non accertati |
 | Spugna isolante | 0 riportata | Confrontare con variante commerciale/manuale |
 | Integrità | Nessun danno visibile riferito dal proprietario | Nessun test elettrico/di movimento |
@@ -56,8 +56,8 @@ La pagina commerciale identifica il prodotto ma non costituisce, da sola, una di
 | Voce | Qtà nel riferimento V1.0 | Conteggio riferito del kit | Esito |
 | --- | ---: | ---: | --- |
 | M2×6 autofilettanti a croce | 60 (52 nella descrizione) | **55** | Discrepanza quantitativa aperta |
-| M2×4 svasate autofilettanti | 2 | Non riconciliato | Sono presenti **4 M2×4 testa tonda per macchina**, non equivalenza |
-| M2×4 a brugola con frenafiletti | 3 | Non riconciliato | Sono presenti **4 M2×4 a croce autofilettanti**, non equivalenza |
+| M2×4 svasate autofilettanti | 2 | **4 riferite dal proprietario** | Etichetta della bustina indica testa tonda a croce per macchina: D03 OPEN fino a verifica della geometria |
+| M2×4 a brugola con frenafiletti | 3 | **4 riferite dal proprietario** | Etichetta della bustina indica autofilettanti a croce: D04 OPEN fino a verifica dell'impronta |
 | M2×10 / gruppo esagonale | 2 | **0** | Assente rispetto al riferimento |
 | M3×10 a croce | 2 | **0** | È presente **1 M3×8 testa piatta**, non equivalente |
 | Dadi autobloccanti M3 | 2 | **0** | È presente **1 dado M2**, non equivalente |
@@ -72,20 +72,20 @@ Il conteggio delle M2×6 è **55**, non 60 e non 52. Non sovrascrivere il dato o
 - **D10:** contati 3 servo horn e tutte e sei le tipologie di minuteria effettivamente elencate nelle buste; verificata come **assente** la spugna. Il divario rispetto al riferimento rimane tracciato altrove, in particolare `D13`.
 - **D12:** marcatura del flat camera leggibile `HBVCAM-2526 V11`; la chiusura non attesta il chip del sensore camera.
 
-**Restano OPEN:** `D01`–`D09`, `D11`, `D13` (11). Principali questioni: quantità 55/60/52; driver display; fissaggi non riconciliati; M2×10, M3×10, dadi M3 non presenti; batteria non marcata; modello servo/PCB revision sconosciuti; identificazione cavo interruttore; spugna assente. Consultare [discrepancies.csv](discrepancies.csv) per causa e prossima verifica.
+**Restano OPEN:** `D01`–`D09`, `D13` (10). Principali questioni: quantità 55/60/52; driver display; fissaggi non riconciliati; M2×10, M3×10, dadi M3 non presenti; batteria non marcata; modello servo/PCB revision sconosciuti; identificazione cavo interruttore; spugna assente. Consultare [discrepancies.csv](discrepancies.csv) per causa e prossima verifica.
 
 ## Audit degli Acceptance Criteria di RTARS-9
 
 | Acceptance criterion | Stato | Evidenza |
 | --- | --- | --- |
 | Inventario con nome e riferimento di ogni componente individuato | PASS | CSV: 25 righe, ID unici, fonte e marcature |
-| Quantità fisiche registrate per ogni componente | **PARZIALE** | `qty_observed` valorizzato in **22/25** voci; quantità non riconciliabili: `E008`, `F002`, `F003` |
+| Quantità fisiche registrate per ogni componente | PASS come dichiarazioni | `qty_observed` valorizzato in **25/25** voci; A003/A004/A008 sono alias storici, non scorte aggiuntive |
 | Revisione registrata *se disponibile* | PASS come registrazione negativa | Nessuna revisione del kit dichiarata; i codici presenti sono registrati senza dedurre numeri di revisione |
 | Stato registrato per ogni voce | PASS | Colonna `status` piena |
 | Differenze annotate con evidenze | PASS | 13 discrepanze, 2 risolte, 11 ancora aperte |
 | Evidenza fotografica permanentemente versionata | **PARZIALE** | Solo hash nel repo, immagine originale ancora non archiviata |
 
-**Decisione:** mantenere Jira `In corso`, PR draft. Le discrepanze di materiale NON impediscono da sole di registrare una BOM corretta; per dichiarare il censimento `Done` occorre chiarire le tre quantità non assegnabili e i riferimenti essenziali senza congetture. L'identificazione della variante di fornitura e la verifica dei fissaggi sono gate anche per l'assemblaggio successivo.
+**Decisione:** i criteri originali di RTARS-9 (nome, quantità, revisione se disponibile, stato, differenze annotate) risultano soddisfatti come inventario dichiarativo e tracciato. La task può passare a **Fatto**; PR soggetta a review senza merge automatico. I conflitti di classificazione D03/D04 e i rischi hardware restano documentati e vanno verificati prima dell'assemblaggio.
 
 ## Sicurezza e limiti del controllo
 
@@ -94,3 +94,9 @@ Il conteggio delle M2×6 è **55**, non 60 e non 52. Non sovrascrivere il dato o
 - I 17 pezzi stampati del robot (13 categorie in distinta) sono fuori dallo scope del kit di elettronica e appartengono all'Epic E04.
 - La fotografia originale è stata condivisa nella conversazione; il repository contiene il suo manifest con SHA-256, **non** il file binario. Il nuovo documento di ispezione è una dichiarazione del proprietario, non una fotografia delle marcature.
 
+
+## Rettifica v0.3 — ultime quantità e fonte del conflitto
+
+Il proprietario identifica il cavo interruttore sciolto, senza bustina, visibile in basso a sinistra: **E008=1**, mentre **A008 è la stessa unità** e non va sommata. Il primo e il secondo gruppo M2×4, già contati in Q11, vengono classificati dal proprietario rispettivamente come **svasate autofilettanti F002=4** e **a brugola con frenafiletti F003=4**. La fotografia delle bustine ha etichette *differenti* e rimane una fonte valida: **D03 e D04 restano OPEN** fino alla verifica della geometria/impronta. La loro apertura non impedisce il censimento dichiarativo, ma impedisce di usare la BOM come distinta di montaggio senza verifica. Con queste correzioni, `qty_observed` è compilata in tutte le 25 righe; alcune righe sono alias e non vanno sommate tra loro.
+
+**D11 RESOLVED** per identificazione inventariale. Non sono stati verificati pinout, qualità delle viti, chimica/polarità batteria o modello dei servomotori. L'originale della foto resta fuori dal repository e il suo hash è nel manifest: quest'ultimo non è equivalente a un archivio fotografico persistente.
