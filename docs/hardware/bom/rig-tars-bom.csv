@@ -1,0 +1,26 @@
+id,reference_scope,category,name,official_spec_or_marking,qty_expected,qty_observed,revision_verified,packages_observed,status,notes
+E001,OFFICIAL,electronics,Scheda principale,RIG-Board0722,1,1,,,UNVERIFIED_IDENTITY,La scheda e fisicamente presente ma la marcatura RIG-Board0722 e la revisione non sono leggibili nella vista frontale.
+E002,OFFICIAL,electronics,Display TFT,ST7789P3 (BOM),1,1,,,SPEC_UNVERIFIED,Display a nastro presente. Driver non identificabile dalla foto; firmware indica ST7789V2 320x240.
+E003,OFFICIAL,electronics,Modulo fotocamera,Camera new / model not specified,1,1,,,REVISION_UNVERIFIED,"Modulo su flat arancione presente; marcatura sul flat parzialmente leggibile, identificazione completa non accertata."
+E004,OFFICIAL,electronics,Altoparlante con cassa,3514 enclosure speaker,1,1,,,SPEC_UNVERIFIED,Modulo rettangolare chiaro con cavo presente; modello 3514 non verificato dalla foto.
+E005,OFFICIAL,cables,Prolunga Type-C,200 mm,1,,,,IDENTIFICATION_PENDING,"Cavo nero sfuso con connettore metallico visibile, ma tipo e lunghezza non confermati."
+E006,OFFICIAL,electronics,Sensore touch,Not specified,1,,,1,IDENTIFICATION_PENDING,"PCB rotondo con fili nella busta antistatica; possibile sensore touch, funzione e quantita non confermate in modo indipendente."
+E007,OFFICIAL,mechanical,Contrappesi,20 g ferro,2,2,,,WEIGHT_UNVERIFIED,Due pesi metallici osservati; massa 20 g e composizione non misurate.
+E008,OFFICIAL,cables,Cavo interruttore,2 fili / 200 mm totali,1,,,1,IDENTIFICATION_PENDING,Busta con cavi rosso/nero visibile; destinazione e lunghezza non verificabili.
+E009,OFFICIAL,motion,Servomotore bus,SCS009,3,3,,,MODEL_UNVERIFIED,Tre servomotori neri osservati; sigla e revisione non leggibili; nessun test elettrico.
+E010,OFFICIAL,motion,Squadrette servo,Original servo horn,3,,,1,COUNT_UNVERIFIED,"Una busta con squadrette rotonde nere; pezzi sovrapposti, conta certa non possibile."
+E011,OFFICIAL,material,Spugna isolante,Tars electronics foam,1,,,,NOT_IDENTIFIED,Nessun componente riconosciuto senza ambiguita come spugna isolante nella fotografia.
+F001,OFFICIAL,fasteners,Vite M2x6 autofilettante a croce,M2x6,60,,,1,COUNT_UNVERIFIED,Bustina etichettata M2*6十字自攻螺丝 presente; distinta di riferimento riporta 60 ma denominazione descrittiva cita 52.
+F002,OFFICIAL,fasteners,Vite M2x4 autofilettante svasata a croce,M2x4,2,,,,SPEC_MISMATCH,Busta M2x4 visibile ma etichettata a testa tonda a croce per macchina; non equiparabile alla specifica svasata autofilettante.
+F003,OFFICIAL,fasteners,Vite M2x4 testa cilindrica esagono incassato con frenafiletti,M2x4,3,,,,SPEC_MISMATCH,Busta M2x4 a croce autofilettante visibile; non prova la presenza di viti a brugola pretrattate.
+F004,OFFICIAL,fasteners,Gruppo vite esagonale M2x10,M2x10,2,,,,NOT_IDENTIFIED,Nessuna bustina con etichetta M2x10; la diversa dicitura M2 dado esagonale di bloccaggio non e equivalente.
+F005,OFFICIAL,fasteners,Vite M3x10 a croce testa tonda,M3x10,2,,,,SPEC_MISMATCH,Nella foto compare etichetta M3x8 a croce testa piatta; non equivalente a M3x10.
+F006,OFFICIAL,fasteners,Dado autobloccante,M3,2,,,,SPEC_MISMATCH,Nella foto compare etichetta M2 dado esagonale di bloccaggio; non dimostra presenza dadi autobloccanti M3.
+A001,OBSERVED_EXTRA,power,Pacco batteria con connettore,Unmarked blue pouch,,1,,,SPEC_UNVERIFIED,"Visibile pacco batteria blu; chimica, tensione, capacita, polarita e revisione NON accertate. Non alimentare senza verifica."
+A002,OBSERVED_EXTRA,cables,Set cablaggi neri con connettori bianchi,Unmarked wire harness,,,,1,COUNT_UNVERIFIED,Busta inferiore sinistra con cablaggi neri a piu connettori; funzione e numero di cavi non verificati; possibile cablaggio servo.
+A003,OBSERVED_EXTRA,fasteners,Vite M2x4 a testa tonda a croce per macchina,M2*4圆头十字机丝,,,,1,COUNT_UNVERIFIED,Busta a destra centro con etichetta cinese; specifica diversa dalle viti F002/F003.
+A004,OBSERVED_EXTRA,fasteners,Vite M2x4 a croce autofilettante,M2*4十字自攻螺丝,,,,1,COUNT_UNVERIFIED,"Busta a destra sotto centro; tipo dichiarato da etichetta, quantita ignota."
+A005,OBSERVED_EXTRA,fasteners,Vite M2x5 testa piatta a croce per macchina,M2*5平头十字机丝,,,,1,COUNT_UNVERIFIED,Etichetta 1 della bustina combinata in basso a destra; per ciascuna tipologia non e possibile attribuire il numero di pezzi.
+A006,OBSERVED_EXTRA,fasteners,Vite M3x8 testa piatta a croce per macchina,M3*8平头十字机丝,,,,1,COUNT_UNVERIFIED,Etichetta 2 della bustina combinata in basso a destra; non sostituisce automaticamente M3x10.
+A007,OBSERVED_EXTRA,fasteners,Dado esagonale M2 di bloccaggio,M2六角对锁螺母,,,,1,COUNT_UNVERIFIED,Etichetta 3 della bustina combinata in basso a destra; specifica M2 e non M3.
+A008,OBSERVED_EXTRA,cables,Cavo nero sfuso con connettore metallico,Unmarked black cable,,1,,,IDENTIFICATION_PENDING,Cavo in basso al centro-sinistra; potrebbe coincidere con E005. Non sommare a E005 prima di identificazione.
