@@ -70,3 +70,7 @@ L'operatore ha fornito due fotografie dell'interfaccia Bambu Studio, schede **Fi
 - **G29-02** raccomandazione ugello acciaio temprato vs ottone: ancora da valutare; non è evidenza di usura effettiva.
 - **G29-03** compatibilità G-code e asciuttezza: rimangono evidenze dichiarative.
 - **DoD**: ancora non completamente superata; non effettuare merge/chiusura sulla base di queste due immagini.
+
+## Verifica Setting Overrides — dichiarazione operatore
+
+Il 2026-11-22 l'operatore dichiara che la scheda **Setting Overrides** del preset `Generic PLA @Elegoo` è **vuota**, senza override visualizzati. Evidenza: dichiarazione diretta; non è stata ricevuta una fotografia della scheda né un export del preset. Esito: **PASS dichiarativo** per assenza di override mostrati nella scheda; non equivale a verifica di ogni impostazione avanzata, di un preset ereditato o del G-code effettivo. Restano aperti la valutazione del rischio ugello ottone e la compatibilità tecnica completa.
