@@ -3,9 +3,9 @@
     "c44b2a6f09e7c89be1c6b1d8d0e5e8bb9b3cb28daff94452eb73ddbeee46b232"
   ],
   "limitations": [
-    "3MF metadata/mesh topology inspected without geometry repair.",
-    "Only 3MF units are explicit when declared; other CAD formats are not parsed.",
-    "No official MakerWorld download or physical fit test is asserted."
+    "3MF relationships, units, transforms, mesh topology and references are inspected without geometry repair.",
+    "Only 3MF mesh geometry is parsed; standalone STL/STEP/IGES and other CAD payloads are hashed but not decoded.",
+    "No physical fit, self-intersection, mesh orientation, slicer acceptance, or redistribution permission is asserted."
   ],
   "records": [
     {
@@ -21,28 +21,3481 @@
         {
           "analysis": {
             "build_instance_count": 16,
-            "build_instances": [
-              "2",
-              "4",
-              "6",
-              "8",
-              "10",
-              "12",
-              "13",
-              "14",
-              "15",
-              "17",
-              "19",
-              "21",
-              "23",
-              "25",
-              "27",
-              "29"
+            "build_items": [
+              {
+                "index": 0,
+                "object_id": "2",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    94.610831
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    72.7533799
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    12.1499996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 1,
+                "object_id": "4",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    57.594746
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -86.1924131
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    2.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 2,
+                "object_id": "6",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    160.596679
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -95.5240152
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 3,
+                "object_id": "8",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    215.460554
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -94.1441252
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    5.8499999
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 4,
+                "object_id": "10",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    95.723701
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    121.963992
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    15.3999996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 5,
+                "object_id": "12",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    95.848126
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    176.000246
+                  ],
+                  [
+                    -1.0,
+                    0.0,
+                    0.0,
+                    15.3999996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 6,
+                "object_id": "13",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    94.618522
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    227.212094
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    12.1499996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 7,
+                "object_id": "14",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    123.248888
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -97.213524
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 8,
+                "object_id": "15",
+                "printable": true,
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    122.959773
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -164.786307
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 9,
+                "object_id": "17",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    443.650341
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    129.462651
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    6.4000001
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 10,
+                "object_id": "19",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    60.5250095
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -214.317576
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 11,
+                "object_id": "21",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    61.6892329
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -146.354086
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    9.82206631
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 12,
+                "object_id": "23",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    112.238136
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -221.830787
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    10.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 13,
+                "object_id": "25",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    153.435335
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    -221.847171
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    10.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 14,
+                "object_id": "27",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    199.462472
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -162.289933
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    2.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "index": 15,
+                "object_id": "29",
+                "printable": true,
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    212.50723
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    127.191768
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    18.5
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              }
             ],
-            "component_file_count": 16,
-            "distinct_mesh_hash_count": 13,
+            "component_references": [
+              {
+                "external_path": "/3D/Objects/object_5.model",
+                "relationship_found": true,
+                "source_object_id": "2",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "1",
+                "target_part": "3D/Objects/object_5.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_12.model",
+                "relationship_found": true,
+                "source_object_id": "4",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "3",
+                "target_part": "3D/Objects/object_12.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_14.model",
+                "relationship_found": true,
+                "source_object_id": "6",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "5",
+                "target_part": "3D/Objects/object_14.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_15.model",
+                "relationship_found": true,
+                "source_object_id": "8",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "7",
+                "target_part": "3D/Objects/object_15.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_16.model",
+                "relationship_found": true,
+                "source_object_id": "10",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "9",
+                "target_part": "3D/Objects/object_16.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_17.model",
+                "relationship_found": true,
+                "source_object_id": "12",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "11",
+                "target_part": "3D/Objects/object_17.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_5.model",
+                "relationship_found": true,
+                "source_object_id": "13",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "1",
+                "target_part": "3D/Objects/object_5.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_14.model",
+                "relationship_found": true,
+                "source_object_id": "14",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "5",
+                "target_part": "3D/Objects/object_14.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_14.model",
+                "relationship_found": true,
+                "source_object_id": "15",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "5",
+                "target_part": "3D/Objects/object_14.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_26.model",
+                "relationship_found": true,
+                "source_object_id": "17",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "16",
+                "target_part": "3D/Objects/object_26.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_31.model",
+                "relationship_found": true,
+                "source_object_id": "19",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "18",
+                "target_part": "3D/Objects/object_31.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_35.model",
+                "relationship_found": true,
+                "source_object_id": "21",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "20",
+                "target_part": "3D/Objects/object_35.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_36.model",
+                "relationship_found": true,
+                "source_object_id": "23",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "22",
+                "target_part": "3D/Objects/object_36.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    9.54e-07
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_37.model",
+                "relationship_found": true,
+                "source_object_id": "25",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "24",
+                "target_part": "3D/Objects/object_37.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    9.54e-07
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_38.model",
+                "relationship_found": true,
+                "source_object_id": "27",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "26",
+                "target_part": "3D/Objects/object_38.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              },
+              {
+                "external_path": "/3D/Objects/object_39.model",
+                "relationship_found": true,
+                "source_object_id": "29",
+                "source_part": "3D/3dmodel.model",
+                "source_unit_effective": "millimeter",
+                "target_found": true,
+                "target_object_id": "28",
+                "target_part": "3D/Objects/object_39.model",
+                "target_to_source_unit_scale": 1.0,
+                "target_unit_effective": "millimeter",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ]
+              }
+            ],
+            "distinct_mesh_model_part_hash_count": 13,
+            "graph_objects": [
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "10",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "12",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "13",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "14",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "15",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "17",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "19",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "2",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "21",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "23",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "25",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "27",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "29",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "4",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "6",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 1,
+                "kind": "component_container",
+                "mesh_status": null,
+                "object_id": "8",
+                "part_path": "3D/3dmodel.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "3",
+                "part_path": "3D/Objects/object_12.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "5",
+                "part_path": "3D/Objects/object_14.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "7",
+                "part_path": "3D/Objects/object_15.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "9",
+                "part_path": "3D/Objects/object_16.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "11",
+                "part_path": "3D/Objects/object_17.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "16",
+                "part_path": "3D/Objects/object_26.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "18",
+                "part_path": "3D/Objects/object_31.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "20",
+                "part_path": "3D/Objects/object_35.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "22",
+                "part_path": "3D/Objects/object_36.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "24",
+                "part_path": "3D/Objects/object_37.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "26",
+                "part_path": "3D/Objects/object_38.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "28",
+                "part_path": "3D/Objects/object_39.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "component_count": 0,
+                "kind": "mesh",
+                "mesh_status": "PASS",
+                "object_id": "1",
+                "part_path": "3D/Objects/object_5.model",
+                "referenced_by_printable_build": true,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              }
+            ],
+            "graph_status": "PASS",
+            "instances": [
+              {
+                "bounds": [
+                  [
+                    22.110831,
+                    167.110831
+                  ],
+                  [
+                    52.7533799,
+                    92.7533799
+                  ],
+                  [
+                    0.0,
+                    24.2999992
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    22.110831,
+                    167.110831
+                  ],
+                  [
+                    52.7533799,
+                    92.7533799
+                  ],
+                  [
+                    0.0,
+                    24.2999992
+                  ]
+                ],
+                "build_object_id": "2",
+                "mesh_object_id": "1",
+                "mesh_path": "3D/Objects/object_5.model",
+                "part_name": "arm.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    94.610831
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    72.7533799
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    12.1499996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      94.610831
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      72.7533799
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      12.1499996
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    34.594746,
+                    80.594746
+                  ],
+                  [
+                    -89.1924131,
+                    -83.1924131
+                  ],
+                  [
+                    0.0,
+                    4.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    34.594746,
+                    80.594746
+                  ],
+                  [
+                    -89.1924131,
+                    -83.1924131
+                  ],
+                  [
+                    0.0,
+                    4.0
+                  ]
+                ],
+                "build_object_id": "4",
+                "mesh_object_id": "3",
+                "mesh_path": "3D/Objects/object_12.model",
+                "part_name": "摇杆.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    57.594746
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -86.1924131
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    2.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      57.594746
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      -86.1924131
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    151.39667919,
+                    169.79667881
+                  ],
+                  [
+                    -114.224016,
+                    -76.8240144
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    151.39667919,
+                    169.79667881
+                  ],
+                  [
+                    -114.224016,
+                    -76.8240144
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "build_object_id": "6",
+                "mesh_object_id": "5",
+                "mesh_path": "3D/Objects/object_14.model",
+                "part_name": "舵机盖.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    160.596679
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -95.5240152
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      160.596679
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      -95.5240152
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      8.02499962
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    197.460554,
+                    233.460554
+                  ],
+                  [
+                    -101.1441252,
+                    -87.1441252
+                  ],
+                  [
+                    0.0,
+                    11.6999998
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    197.460554,
+                    233.460554
+                  ],
+                  [
+                    -101.1441252,
+                    -87.1441252
+                  ],
+                  [
+                    0.0,
+                    11.6999998
+                  ]
+                ],
+                "build_object_id": "8",
+                "mesh_object_id": "7",
+                "mesh_path": "3D/Objects/object_15.model",
+                "part_name": "舵臂.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    215.460554
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -94.1441252
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    5.8499999
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      215.460554
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      -94.1441252
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      5.8499999
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    23.223701,
+                    168.223701
+                  ],
+                  [
+                    101.963992,
+                    141.963992
+                  ],
+                  [
+                    0.0,
+                    30.7999992
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    23.223701,
+                    168.223701
+                  ],
+                  [
+                    101.963992,
+                    141.963992
+                  ],
+                  [
+                    0.0,
+                    30.7999992
+                  ]
+                ],
+                "build_object_id": "10",
+                "mesh_object_id": "9",
+                "mesh_path": "3D/Objects/object_16.model",
+                "part_name": "R arm_shell.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    95.723701
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    121.963992
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    15.3999996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      95.723701
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      121.963992
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      15.3999996
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    23.348126,
+                    168.348126
+                  ],
+                  [
+                    156.000246,
+                    196.000246
+                  ],
+                  [
+                    0.0,
+                    30.7999992
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    23.348126,
+                    168.348126
+                  ],
+                  [
+                    156.000246,
+                    196.000246
+                  ],
+                  [
+                    0.0,
+                    30.7999992
+                  ]
+                ],
+                "build_object_id": "12",
+                "mesh_object_id": "11",
+                "mesh_path": "3D/Objects/object_17.model",
+                "part_name": "arm_shell.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    95.848126
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    176.000246
+                  ],
+                  [
+                    -1.0,
+                    0.0,
+                    0.0,
+                    15.3999996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      95.848126
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      176.000246
+                    ],
+                    [
+                      -1.0,
+                      0.0,
+                      0.0,
+                      15.3999996
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    22.118522,
+                    167.118522
+                  ],
+                  [
+                    207.212094,
+                    247.212094
+                  ],
+                  [
+                    0.0,
+                    24.2999992
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    22.118522,
+                    167.118522
+                  ],
+                  [
+                    207.212094,
+                    247.212094
+                  ],
+                  [
+                    0.0,
+                    24.2999992
+                  ]
+                ],
+                "build_object_id": "13",
+                "mesh_object_id": "1",
+                "mesh_path": "3D/Objects/object_5.model",
+                "part_name": "arm.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    94.618522
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    227.212094
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    12.1499996
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      94.618522
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      227.212094
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      12.1499996
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    114.04888819,
+                    132.44888781
+                  ],
+                  [
+                    -115.9135248,
+                    -78.5135232
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    114.04888819,
+                    132.44888781
+                  ],
+                  [
+                    -115.9135248,
+                    -78.5135232
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "build_object_id": "14",
+                "mesh_object_id": "5",
+                "mesh_path": "3D/Objects/object_14.model",
+                "part_name": "舵机盖.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    123.248888
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -97.213524
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      123.248888
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      -97.213524
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      8.02499962
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    113.75977319,
+                    132.15977281
+                  ],
+                  [
+                    -183.4863078,
+                    -146.0863062
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    113.75977319,
+                    132.15977281
+                  ],
+                  [
+                    -183.4863078,
+                    -146.0863062
+                  ],
+                  [
+                    0.0,
+                    16.04999924
+                  ]
+                ],
+                "build_object_id": "15",
+                "mesh_object_id": "5",
+                "mesh_path": "3D/Objects/object_14.model",
+                "part_name": "舵机盖.STEP",
+                "transform": [
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    122.959773
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    -164.786307
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    8.02499962
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      122.959773
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      -164.786307
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      8.02499962
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    408.650341,
+                    478.650341
+                  ],
+                  [
+                    56.962651,
+                    201.962651
+                  ],
+                  [
+                    0.0,
+                    12.8000002
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    408.650341,
+                    478.650341
+                  ],
+                  [
+                    56.962651,
+                    201.962651
+                  ],
+                  [
+                    0.0,
+                    12.8000002
+                  ]
+                ],
+                "build_object_id": "17",
+                "mesh_object_id": "16",
+                "mesh_path": "3D/Objects/object_26.model",
+                "part_name": "body_shell.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    443.650341
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    129.462651
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    6.4000001
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      443.650341
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      129.462651
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      6.4000001
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    43.0250095,
+                    78.0250095
+                  ],
+                  [
+                    -220.83771522,
+                    -207.79743678
+                  ],
+                  [
+                    0.0,
+                    2.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    43.0250095,
+                    78.0250095
+                  ],
+                  [
+                    -220.83771522,
+                    -207.79743678
+                  ],
+                  [
+                    0.0,
+                    2.0
+                  ]
+                ],
+                "build_object_id": "19",
+                "mesh_object_id": "18",
+                "mesh_path": "3D/Objects/object_31.model",
+                "part_name": "摄像头盖板.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    60.5250095
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    -214.317576
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      60.5250095
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      -214.317576
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      1.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    32.5392333,
+                    90.8392325
+                  ],
+                  [
+                    -165.354086,
+                    -127.354086
+                  ],
+                  [
+                    0.0,
+                    19.64413262
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    32.5392333,
+                    90.8392325
+                  ],
+                  [
+                    -165.354086,
+                    -127.354086
+                  ],
+                  [
+                    0.0,
+                    19.64413262
+                  ]
+                ],
+                "build_object_id": "21",
+                "mesh_object_id": "20",
+                "mesh_path": "3D/Objects/object_35.model",
+                "part_name": "支架.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    61.6892329
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -146.354086
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    9.82206631
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      61.6892329
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      -146.354086
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      9.82206631
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    103.913136194,
+                    120.563135814
+                  ],
+                  [
+                    -233.5800384,
+                    -210.0815356
+                  ],
+                  [
+                    0.0,
+                    20.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    103.913136194,
+                    120.563135814
+                  ],
+                  [
+                    -233.5800384,
+                    -210.0815356
+                  ],
+                  [
+                    0.0,
+                    20.0
+                  ]
+                ],
+                "build_object_id": "23",
+                "mesh_object_id": "22",
+                "mesh_path": "3D/Objects/object_36.model",
+                "part_name": "电路板支架小.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    112.238136954
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -221.830787
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    10.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      112.238136
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      -221.830787
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      10.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      9.54e-07
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    145.110335194,
+                    161.760334814
+                  ],
+                  [
+                    -233.5964224,
+                    -210.0979196
+                  ],
+                  [
+                    0.0,
+                    20.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    145.110335194,
+                    161.760334814
+                  ],
+                  [
+                    -233.5964224,
+                    -210.0979196
+                  ],
+                  [
+                    0.0,
+                    20.0
+                  ]
+                ],
+                "build_object_id": "25",
+                "mesh_object_id": "24",
+                "mesh_path": "3D/Objects/object_37.model",
+                "part_name": "电路板支架小L.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    153.435335954
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    0.0,
+                    -221.847171
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    10.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      153.435335
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      -221.847171
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      10.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      9.54e-07
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    167.462472,
+                    231.462472
+                  ],
+                  [
+                    -193.7399261,
+                    -130.8399399
+                  ],
+                  [
+                    0.0,
+                    4.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    167.462472,
+                    231.462472
+                  ],
+                  [
+                    -193.7399261,
+                    -130.8399399
+                  ],
+                  [
+                    0.0,
+                    4.0
+                  ]
+                ],
+                "build_object_id": "27",
+                "mesh_object_id": "26",
+                "mesh_path": "3D/Objects/object_38.model",
+                "part_name": "屏幕贴胶底壳.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    199.462472
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    -162.289933
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0,
+                    2.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      199.462472
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      -162.289933
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              },
+              {
+                "bounds": [
+                  [
+                    177.50723,
+                    247.50723
+                  ],
+                  [
+                    54.691768,
+                    199.691768
+                  ],
+                  [
+                    0.0,
+                    37.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    177.50723,
+                    247.50723
+                  ],
+                  [
+                    54.691768,
+                    199.691768
+                  ],
+                  [
+                    0.0,
+                    37.0
+                  ]
+                ],
+                "build_object_id": "29",
+                "mesh_object_id": "28",
+                "mesh_path": "3D/Objects/object_39.model",
+                "part_name": "主体.STEP",
+                "transform": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    212.50723
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    -1.0,
+                    127.191768
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0,
+                    18.5
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "transform_chain": [
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      212.50723
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      -1.0,
+                      127.191768
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      18.5
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ],
+                  [
+                    [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      0.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  ]
+                ],
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter"
+              }
+            ],
+            "issues": [],
             "mesh_checks_pass": true,
             "mesh_file_count": 13,
+            "mesh_instance_count": 16,
+            "mesh_object_count": 13,
+            "meshless_container_count": 16,
+            "model_part_units": {
+              "3D/3dmodel.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_12.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_14.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_15.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_16.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_17.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_26.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_27.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_28.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_29.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_31.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_35.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_36.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_37.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_38.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_39.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              },
+              "3D/Objects/object_5.model": {
+                "declared": "millimeter",
+                "effective": "millimeter",
+                "source": "declared"
+              }
+            },
+            "model_relationships": [
+              {
+                "relationship_id": "rel-1",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_5.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-10",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_26.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-11",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_31.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-12",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_35.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-13",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_36.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-14",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_37.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-15",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_38.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-16",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_39.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-2",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_12.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-3",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_14.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-4",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_15.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-5",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_16.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-6",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_17.model",
+                "used_by_printable_build": true
+              },
+              {
+                "relationship_id": "rel-7",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_27.model",
+                "used_by_printable_build": false
+              },
+              {
+                "relationship_id": "rel-8",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_28.model",
+                "used_by_printable_build": false
+              },
+              {
+                "relationship_id": "rel-9",
+                "source_part": "3D/3dmodel.model",
+                "target_found": true,
+                "target_part": "3D/Objects/object_29.model",
+                "used_by_printable_build": false
+              },
+              {
+                "primary_model": true,
+                "relationship_id": "rel-1",
+                "source_part": "_rels/.rels",
+                "target_found": true,
+                "target_part": "3D/3dmodel.model",
+                "used_by_printable_build": true
+              }
+            ],
             "named_instance_counts": {
               "R arm_shell.STEP": 1,
               "arm.STEP": 2,
@@ -58,93 +3511,45 @@
               "舵机盖.STEP": 3,
               "舵臂.STEP": 1
             },
-            "objects": [
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "2"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "4"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "6"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "8"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "10"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "12"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "13"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "14"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "15"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "17"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "19"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "21"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "23"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "25"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "27"
-              },
-              {
-                "component_count": 1,
-                "kind": "component_container",
-                "object_id": "29"
-              }
-            ],
+            "object_count_all_parts": 29,
             "package_member_count": 40,
             "package_status": "PASS",
             "plate_count": 3,
+            "primary_model_metadata": {
+              "Application": "BambuStudio-02.07.01.57",
+              "BambuStudio:3mfVersion": "1",
+              "Copyright": "",
+              "CreationDate": "2026-09-02",
+              "Description": "",
+              "Designer": "",
+              "DesignerCover": "",
+              "DesignerUserId": "1510856505",
+              "License": "",
+              "ModificationDate": "2026-09-02",
+              "Origin": "",
+              "ProfileCover": "",
+              "ProfileDescription": "",
+              "ProfileTitle": "",
+              "Thumbnail_Middle": "/Metadata/plate_1.png",
+              "Thumbnail_Small": "/Metadata/plate_1_small.png",
+              "Title": ""
+            },
+            "printable_build_instance_count": 16,
+            "relationship_targets_not_used_by_components": [
+              "3D/Objects/object_27.model",
+              "3D/Objects/object_28.model",
+              "3D/Objects/object_29.model"
+            ],
             "resource_object_count": 16,
-            "unit_declared": "millimeter"
+            "unit_declared": "millimeter",
+            "unit_effective": "millimeter",
+            "unit_source": "declared",
+            "unreferenced_package_parts": [
+              "3D/Objects/object_27.model",
+              "3D/Objects/object_28.model",
+              "3D/Objects/object_29.model"
+            ],
+            "unreferenced_resource_object_ids": []
           },
           "format": "3MF",
           "package_members": [
@@ -169,6 +3574,20 @@
                     3.0
                   ]
                 ],
+                "bounds_mm": [
+                  [
+                    -23.0,
+                    23.0
+                  ],
+                  [
+                    -2.0,
+                    2.0
+                  ],
+                  [
+                    -3.0,
+                    3.0
+                  ]
+                ],
                 "degenerate_triangle_count": 0,
                 "duplicate_triangle_count": 0,
                 "edge_incidence": {
@@ -178,9 +3597,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 1004,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 500,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -23.0,
+                        23.0
+                      ],
+                      [
+                        -2.0,
+                        2.0
+                      ],
+                      [
+                        -3.0,
+                        3.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -23.0,
+                        23.0
+                      ],
+                      [
+                        -2.0,
+                        2.0
+                      ],
+                      [
+                        -3.0,
+                        3.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 1506
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 1004,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 500,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "3"
+                }
+              ],
               "path": "3D/Objects/object_12.model",
               "sha256": "044ca1dabd1919a03d5700efe88b3289a95047dd46b317c4e6238197b9692fda",
               "size_bytes": 70164
@@ -188,6 +3657,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -18.7000008,
+                    18.7000008
+                  ],
+                  [
+                    -8.02499962,
+                    8.02499962
+                  ],
+                  [
+                    -9.19999981,
+                    9.19999981
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -18.7000008,
                     18.7000008
@@ -210,9 +3693,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 5566,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 2775,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -18.7000008,
+                        18.7000008
+                      ],
+                      [
+                        -8.02499962,
+                        8.02499962
+                      ],
+                      [
+                        -9.19999981,
+                        9.19999981
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -18.7000008,
+                        18.7000008
+                      ],
+                      [
+                        -8.02499962,
+                        8.02499962
+                      ],
+                      [
+                        -9.19999981,
+                        9.19999981
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 8349
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 5566,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 2775,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "5"
+                }
+              ],
               "path": "3D/Objects/object_14.model",
               "sha256": "3227eed57147c1c7d3f0f57a1fe2ab01f1151ec7d6a1638aa893d166f3eeb236",
               "size_bytes": 422202
@@ -220,6 +3753,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -18.0,
+                    18.0
+                  ],
+                  [
+                    -5.8499999,
+                    5.8499999
+                  ],
+                  [
+                    -7.0,
+                    7.0
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -18.0,
                     18.0
@@ -242,9 +3789,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 21526,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 10753,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -18.0,
+                        18.0
+                      ],
+                      [
+                        -5.8499999,
+                        5.8499999
+                      ],
+                      [
+                        -7.0,
+                        7.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -18.0,
+                        18.0
+                      ],
+                      [
+                        -5.8499999,
+                        5.8499999
+                      ],
+                      [
+                        -7.0,
+                        7.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 32289
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 21526,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 10753,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "7"
+                }
+              ],
               "path": "3D/Objects/object_15.model",
               "sha256": "4d2dc7843fd850b9774216bc30efc8e6c9be7189263b34cd5ed1daea0c6022c0",
               "size_bytes": 1664318
@@ -265,25 +3862,7 @@
                     20.0
                   ]
                 ],
-                "degenerate_triangle_count": 0,
-                "duplicate_triangle_count": 0,
-                "edge_incidence": {
-                  "2": 11904
-                },
-                "manifold_by_edge_count": true,
-                "mesh_status": "PASS",
-                "triangle_count": 7936,
-                "unit_declared": "millimeter",
-                "vertex_count": 3956,
-                "watertight_by_edge_count": true
-              },
-              "path": "3D/Objects/object_16.model",
-              "sha256": "91476bf59bc1195dbcd06ae771960bc1dbe81cd20bc67a42c9fedc4473667101",
-              "size_bytes": 603563
-            },
-            {
-              "mesh": {
-                "bounds": [
+                "bounds_mm": [
                   [
                     -15.3999996,
                     15.3999996
@@ -306,9 +3885,155 @@
                 "mesh_status": "PASS",
                 "triangle_count": 7936,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 3956,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -15.3999996,
+                        15.3999996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -15.3999996,
+                        15.3999996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 11904
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 7936,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 3956,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "9"
+                }
+              ],
+              "path": "3D/Objects/object_16.model",
+              "sha256": "91476bf59bc1195dbcd06ae771960bc1dbe81cd20bc67a42c9fedc4473667101",
+              "size_bytes": 603563
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -15.3999996,
+                    15.3999996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    -15.3999996,
+                    15.3999996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11904
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7936,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
+                "vertex_count": 3956,
+                "watertight_by_edge_count": true
+              },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -15.3999996,
+                        15.3999996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -15.3999996,
+                        15.3999996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 11904
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 7936,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 3956,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "11"
+                }
+              ],
               "path": "3D/Objects/object_17.model",
               "sha256": "6a8546b7ec91539e6406c75208eced752ce383701710cc310eec77a07347313f",
               "size_bytes": 603331
@@ -316,6 +4041,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -35.0,
+                    35.0
+                  ],
+                  [
+                    -6.4000001,
+                    6.4000001
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -35.0,
                     35.0
@@ -338,9 +4077,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 11304,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 5638,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -35.0,
+                        35.0
+                      ],
+                      [
+                        -6.4000001,
+                        6.4000001
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -35.0,
+                        35.0
+                      ],
+                      [
+                        -6.4000001,
+                        6.4000001
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 16956
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 11304,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 5638,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "16"
+                }
+              ],
               "path": "3D/Objects/object_26.model",
               "sha256": "977476f74d34bc88c9003845c173f60b6b49c122cef80ca9133940b44a2aec59",
               "size_bytes": 887489
@@ -376,6 +4165,20 @@
                     6.52013922
                   ]
                 ],
+                "bounds_mm": [
+                  [
+                    -17.5,
+                    17.5
+                  ],
+                  [
+                    -1.0,
+                    1.0
+                  ],
+                  [
+                    -6.52013922,
+                    6.52013922
+                  ]
+                ],
                 "degenerate_triangle_count": 0,
                 "duplicate_triangle_count": 0,
                 "edge_incidence": {
@@ -385,9 +4188,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 2676,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 1336,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -17.5,
+                        17.5
+                      ],
+                      [
+                        -1.0,
+                        1.0
+                      ],
+                      [
+                        -6.52013922,
+                        6.52013922
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -17.5,
+                        17.5
+                      ],
+                      [
+                        -1.0,
+                        1.0
+                      ],
+                      [
+                        -6.52013922,
+                        6.52013922
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 4014
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 2676,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 1336,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "18"
+                }
+              ],
               "path": "3D/Objects/object_31.model",
               "sha256": "9effea827fa26c7458dafdf8ef767787c151a33cbf2da9ee9e418b7e6921e0d4",
               "size_bytes": 196753
@@ -395,6 +4248,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -29.1499996,
+                    29.1499996
+                  ],
+                  [
+                    -19.0,
+                    19.0
+                  ],
+                  [
+                    -9.82206631,
+                    9.82206631
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -29.1499996,
                     29.1499996
@@ -417,9 +4284,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 6990,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 3489,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -29.1499996,
+                        29.1499996
+                      ],
+                      [
+                        -19.0,
+                        19.0
+                      ],
+                      [
+                        -9.82206631,
+                        9.82206631
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -29.1499996,
+                        29.1499996
+                      ],
+                      [
+                        -19.0,
+                        19.0
+                      ],
+                      [
+                        -9.82206631,
+                        9.82206631
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 10485
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 6990,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 3489,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "20"
+                }
+              ],
               "path": "3D/Objects/object_35.model",
               "sha256": "96f05fcdf7fbc4c875b6f700d916f302ae692cc0c18a9a9aeb989adf54191284",
               "size_bytes": 533564
@@ -440,25 +4357,7 @@
                     10.0
                   ]
                 ],
-                "degenerate_triangle_count": 0,
-                "duplicate_triangle_count": 0,
-                "edge_incidence": {
-                  "2": 11352
-                },
-                "manifold_by_edge_count": true,
-                "mesh_status": "PASS",
-                "triangle_count": 7568,
-                "unit_declared": "millimeter",
-                "vertex_count": 3770,
-                "watertight_by_edge_count": true
-              },
-              "path": "3D/Objects/object_36.model",
-              "sha256": "0fc50ad8a2f2260776eb47325f6ccb85a482d7a8fea3388f2ac5013cca170ceb",
-              "size_bytes": 581612
-            },
-            {
-              "mesh": {
-                "bounds": [
+                "bounds_mm": [
                   [
                     -8.32500076,
                     8.32499886
@@ -481,9 +4380,155 @@
                 "mesh_status": "PASS",
                 "triangle_count": 7568,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 3770,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -8.32500076,
+                        8.32499886
+                      ],
+                      [
+                        -11.7492514,
+                        11.7492514
+                      ],
+                      [
+                        -10.0,
+                        10.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -8.32500076,
+                        8.32499886
+                      ],
+                      [
+                        -11.7492514,
+                        11.7492514
+                      ],
+                      [
+                        -10.0,
+                        10.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 11352
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 7568,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 3770,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "22"
+                }
+              ],
+              "path": "3D/Objects/object_36.model",
+              "sha256": "0fc50ad8a2f2260776eb47325f6ccb85a482d7a8fea3388f2ac5013cca170ceb",
+              "size_bytes": 581612
+            },
+            {
+              "mesh": {
+                "bounds": [
+                  [
+                    -8.32500076,
+                    8.32499886
+                  ],
+                  [
+                    -11.7492514,
+                    11.7492514
+                  ],
+                  [
+                    -10.0,
+                    10.0
+                  ]
+                ],
+                "bounds_mm": [
+                  [
+                    -8.32500076,
+                    8.32499886
+                  ],
+                  [
+                    -11.7492514,
+                    11.7492514
+                  ],
+                  [
+                    -10.0,
+                    10.0
+                  ]
+                ],
+                "degenerate_triangle_count": 0,
+                "duplicate_triangle_count": 0,
+                "edge_incidence": {
+                  "2": 11352
+                },
+                "manifold_by_edge_count": true,
+                "mesh_status": "PASS",
+                "triangle_count": 7568,
+                "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
+                "vertex_count": 3770,
+                "watertight_by_edge_count": true
+              },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -8.32500076,
+                        8.32499886
+                      ],
+                      [
+                        -11.7492514,
+                        11.7492514
+                      ],
+                      [
+                        -10.0,
+                        10.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -8.32500076,
+                        8.32499886
+                      ],
+                      [
+                        -11.7492514,
+                        11.7492514
+                      ],
+                      [
+                        -10.0,
+                        10.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 11352
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 7568,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 3770,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "24"
+                }
+              ],
               "path": "3D/Objects/object_37.model",
               "sha256": "5e1cf924d5629a5ea7f419798e813a8670811e80bf7641f84a3ef41273b528e8",
               "size_bytes": 582377
@@ -491,6 +4536,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -32.0,
+                    32.0
+                  ],
+                  [
+                    -31.4499931,
+                    31.4499931
+                  ],
+                  [
+                    -2.0,
+                    2.0
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -32.0,
                     32.0
@@ -513,9 +4572,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 123128,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 61444,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -32.0,
+                        32.0
+                      ],
+                      [
+                        -31.4499931,
+                        31.4499931
+                      ],
+                      [
+                        -2.0,
+                        2.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -32.0,
+                        32.0
+                      ],
+                      [
+                        -31.4499931,
+                        31.4499931
+                      ],
+                      [
+                        -2.0,
+                        2.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 184692
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 123128,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 61444,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "26"
+                }
+              ],
               "path": "3D/Objects/object_38.model",
               "sha256": "89b054f417b4382bb86abf053a92986464f9c1507374ebd9a46da790d8a47f5f",
               "size_bytes": 9877467
@@ -523,6 +4632,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -35.0,
+                    35.0
+                  ],
+                  [
+                    -18.5,
+                    18.5
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -35.0,
                     35.0
@@ -545,9 +4668,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 16828,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 8388,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -35.0,
+                        35.0
+                      ],
+                      [
+                        -18.5,
+                        18.5
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -35.0,
+                        35.0
+                      ],
+                      [
+                        -18.5,
+                        18.5
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 25242
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 16828,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 8388,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "28"
+                }
+              ],
               "path": "3D/Objects/object_39.model",
               "sha256": "0857334419780e56fbb12290c66a6522757903ac7e66bc1a7d0459c1323fe006",
               "size_bytes": 1277823
@@ -555,6 +4728,20 @@
             {
               "mesh": {
                 "bounds": [
+                  [
+                    -12.1499996,
+                    12.1499996
+                  ],
+                  [
+                    -72.5,
+                    72.5
+                  ],
+                  [
+                    -20.0,
+                    20.0
+                  ]
+                ],
+                "bounds_mm": [
                   [
                     -12.1499996,
                     12.1499996
@@ -577,9 +4764,59 @@
                 "mesh_status": "PASS",
                 "triangle_count": 9788,
                 "unit_declared": "millimeter",
+                "unit_effective": "millimeter",
+                "unit_source": "declared",
                 "vertex_count": 4884,
                 "watertight_by_edge_count": true
               },
+              "objects": [
+                {
+                  "mesh": {
+                    "bounds": [
+                      [
+                        -12.1499996,
+                        12.1499996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "bounds_mm": [
+                      [
+                        -12.1499996,
+                        12.1499996
+                      ],
+                      [
+                        -72.5,
+                        72.5
+                      ],
+                      [
+                        -20.0,
+                        20.0
+                      ]
+                    ],
+                    "degenerate_triangle_count": 0,
+                    "duplicate_triangle_count": 0,
+                    "edge_incidence": {
+                      "2": 14682
+                    },
+                    "manifold_by_edge_count": true,
+                    "mesh_status": "PASS",
+                    "triangle_count": 9788,
+                    "unit_declared": "millimeter",
+                    "unit_effective": "millimeter",
+                    "unit_source": "declared",
+                    "vertex_count": 4884,
+                    "watertight_by_edge_count": true
+                  },
+                  "object_id": "1"
+                }
+              ],
               "path": "3D/Objects/object_5.model",
               "sha256": "3f47b028c0c41cee11d877b6997a408e1ce25280523214b9a462a203478cb45d",
               "size_bytes": 753193
