@@ -13,24 +13,24 @@
 - **MANCANTE:** dichiarato esplicitamente assente nella ricognizione attuale. Nessun elemento è classificato così senza conferma.
 - **NON APPLICABILE:** utilità non ancora stabilita rispetto a una fase operativa.
 
-Gli ID sono stabili. Non considerare l'elenco un ordine d'acquisto. **La disponibilità di un attrezzo non dimostra che sia adatto** a tutte le dimensioni di viti o alle procedure del kit.
+Gli ID sono stabili. Non considerare l'elenco un ordine d'acquisto. L'utente dichiara di possedere assortimenti completi di misure e forme degli utensili manuali: non occorre inventariare singolarmente le misure. La compatibilità si verifica comunque durante l'uso, evitando forzature.
 
 ## 1. Attrezzatura fisica
 
 | ID | Categoria | Attrezzo | Stato | Quantità / note | Uso previsto |
 | --- | --- | --- | --- | --- | --- |
-| TOOL-001 | Assemblaggio | Cacciaviti a croce di precisione | DISPONIBILE — dichiarato | Misure delle punte da verificare | Viti con impronta a croce |
-| TOOL-002 | Assemblaggio | Pinzette di precisione | DISPONIBILE — dichiarato | Modello da verificare | Piccole parti e connettori |
+| TOOL-001 | Assemblaggio | Cacciaviti a croce di precisione | DISPONIBILE — dichiarato | Assortimento completo di misure dichiarato | Viti con impronta a croce |
+| TOOL-002 | Assemblaggio | Pinzette di precisione | DISPONIBILE — dichiarato | Forme e misure disponibili dichiarate | Piccole parti e connettori |
 | TOOL-003 | Assemblaggio | Tronchesine | DISPONIBILE — dichiarato | Modello da verificare | Taglio fascette/filo, con cautela |
-| TOOL-004 | Assemblaggio | Chiavi esagonali / brugole | DISPONIBILE — dichiarato | Misure da verificare; non dedurre uso su viti del kit | Eventuali elementi esagonali |
-| TOOL-005 | Misura | Calibro digitale | DISPONIBILE — dichiarato | Modello/precisione e disponibilità effettiva da verificare | Quote di stampe e accoppiamenti |
+| TOOL-004 | Assemblaggio | Chiavi esagonali / brugole | DISPONIBILE — dichiarato | Assortimento completo dichiarato; non dedurre uso su viti del kit | Eventuali elementi esagonali |
+| TOOL-005 | Misura | Calibro digitale | DISPONIBILE — dichiarato | Disponibilità confermata; caratteristiche metrologiche non essenziali a questo inventario | Quote di stampe e accoppiamenti |
 | TOOL-006 | Elettronica | Multimetro digitale | DISPONIBILE — dichiarato | Modello da verificare | Verifiche elettriche a circuito disalimentato, ove applicabile |
 | TOOL-007 | Elettronica | Saldatore a stagno | DISPONIBILE — dichiarato | Temperatura/punte da verificare | Eventuali lavorazioni autorizzate |
 | TOOL-008 | Elettronica | Stagno e flussante | DISPONIBILE — dichiarato | Lega, diametro e quantità da verificare | Saldature, se necessarie |
 | TOOL-009 | Elettronica | Pinze spelafili | DISPONIBILE — dichiarato | Sezioni compatibili da verificare | Preparazione cavi, se necessaria |
 | TOOL-010 | Stampa FDM | Spatola per rimozione stampe | DISPONIBILE — dichiarato | Modello da verificare | Rimozione pezzi a piatto freddo |
 | TOOL-011 | Finitura | Carta abrasiva / lime | DISPONIBILE — dichiarato | Grane e geometrie da verificare | Rifinitura pezzi |
-| TOOL-012 | Stampa FDM | Essiccatore per filamenti | DISPONIBILE — dichiarato | Modello, controllo termico e capacità da verificare | Gestione filamenti umidi |
+| TOOL-012 | Stampa FDM | Essiccatore per filamenti | DISPONIBILE — dichiarato | Disponibilità confermata; parametri operativi da leggere sul modello prima dell'uso | Gestione filamenti umidi |
 | TOOL-013 | Finitura | Colla per plastica | DISPONIBILE — dichiarato | Tipo chimico e compatibilità PLA da verificare | Incollaggi solo dove previsti |
 | TOOL-014 | Elettronica | Alimentatore da banco | DA VERIFICARE | Non selezionato; non dichiarato mancante | Eventuale diagnosi |
 | TOOL-015 | Finitura | Utensile per sbavatura | DA VERIFICARE | Non selezionato; lime già disponibili come possibile alternativa | Bordi delle stampe |
@@ -43,10 +43,10 @@ Gli ID sono stabili. Non considerare l'elenco un ordine d'acquisto. **La disponi
 
 | Oggetto | Alternativa o mitigazione | Stato della valutazione |
 | --- | --- | --- |
-| Utensile per sbavatura | Lime/carta abrasiva già disponibili, se geometria e tolleranze lo consentono | Alternativa possibile, non equivalenza generale |
+| Utensile per sbavatura | Lime/carta abrasiva già disponibili, se geometria e tolleranze lo consentono | Alternativa disponibile per finitura ordinaria; necessità di attrezzo dedicato non dimostrata |
 | Alimentatore da banco | Nessuna alternativa validata | Necessità da stabilire; **non** sostituire con alimentazioni improvvisate |
 | Trapano | Nessuna alternativa validata | Necessità da stabilire sui modelli ufficiali |
-| Utensili a croce | Verificare la misura delle punte sulla minuteria effettiva prima di usarli | Compatibilità non testata |
+| Utensili a croce | Assortimento di misure/formati dichiarato completo | Nessun acquisto richiesto; scegliere la punta corretta durante l'assemblaggio |
 
 ## 2. Stampante e ambiente
 
@@ -61,15 +61,15 @@ La Neptune 4 Standard è distinta da Pro, Plus e Max. I dati di volume/ugello so
 
 ## 3. Filamenti e consumabili di stampa
 
-Gli acquisti storici sono tracciati **senza inferire** bobine rimaste, peso residuo o presenza fisica attuale. I prezzi sono prezzi d'acquisto storici, non prezzi correnti.
+L'utente dichiara in data 2026-11-22 **oltre 800 g di filamento residuo per ciascuna delle cinque varianti elencate**. Sono quantità dichiarate, non pesate in questa task. I prezzi sono storici, non correnti.
 
 | ID | Materiale | Colore | Formato / diametro | Stato | Evidenza e note |
 | --- | --- | --- | --- | --- | --- |
-| MAT-001 | ELEGOO Rapid PLA+ | Black | 1,75 mm; peso residuo ignoto | DOCUMENTATO — storico | Materiale effettivamente usato nei test Neptune 4, T1-M01 |
-| MAT-002 | ELEGOO PLA Pro | Burgundy Red | Diametro e massa bobina da verificare | DOCUMENTATO — storico | Acquisto dichiarato 2026-08-28, €14,08 |
-| MAT-003 | ELEGOO PLA Matte | Sakura Pink | Diametro e massa bobina da verificare | DOCUMENTATO — storico | Acquisto dichiarato 2026-08-28, €14,90 |
-| MAT-004 | ELEGOO PLA Metallic | Metal Bronze | Diametro e massa bobina da verificare | DOCUMENTATO — storico | Acquisto dichiarato 2026-08-28, €15,73; *metallic* è denominazione commerciale, non prova di caricamento metallico abrasivo |
-| MAT-005 | ELEGOO Rapid PLA Plus | White | Diametro e massa bobina da verificare | DOCUMENTATO — storico | Acquisto dichiarato 2026-08-28, €13,25 |
+| MAT-001 | ELEGOO Rapid PLA+ | Black | 1,75 mm; residuo >800 g (dichiarato) | DISPONIBILE — dichiarato | Materiale effettivamente usato nei test Neptune 4, T1-M01 |
+| MAT-002 | ELEGOO PLA Pro | Burgundy Red | Residuo >800 g (dichiarato); diametro non rilevato | DISPONIBILE — dichiarato | Acquisto dichiarato 2026-08-28, €14,08 |
+| MAT-003 | ELEGOO PLA Matte | Sakura Pink | Residuo >800 g (dichiarato); diametro non rilevato | DISPONIBILE — dichiarato | Acquisto dichiarato 2026-08-28, €14,90 |
+| MAT-004 | ELEGOO PLA Metallic | Metal Bronze **(scelto per RIG-TARS)** | Residuo >800 g (dichiarato); diametro non rilevato | DISPONIBILE — dichiarato | Acquisto dichiarato 2026-08-28, €15,73; *metallic* è denominazione commerciale, non prova di caricamento metallico abrasivo |
+| MAT-005 | ELEGOO Rapid PLA Plus | White | Residuo >800 g (dichiarato); diametro non rilevato | DISPONIBILE — dichiarato | Acquisto dichiarato 2026-08-28, €13,25 |
 | MAT-006 | Alcool isopropilico (IPA) | — | Concentrazione ignota | DA VERIFICARE | Non selezionato; non dichiarato mancante |
 | MAT-007 | Frenafiletti aggiuntivo | — | Tipo ignoto | DA VERIFICARE | Distinto da eventuale frenafiletti preapplicato a viti del kit |
 | MAT-008 | Ulteriori filamenti PETG / TPU / ASA / ABS / Nylon | — | — | DA VERIFICARE | Discussioni/raccomandazioni pregresse **non** equivalgono ad acquisto o possesso |
@@ -103,17 +103,17 @@ La classificazione delle viti del kit deve rimanere aderente alle ultime ispezio
 - [x] Materiali di stampa recuperati da evidenze storiche con nomi/varianti documentati.
 - [x] Elementi non selezionati conservati come **DA VERIFICARE**, non marcati mancanti.
 - [x] Alternative/assenze non dimostrate esplicitate; nessuna compatibilità non testata dichiarata valida.
-- [ ] Verificare fisicamente quantità attuali, peso residuo, diametri e condizioni dei filamenti.
-- [ ] Verificare modello essiccatore e possibilità di trattamento conforme ai produttori.
-- [ ] Verificare misure cacciaviti e compatibilità con le viti effettive del kit.
-- [ ] Stabilire se alimentatore da banco/trapano/utensile di sbavatura siano necessari.
-- [ ] Confermare disponibilità attuale degli attrezzi riportati solo come storici.
+- [x] Quantità residue registrate come dichiarazione dell'utente (>800 g per ciascuna delle cinque varianti); diametro delle varianti non rilevate e condizioni del filamento restano controlli operativi prima della stampa, non blocchi dell'inventario.
+- [x] Essiccatore registrato come disponibile; modello e parametri conformi ai produttori saranno verificati prima di un ciclo concreto, senza bloccare questa task documentale.
+- [x] Assortimento completo di misure/formati degli utensili dichiarato dall'utente; scelta della punta corretta demandata all'assemblaggio.
+- [x] Alimentatore da banco e trapano mantenuti DA VERIFICARE come dotazioni **non necessarie per chiudere l'inventario**; necessità operativa futura valutata quando emerge. Lime/carta abrasiva già disponibili per finitura ordinaria.
+- [x] Le attrezzature note solo da storico rimangono esplicitamente classificate DOCUMENTATO — storico; la loro disponibilità non viene promossa senza conferma, come previsto dall'AC di inventariazione.
 
 ### Provenienza e revisione
 
-- **Ricognizione diretta:** conferma dell'utente del 2026-11-22 (13 voci selezionate).
+- **Ricognizione diretta:** conferme dell'utente del 2026-11-22 (13 voci selezionate; assortimenti completi di utensili; cinque varianti di filamento con residuo >800 g ciascuna; Metal Bronze scelto per RIG-TARS).
 - **Progetto Stampa 3D:** dichiarazioni e acquisti registrati tra agosto e novembre 2026; alcune informazioni sono storiche e richiedono verifica fisica corrente.
 - **RTARS-9:** fonte canonica per BOM e minuteria del robot.
 - **Nessuna evidenza fotografica aggiuntiva** esaminata per questa revisione.
 
-L'inventario è una baseline aggiornabile. Prima di chiudere RTARS-13, valutare gli AC usando le verifiche aperte e la Definition of Done del repository.
+**Esito RTARS-13:** inventario documentale completo rispetto agli AC («attrezzature e materiali elencati; assenze e alternative registrate»). Le verifiche d'uso, l'adeguatezza della stampa e le necessità future restano controlli di fase; non sono prerequisiti per censire gli strumenti. **Filamento selezionato:** ELEGOO PLA Metallic Metal Bronze, scelta dell'utente, non ancora validata con stampa di prova.
