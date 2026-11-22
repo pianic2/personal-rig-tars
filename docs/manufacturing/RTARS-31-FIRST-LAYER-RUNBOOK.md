@@ -2,10 +2,11 @@
 
 **Lotto**: tre pezzi — staffa/supporto, base posteriore schermo, copertura servo. G-code locale `3_parts.gcode`, SHA-256 `32fec82a5f94c0d36b87587c2e853acb7f2462dc7703ec7e0fd6e9e1563a99fa` (non redistribuire file, G-code contiene geometria soggetta a MakerWorld Exclusive). Machine: ELEGOO Neptune 4 Standard, 0.4 mm acciaio temprato (dichiarato). Process: `RTARS-FUNCTIONAL CANDIDATE 0.20mm`. Filamento: ELEGOO PLA Metallic Metal Bronze / Generic PLA @Elegoo nel file. Temperatura nozzle primo layer 210 °C, resto 205 °C; bed 60 °C. Slicer estimate 2h32m12s / 20.59 g, **non consuntivo**.
 
-## Stato al 22/11/2026
-- I **5 preflight** sono stati confermati **PASS** dall'operatore prima di avviare, non da diagnostica strumentale indipendente. Evidenza nel documento [DRYING-ENVIRONMENT-PREFLIGHT.md](RTARS-31-DRYING-ENVIRONMENT-PREFLIGHT.md).
-- **Avvio effettivo NON ANCORA CONFERMATO**: il messaggio «Procedo ad avviare» non prova che il comando di stampa sia già stato eseguito.
-- Risultati homing, purge, adesione e primo layer **NON TESTED** fino alla comunicazione dell'operatore.
+## Stato aggiornato al 22/11/2026 — esito primo layer
+- I **5 preflight** sono stati confermati **PASS** dall'operatore. [Verbale condizioni e preflight](RTARS-31-DRYING-ENVIRONMENT-PREFLIGHT.md).
+- **Avvio effettivo: SI**, **L01 Homing: PASS**, **L02 Spurgo: PASS**, **L03 Primo layer: PASS**, **3/3 pezzi aderenti**, **anomalie riferite: nessuna**. Fonte: risposta diretta dell'operatore. **Non** sono esiti verificati da log macchina indipendenti.
+- Foto ravvicinata ricevuta, non pubblicata per licenza; visibilità parziale (non dimostra l'intero 3/3). Dettagli e hash nel [verbale first-layer](RTARS-31-FIRST-LAYER-RESULTS.md).
+- Stato: **PRINTING_IN_PROGRESS**; **CONTINUE_WITH_MONITORING**. La stampa finita, le misurazioni e i fit test restano **NOT TESTED**.
 
 ## Esecuzione: tre controlli sequenziali
 
