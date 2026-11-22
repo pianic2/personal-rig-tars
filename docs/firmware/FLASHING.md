@@ -2,6 +2,9 @@
 
 **Scope:** documented and statically reviewed; **device flashing NOT TESTED**. Firmware is third-party; never mix binaries across editions or source repositories.
 
+For the automated dry-run, artifact/hash verification, optional device probe,
+and separately confirmed flash mode, follow [AUTOMATED_VALIDATION.md](AUTOMATED_VALIDATION.md).
+
 ## Source of truth
 - Dedicated TARS v3.8.1 source at `LuwuDynamics/rig_tars_rl`, pinned to `456e3ee95ccbe94deae9484568719e8686b4b68b`.
 - Global/English edition: `configs/tars-gb.sdkconfig`; China edition: `configs/tars-cn.sdkconfig`. Target ESP32-S3, ESP-IDF 5.5.3, configured flash 16 MiB.
