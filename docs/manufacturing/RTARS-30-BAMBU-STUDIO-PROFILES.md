@@ -28,7 +28,7 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 - Official ELEGOO PLA Metallic product documentation: https://www.elegoo.com/products/pla-metal-filament-1-75-mm-colored-1-kg (Metallic Bronze variant; manufacturer's published bed range 35–65 °C, subject to build plate). Do not import settings from **Bambu PLA Metal**, a different product. Do not assume the material contains actual metal powder.
 - Bambu Studio source contains Elegoo printer/filament preset definitions: https://github.com/bambulab/BambuStudio/tree/master/resources/profiles/Elegoo . Presence in upstream source does **not** prove the user's installed version ships or activates the exact Neptune 4 Standard 0.4 mm profile.
 - Before printing, verify start/end G-code, bed dimensions, kinematics, temperature limits and Klipper compatibility against **the correct Neptune 4 Standard** preset. Do not blindly use G-code from Bambu or Neptune 4 Pro/Plus/Max profiles.
-- Existing RTARS-34 four-plate estimates remain historical; changing printer, filament or process preset invalidates their use as a new validated slicing baseline.
+- RTARS-34 original four-plate estimates remain historical. A second four-plate **HL-18 QUALITY 0.20 mm / Generic PLA** preview is now documented in [RTARS-30-QUALITY-SLICING-EVIDENCE.md](RTARS-30-QUALITY-SLICING-EVIDENCE.md): 23h19m, 87.04 m, 259.61 g (MODEL aggregate only). These are two distinct runs, not proof of equivalent inputs; neither qualifies as a validated dedicated RTARS profile.
 
 ## Per-part provisional routing (not a validated plate layout)
 - Functional priority P0: P01 arm (2), P05 main body (1), P08 joystick (1), P13 servo arm (1).
@@ -53,8 +53,9 @@ Status: DOCUMENTED / NOT YET SLICER-VALIDATED. Jira: RTARS-30.
 | Installed slicer version, correct machine preset, filament condition and temperatures | NOT TESTED |
 | Native presets exported/versioned | NOT TESTED |
 | Part-by-part orientation/support justification | NOT TESTED |
-| Four-plate Bambu Studio slicing with target presets | NOT TESTED |
+| Four-plate Bambu Studio slicing **with legacy QUALITY + Generic PLA** | PASS — screenshot of estimates only; toolpaths/supports not shown |
+| Four-plate Bambu Studio slicing **with dedicated RTARS target presets** | NOT TESTED |
 | RTARS-31 functional fit test | NOT TESTED (downstream) |
 | RTARS-32 definitive production | BLOCKED (downstream) |
 
-No physical prints, fit tests, dimensional measurements, G-code safety verification, Bambu Studio slicing or native preset exports are claimed. User has only confirmed model, nozzle diameter, filament name and caliper availability.
+No physical prints, fit tests, dimensional measurements, G-code safety verification, **dedicated profile slicing** or native RTARS preset exports are claimed. A screenshot confirms that the user obtained **one four-plate slicing summary using a legacy QUALITY process and Generic PLA**; detailed per-part toolpaths and support inspection remain NOT TESTED.
