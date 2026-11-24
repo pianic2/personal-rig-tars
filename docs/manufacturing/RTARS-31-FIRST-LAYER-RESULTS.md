@@ -74,3 +74,22 @@ Fotografie 1152x1536 JPEG; solo identificativi SHA-256 e osservazioni testuali i
 5. Riprovare `3_parts.gcode` solo dopo un test primo layer con linee fuse senza sovraestrusione o distacchi, e solo dopo nuovo preflight. Registrare nuovi valori **prima/dopo** e risultati; non alterare la versione approvata dei preset senza tracciamento.
 
 **Decisione: HOLD / RE-CALIBRATE BEFORE REPRINT.** Ipotesi tecnica, non certezza strumentale. L'evento rende non valido l'originario «L03 PASS» per la riuscita del lotto. Nessun nuovo risultato sperimentale è inventato.
+
+## Nuova ipotesi di diagnosi — flow primo layer (aggiornamento 2026-11-24)
+
+L'operatore riferisce di avere **già eseguito nuovamente il livellamento del piatto** e propone di indagare la quantità di materiale estruso. Questo non costituisce un test di portata, ma aggiorna la priorità delle verifiche. Non ripetere il livellamento senza indicazioni specifiche; ricordare che il livellamento non equivale alla calibrazione dell'offset Z.
+
+### Evidenza oggettiva estratta dal G-code privato `3_parts.gcode`
+- `filament_flow_ratio = 0.98`; `initial_layer_flow_ratio = 1`; `print_flow_ratio = 1`; `M221 S100` nel machine-start.
+- Primo layer: `initial_layer_print_height = 0.12 mm`, `initial_layer_line_width = 0.5 mm`, `initial_layer_speed = 18 mm/s`, `initial_layer_infill_speed = 18 mm/s`.
+- Limite volumetrico di filamento configurato: `15 mm³/s`. Passata campionata di fondo: segmento XY **17.5638 mm**, estrusione comandata `E=0.40979 mm` di filamento ø1.75mm = **0.05612 mm³/mm**, circa **1.01 mm³/s** a 18 mm/s. Questo dato è relativo al **comando**, non alla massa effettivamente uscita; esclude soltanto il superamento nominale della portata massima in quel segmento.
+- Possibili cause dei vuoti: sottoestrusione reale dovuta a flow moltiplicatore/trascinamento/restrizione; primo layer eccessivamente alto per Z-offset; linee spaziature o mesh locale. Non attribuire una causa certa dalle immagini.
+
+### Esperimento A/B proposto, non ancora eseguito
+1. Usare una **geometria propria semplice**, quadrato pieno di primo layer circa 40×40 mm, non una porzione del kit MakerWorld. Mantenere identici macchina, ugello, temperature, piatto, posizione e Z-offset. Evitare modifiche simultanee.
+2. **Test A (baseline):** `filament_flow_ratio = 0.98`, `initial_layer_flow_ratio = 1.00`.
+3. **Test B (variazione isolata):** duplicare temporaneamente il preset di processo, `initial_layer_flow_ratio = 1.05` (**+5% di estrusione sul solo primo layer**) e lasciare `filament_flow_ratio=0.98` e gli altri parametri invariati. Non sovrascrivere i preset RTARS-30 già versionati; documentare la variante come test.
+4. Confrontare unione delle linee, eventuali creste/accumuli, perimetri, uniformità e adesione. Se B migliora chiaramente senza sovraestrusione, indagare la calibrazione flow del materiale e portata reale; se uguale o peggio, non alzare ancora il flow e distinguere problemi Z-offset/mesh o meccanici.
+5. Se persistono anomalie, controllare scorrimento del filamento, pulizia ugello e affidabilità estrusore a temperatura di esercizio prima di alterare altri setpoint. Fermare subito se ugello raschia il piano, estrusione assente o materiale si accumula.
+
+**Stato:** proposta diagnosi non testata, nessun G-code o stampa nuovo generato. Jira RTARS-31 rimane In corso e PR #32 Draft.
