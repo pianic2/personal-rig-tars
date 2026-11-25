@@ -1,6 +1,8 @@
 # RTARS-31 — Verbale primo layer e arresto del lotto (2026-11-22)
 
-> **STATO AGGIORNATO: PRINT_ABORTED — L03 FAIL_VISUAL.** La sezione «Risultati operatore» seguente conserva il primo responso storico dichiarato, successivamente **superato** dalla nuova serie fotografica e dall'arresto comunicato dall'operatore. Non utilizzare `PRINTING_IN_PROGRESS` né `CONTINUE_WITH_MONITORING` come stato attuale.
+> **AGGIORNAMENTO 2026-11-25 — più recente e prevalente:** secondo tentativo con un solo componente **FAIL** dopo 10 ore di essiccazione riferite; flusso bloccato nuovamente, deposito non uniforme e scoppiettii. La diagnosi non è più focalizzata sulla sola adesione del primo layer. **Sospesi esperimenti di aumento flow**: prima [prova di alimentazione a vuoto e distinzione dell'origine del rumore](RTARS-31-EXTRUSION-DIAGNOSTIC-2026-11-25.md). Nessuna ulteriore stampa confermata.
+
+> **STATO STORICO 2026-11-22: PRINT_ABORTED — L03 FAIL_VISUAL.** La sezione «Risultati operatore» seguente conserva il primo responso storico dichiarato, successivamente **superato** dalla nuova serie fotografica e dall'arresto comunicato dall'operatore. Non utilizzare `PRINTING_IN_PROGRESS` né `CONTINUE_WITH_MONITORING` come stato attuale.
 
 ## Provenienza
 
