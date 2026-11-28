@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.1.0",
+  "task": "RTARS-34",
+  "plates": [
+    {
+      "plate_id": "PLATE-01",
+      "status": "pending",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported",
+        "profile_name": "HL-18 FAST 0.28mm @Elegoo Neptune4 0.4 nozzle (profilo Bambulab usiamo bambulab noi)",
+        "profile_validated": false,
+        "profile_validation_note": "Profile name refers to Elegoo Neptune4, while user reports Bambu Lab/Bambu Studio. Actual printer, profile mapping and export remain unverified."
+      },
+      "slicing_estimate": {
+        "duration_minutes": 59.233333333333334,
+        "consumed_mass_g": 24.5,
+        "waste_mass_g": 0.12,
+        "source": "mixed: photo_duration; earlier_user_report_for_mass_and_waste",
+        "waste_definition": "unverified",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "prior_user_reported_duration_minutes": 63,
+        "duration_seconds": 3554,
+        "time_source": "slicer-overview-2026-11-22",
+        "mass_source": "earlier_user_report_unverified_by_photo",
+        "waste_source": "earlier_user_report_unverified_by_photo",
+        "duration_conflict_note": "Earlier wizard said 63 min; later screenshot shows Plate 1 59m14s (difference 3m46s). Screenshot time used as current slicing estimate; earlier value preserved for audit."
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "ottenute con lo slicing di bambulab",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "printer_profile_not_verified",
+        "waste_category_not_defined",
+        "physical_print_not_executed",
+        "individual_mass_not_shown_in_photo",
+        "individual_waste_not_shown_in_photo"
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 110,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
+    },
+    {
+      "plate_id": "PLATE-02",
+      "status": "unconfirmed",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 8040,
+        "duration_minutes": 134,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
+        "physical_print_status_not_confirmed"
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 225,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
+    },
+    {
+      "plate_id": "PLATE-03",
+      "status": "unconfirmed",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 14460,
+        "duration_minutes": 241,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
+        "physical_print_status_not_confirmed"
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 479,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
+    },
+    {
+      "plate_id": "PLATE-04",
+      "status": "unconfirmed",
+      "material": null,
+      "slicer": {
+        "application": "Bambu Studio",
+        "provenance": "user_reported_application_not_confirmed_by_photo",
+        "profile_name": null,
+        "profile_validated": false,
+        "profile_validation_note": "Per-plate profile not shown; same settings as PLATE-01 not assumed."
+      },
+      "slicing_estimate": {
+        "duration_seconds": 17340,
+        "duration_minutes": 289,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "source": "slicer-overview-2026-11-22",
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+        "waste_definition": "unknown"
+      },
+      "actual_print": {
+        "duration_minutes": null,
+        "consumed_mass_g": null,
+        "waste_mass_g": null,
+        "outcome": null,
+        "attempts": [],
+        "evidence_files": []
+      },
+      "notes": "Slicer duration shown. No assertion about whether physical printing happened; actual status and mass/waste are unconfirmed.",
+      "gaps": [
+        "material_not_reported",
+        "slicer_export_missing",
+        "profile_not_reported",
+        "individual_consumed_mass_not_reported",
+        "individual_waste_not_reported",
+        "physical_print_status_not_confirmed"
+      ],
+      "latest_slicing_estimate": {
+        "source_id": "slicer-quality-2026-11-22",
+        "status": "slicer_only_not_physical_print",
+        "duration_minutes": 585,
+        "mass_g": null,
+        "waste_mass_g": null,
+        "process_profile_visible": "HL-18 QUALITY 0.20mm @Elegoo Neptune 4",
+        "filament_preset_visible": "Generic PLA",
+        "filament_actual_declared": "ELEGOO PLA Metallic Metal Bronze",
+        "profile_validated": false,
+        "evidence_file": "docs/manufacturing/print-consumption/evidence/slicer-summary-quality-2026-11-22.md"
+      }
+    }
+  ],
+  "summary_slicing_estimate": {
+    "source_id": "slicer-overview-2026-11-22",
+    "source_type": "user_uploaded_photo_manual_transcription",
+    "source_transcription": "docs/manufacturing/print-consumption/evidence/slicer-summary-2026-11-22.md",
+    "original_photo_in_repository": false,
+    "original_photo_sha256": "7a71943da07bf84a3ed422f615ed743423e0e6be687137181eac01a324f13616",
+    "filament_slot": "1",
+    "model_filament_length_m": 90.48,
+    "model_mass_g": 269.85,
+    "displayed_cost": "5.63",
+    "cost_currency": null,
+    "displayed_total_time": "12h3m",
+    "sum_of_individual_plate_durations_seconds": 43394,
+    "total_plates_in_screenshot": 4,
+    "material_type": null,
+    "model_mass_is_total_consumption": false,
+    "print_status_note": "Only PLATE-01 is explicitly pending in the user-supplied record; physical status of PLATE-02/03/04 is unconfirmed by this screenshot."
+  },
+  "latest_slicing_overview": {
+    "source_id": "slicer-quality-2026-11-22",
+    "source_type": "user_uploaded_photo_manual_transcription",
+    "image_sha256": "ab3a74239d7851b0c0368ca87cac6341a91418363b3e3d34f898e65c1bc33166",
+    "original_photo_in_repository": false,
+    "printer_selection_visible": "Elegoo Neptune 4",
+    "process_visible": "HL-18 QUALITY 0.20mm",
+    "filament_selection_visible": "Generic PLA",
+    "filament_actual_user_declared": "ELEGOO PLA Metallic Metal Bronze",
+    "displayed_total_time": "23h19m",
+    "sum_plate_times_minutes": 1399,
+    "model_filament_length_m": 87.04,
+    "model_mass_g": 259.61,
+    "displayed_cost": "5.49",
+    "cost_currency": null,
+    "number_of_plates": 4,
+    "plate_durations_minutes": [
+      110,
+      225,
+      479,
+      585
+    ],
+    "model_mass_is_total_consumption": false,
+    "actual_print_data_present": false,
+    "previous_baseline_preserved_in": "summary_slicing_estimate",
+    "limitations": [
+      "No proof of actual printed mass, time or waste",
+      "No per-plate mass shown",
+      "No visible toolpaths, supports or validated G-code",
+      "Actual filament is not represented by a validated named filament preset",
+      "No confirmation of consistent geometry and settings versus previous baseline"
+    ]
+  }
+}
